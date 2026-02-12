@@ -18,7 +18,7 @@
     "lumebonde"
   ],
   "dependencies": {
-    "@betterdata/commerce-gateway": "workspace:*"
+    "@betterdata/commerce-gateway": "^1.0.0"
   },
   "devDependencies": {
     "tsx": "^4.19.2",
