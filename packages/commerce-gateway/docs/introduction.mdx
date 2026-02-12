@@ -1,0 +1,173 @@
+---
+title: Introduction
+description: 'Universal LLM Gateway for Conversational Commerce'
+---
+
+<img
+  className="block dark:hidden"
+  src="/images/hero-light.svg"
+  alt="LLM Gateway Hero"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="LLM Gateway Hero"
+/>
+
+## What is @betterdata/llm-gateway?
+
+**@betterdata/llm-gateway** is an open-source framework for building AI-powered shopping experiences. It provides a universal abstraction layer that works with any LLM provider (Claude, ChatGPT, Grok) and any e-commerce backend.
+
+### The Problem
+
+Every e-commerce platform needs to integrate with multiple AI assistants:
+- **Claude** for sophisticated reasoning
+- **ChatGPT** for widespread adoption
+- **Grok** for real-time data
+
+Each has different APIs, authentication, and tool-calling formats. Building these integrations from scratch is time-consuming and error-prone.
+
+### The Solution
+
+**@betterdata/llm-gateway** provides:
+
+<CardGroup cols={2}>
+  <Card
+    title="Universal Tool Format"
+    icon="wrench"
+  >
+    Define tools once, use everywhere. Automatic conversion between Anthropic MCP, OpenAI Functions, and Grok formats.
+  </Card>
+  <Card
+    title="Pluggable Backends"
+    icon="plug"
+  >
+    Clean interfaces for products, cart, and orders. Implement once, connect to any LLM.
+  </Card>
+  <Card
+    title="Session Management"
+    icon="database"
+  >
+    Redis-based sessions with cross-platform transfer. Start in Claude, continue in ChatGPT.
+  </Card>
+  <Card
+    title="Production Ready"
+    icon="rocket"
+  >
+    Rate limiting, authentication, error handling, and logging built-in.
+  </Card>
+</CardGroup>
+
+## Quick Example
+
+```typescript
+import { LLMGateway } from '@betterdata/llm-gateway';
+import { MyShopifyBackend } from './my-backend';
+
+const gateway = new LLMGateway({
+  backends: {
+    products: new MyShopifyBackend(),
+    cart: new MyShopifyBackend(),
+    orders: new MyShopifyBackend(),
+  },
+  session: {
+    redis: { url: process.env.REDIS_URL }
+  },
+  auth: {
+    apiKeys: [process.env.API_KEY]
+  }
+});
+
+await gateway.start(3000);
+```
+
+## Who Is This For?
+
+- **E-commerce developers** adding AI chat to their stores
+- **Platform builders** creating conversational commerce products
+- **Agencies** building AI shopping experiences for clients
+- **Startups** launching AI-first commerce apps
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│ @betterdata/llm-gateway                                 │
+├─────────────────────────────────────────────────────────┤
+│ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐        │
+│ │  Claude │ │ OpenAI  │ │  Grok   │ │ Custom  │        │
+│ │   MCP   │ │Functions│ │  Tools  │ │ Adapter │        │
+│ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘        │
+│      └───────────┼───────────┼───────────┘             │
+│                  ▼                                      │
+│ ┌─────────────────────────────────────────────────────┐│
+│ │              Universal Tool Registry                ││
+│ │   search_products · add_to_cart · check_inventory  ││
+│ │   get_recommendations · create_order               ││
+│ └────────────────────────┬────────────────────────────┘│
+│                          ▼                              │
+│ ┌─────────────────────────────────────────────────────┐│
+│ │              Backend Interfaces                     ││
+│ │   ProductBackend · CartBackend · OrderBackend      ││
+│ └─────────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────┘
+                           │
+           ┌───────────────┼───────────────┐
+           ▼               ▼               ▼
+      ┌─────────┐    ┌─────────┐    ┌─────────┐
+      │ Shopify │    │  WooC   │    │ Custom  │
+      │  Store  │    │Commerce │    │   DB    │
+      └─────────┘    └─────────┘    └─────────┘
+```
+
+## Don't Want to Self-Host?
+
+Use our managed service at **[betterdata.dev](https://betterdata.dev)**:
+
+- ✅ Zero infrastructure setup
+- ✅ Global edge deployment  
+- ✅ 99.9% uptime SLA
+- ✅ Built-in analytics
+- ✅ Free tier: 10k tool calls/month
+
+<Card
+  title="Get Started Free"
+  icon="rocket"
+  href="https://betterdata.dev/signup"
+>
+  Create a free account and start building in minutes
+</Card>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Quickstart"
+    icon="play"
+    href="/quickstart"
+  >
+    Get up and running in 5 minutes
+  </Card>
+  <Card
+    title="Examples"
+    icon="code"
+    href="/examples/simple-search"
+  >
+    Browse complete examples
+  </Card>
+  <Card
+    title="Claude MCP Guide"
+    icon="message"
+    href="/guides/claude-mcp"
+  >
+    Integrate with Claude Desktop
+  </Card>
+  <Card
+    title="API Reference"
+    icon="book"
+    href="/api-reference/gateway"
+  >
+    Full API documentation
+  </Card>
+</CardGroup>
+

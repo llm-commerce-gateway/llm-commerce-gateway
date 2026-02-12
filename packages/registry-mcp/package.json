@@ -1,0 +1,62 @@
+{
+  "name": "@betterdata/registry-mcp",
+  "version": "1.0.0",
+  "description": "Commerce Gateway Registry MCP Server for Claude Desktop integration",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./store": {
+      "types": "./dist/store/index.d.ts",
+      "import": "./dist/store/index.js"
+    },
+    "./auth": {
+      "types": "./dist/auth/index.d.ts",
+      "import": "./dist/auth/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "clean": "git clean -xdf .turbo dist node_modules",
+    "prepublishOnly": "pnpm build",
+    "test": "node ../../scripts/check-oss-boundary.mjs --package .",
+    "check:oss-boundary": "node ../../scripts/check-oss-boundary.mjs --package ."
+  },
+  "dependencies": {
+    "@betterdata/commerce-gateway": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "jose": "^5.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "commerce",
+    "registry",
+    "gateway"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

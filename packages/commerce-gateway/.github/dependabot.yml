@@ -1,0 +1,77 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
+    
+    # Automatically merge minor and patch updates
+    open-pull-requests-limit: 10
+    
+    # Reviewers and assignees
+    reviewers:
+      - "betterdata/core-team"
+    
+    # Labels for PRs
+    labels:
+      - "dependencies"
+      - "automated"
+    
+    # Commit message prefix
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    
+    # Version updates
+    versioning-strategy: increase
+    
+    # Ignore specific dependencies
+    ignore:
+      # Ignore major version updates for now
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  # Enable security updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    
+    open-pull-requests-limit: 5
+    
+    labels:
+      - "security"
+      - "dependencies"
+      - "high-priority"
+    
+    commit-message:
+      prefix: "security(deps)"
+    
+    # Only security updates
+    allow:
+      - dependency-type: "all"
+    
+    # Don't ignore security updates
+    ignore: []
+
+  # GitHub Actions updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    
+    open-pull-requests-limit: 3
+    
+    labels:
+      - "github-actions"
+      - "dependencies"
+    
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+

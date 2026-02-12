@@ -1,0 +1,66 @@
+{
+  "name": "@betterdata/commerce-gateway-connectors",
+  "version": "1.0.0",
+  "description": "Commerce platform connectors for the LLM Commerce Gateway — Shopify, BigCommerce, WooCommerce",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./shopify": {
+      "types": "./dist/shopify/index.d.ts",
+      "import": "./dist/shopify/index.js"
+    },
+    "./bigcommerce": {
+      "types": "./dist/bigcommerce/index.d.ts",
+      "import": "./dist/bigcommerce/index.js"
+    },
+    "./woocommerce": {
+      "types": "./dist/woocommerce/index.d.ts",
+      "import": "./dist/woocommerce/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "@betterdata/commerce-gateway": "^1.0.0"
+  },
+  "devDependencies": {
+    "@betterdata/commerce-gateway": "workspace:*",
+    "@types/node": "^22.13.9",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/betterdataco/llm-commerce-gateway.git",
+    "directory": "packages/commerce-gateway-connectors"
+  },
+  "homepage": "https://github.com/betterdataco/llm-commerce-gateway",
+  "keywords": [
+    "commerce",
+    "gateway",
+    "shopify",
+    "bigcommerce",
+    "woocommerce",
+    "connectors",
+    "llm",
+    "ai"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

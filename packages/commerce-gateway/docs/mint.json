@@ -1,0 +1,121 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "@betterdata/llm-gateway",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373",
+    "anchors": {
+      "from": "#0D9373",
+      "to": "#07C983"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/betterdata/llm-gateway"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://betterdata.dev"
+  },
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/betterdata/llm-gateway"
+    },
+    {
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://discord.gg/betterdata"
+    },
+    {
+      "name": "Hosted Service",
+      "icon": "cloud",
+      "url": "https://betterdata.dev"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "installation"
+      ]
+    },
+    {
+      "group": "Core Concepts",
+      "pages": [
+        "concepts/backends",
+        "concepts/tools",
+        "concepts/sessions",
+        "concepts/authentication"
+      ]
+    },
+    {
+      "group": "Integration Guides",
+      "pages": [
+        "guides/claude-mcp",
+        "guides/openai-functions",
+        "guides/grok-integration",
+        "guides/custom-backend"
+      ]
+    },
+    {
+      "group": "Platform Guides",
+      "pages": [
+        "guides/shopify",
+        "guides/woocommerce",
+        "guides/stripe"
+      ]
+    },
+    {
+      "group": "Deployment",
+      "pages": [
+        "deployment/vercel",
+        "deployment/docker",
+        "deployment/self-hosted"
+      ]
+    },
+    {
+      "group": "Examples",
+      "pages": [
+        "examples/simple-search",
+        "examples/ecommerce-stripe",
+        "examples/shopify",
+        "examples/lumebonde-demo"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/gateway",
+        "api-reference/mcp",
+        "api-reference/openai",
+        "api-reference/session",
+        "api-reference/auth",
+        "api-reference/links"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/betterdata",
+    "github": "https://github.com/betterdata",
+    "discord": "https://discord.gg/betterdata"
+  }
+}
+

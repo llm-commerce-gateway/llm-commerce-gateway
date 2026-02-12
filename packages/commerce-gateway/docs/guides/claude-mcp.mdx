@@ -1,0 +1,272 @@
+---
+title: Claude MCP Integration
+description: 'Connect your store to Claude Desktop with MCP'
+---
+
+The Model Context Protocol (MCP) is Anthropic's standard for connecting Claude to external tools and data sources. This guide shows how to create an MCP server for your e-commerce store.
+
+## What is MCP?
+
+MCP allows Claude Desktop to:
+- **Tools**: Call your backend functions (search, add to cart, checkout)
+- **Resources**: Access live data feeds (product catalog, inventory)
+- **Prompts**: Use pre-defined conversation templates
+
+## Quick Setup
+
+### 1. Install the Package
+
+```bash
+npm install @betterdata/llm-gateway
+```
+
+### 2. Create Your MCP Server
+
+```typescript mcp-server.ts
+import { MCPServer } from '@betterdata/llm-gateway/mcp';
+import { MyBackend } from './backend';
+
+const server = new MCPServer({
+  backends: {
+    products: new MyBackend(),
+    cart: new MyBackend(),
+  },
+  tools: [
+    'search_products',
+    'get_product_details', 
+    'add_to_cart',
+    'check_inventory',
+    'get_recommendations',
+    'create_order',
+  ],
+  resources: ['catalog'],
+  prompts: ['shopping_assistant'],
+  name: 'my-store',
+  version: '1.0.0',
+});
+
+server.start();
+```
+
+### 3. Configure Claude Desktop
+
+Add to `~/.config/claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+
+```json
+{
+  "mcpServers": {
+    "my-store": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-server.js"],
+      "env": {
+        "REDIS_URL": "redis://localhost:6379",
+        "API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+
+### 4. Restart Claude Desktop
+
+Close and reopen Claude Desktop. Your tools should now be available!
+
+## Built-in Tools
+
+The gateway includes 6 commerce tools out of the box:
+
+| Tool | Description |
+|------|-------------|
+| `search_products` | Search product catalog with filters |
+| `get_product_details` | Get detailed product info by ID |
+| `add_to_cart` | Add item to shopping cart |
+| `check_inventory` | Check stock availability |
+| `get_recommendations` | Get product recommendations |
+| `create_order` | Create order from cart |
+
+## Example Conversation
+
+<Steps>
+  <Step title="User asks about products">
+    > "What wireless headphones do you have?"
+    
+    Claude calls `search_products` with query "wireless headphones"
+  </Step>
+  
+  <Step title="Claude shows results">
+    > "I found 3 wireless headphones:
+    > 
+    > 1. **Premium Wireless Headphones** - $299.99 ⭐ 4.8/5
+    >    Active noise cancellation, 30-hour battery
+    > 
+    > 2. **Sport Earbuds** - $149.99 ⭐ 4.6/5
+    >    Water resistant, 8-hour battery
+    >
+    > Would you like details on any of these?"
+  </Step>
+  
+  <Step title="User adds to cart">
+    > "Add the Premium headphones in black to my cart"
+    
+    Claude calls `add_to_cart` with product ID and variant
+  </Step>
+  
+  <Step title="Claude confirms">
+    > "I've added Premium Wireless Headphones (Black) to your cart.
+    >
+    > **Your Cart:**
+    > - Premium Wireless Headphones (Black) x1 - $299.99
+    > 
+    > **Total:** $299.99
+    >
+    > Would you like to continue shopping or proceed to checkout?"
+  </Step>
+</Steps>
+
+## Configuration Options
+
+```typescript
+interface MCPServerConfig {
+  // Required
+  backends: {
+    products: ProductBackend;
+    cart?: CartBackend;
+    orders?: OrderBackend;
+    links?: LinkGenerator;
+  };
+  
+  // Tools to enable
+  tools?: string[];
+  
+  // Resources to expose
+  resources?: string[];
+  
+  // Prompt templates
+  prompts?: string[];
+  
+  // Server info
+  name: string;
+  version: string;
+  description?: string;
+  
+  // Session options
+  session?: {
+    redis?: { url: string; token?: string };
+    ttl?: number;
+  };
+}
+```
+
+## Available Resources
+
+Resources provide live data to Claude:
+
+| Resource | Description |
+|----------|-------------|
+| `catalog` | Full product catalog |
+| `categories` | Product categories |
+| `featured_products` | Featured/sale items |
+| `search?q=...` | Dynamic search results |
+
+## Prompt Templates
+
+Pre-defined conversation starters:
+
+| Prompt | Description |
+|--------|-------------|
+| `shopping_assistant` | General shopping help |
+| `gift_finder` | Gift recommendation flow |
+| `checkout_help` | Checkout assistance |
+| `order_status` | Order tracking |
+| `reorder` | Reorder previous items |
+
+## Advanced Configuration
+
+### Custom Session Storage
+
+```typescript
+const server = new MCPServer({
+  backends: { products: myBackend },
+  session: {
+    redis: {
+      url: process.env.REDIS_URL,
+      token: process.env.REDIS_TOKEN, // For Upstash
+    },
+    ttl: 86400, // 24 hours
+  },
+});
+```
+
+### Link Generation
+
+Enable short links in responses:
+
+```typescript
+import { DubLinkGenerator } from '@betterdata/llm-gateway/links';
+
+const links = new DubLinkGenerator({
+  apiKey: process.env.DUB_API_KEY,
+  domain: 'shop.link',
+  storeBaseUrl: 'https://mystore.com',
+});
+
+const server = new MCPServer({
+  backends: {
+    products: myBackend,
+    links,
+  },
+});
+```
+
+### Select Specific Tools
+
+```typescript
+const server = new MCPServer({
+  backends: { products: myBackend },
+  // Only enable search and details
+  tools: ['search_products', 'get_product_details'],
+});
+```
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Claude doesn't see my tools">
+    1. Check that the path in `claude_desktop_config.json` is absolute
+    2. Ensure the script runs without errors: `node /path/to/mcp-server.js`
+    3. Restart Claude Desktop completely
+    4. Look for errors in Claude's developer console
+  </Accordion>
+  
+  <Accordion title="Tool calls fail silently">
+    Your backend might be throwing errors. Add logging:
+    ```typescript
+    server.start();
+    console.error('Server started');
+    ```
+    
+    Check the terminal where the MCP server is running.
+  </Accordion>
+  
+  <Accordion title="Session not persisting">
+    Without Redis, sessions are in-memory and reset when the server restarts.
+    Add Redis for persistence:
+    ```typescript
+    session: {
+      redis: { url: 'redis://localhost:6379' }
+    }
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add OpenAI Support" href="/guides/openai-functions">
+    Support ChatGPT alongside Claude
+  </Card>
+  <Card title="Shopify Integration" href="/guides/shopify">
+    Connect to a real Shopify store
+  </Card>
+</CardGroup>
+

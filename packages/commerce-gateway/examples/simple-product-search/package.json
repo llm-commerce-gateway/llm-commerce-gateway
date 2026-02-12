@@ -1,0 +1,21 @@
+{
+  "name": "simple-product-search",
+  "version": "1.0.0",
+  "description": "Minimal conversational commerce example with Claude",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx server.ts"
+  },
+  "dependencies": {
+    "@betterdata/commerce-gateway": "file:../.."
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "tsx": "^4.20.0",
+    "typescript": "^5.5.3"
+  }
+}
+

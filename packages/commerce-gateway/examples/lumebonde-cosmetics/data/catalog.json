@@ -1,0 +1,322 @@
+[
+  {
+    "id": "LMBD-SERUM-001",
+    "name": "Lumebondé Radiance Serum",
+    "description": "Brightening vitamin C serum with hyaluronic acid. Our signature product delivers instant luminosity and long-term brightening benefits. Formulated with 15% L-ascorbic acid and triple-weight hyaluronic acid for maximum efficacy.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Serums > Vitamin C Serums",
+    "price": 89.00,
+    "currency": "USD",
+    "sku": "LMBD-SERUM-001",
+    "gtin": "0850001234561",
+    "images": ["https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800"],
+    "inStock": true,
+    "quantity": 430,
+    "metadata": {
+      "size": "30ml",
+      "ingredients": "Water, Ascorbic Acid (15%), Hyaluronic Acid, Vitamin E, Ferulic Acid, Niacinamide",
+      "benefits": ["Brightening", "Anti-aging", "Hydrating", "Antioxidant protection"],
+      "skinType": ["All skin types", "Especially dull or uneven skin"],
+      "usage": "Apply 3-4 drops to clean face and neck morning and evening before moisturizer",
+      "tags": ["bestseller", "hero", "vitamin-c", "brightening"],
+      "skuClass": "HERO"
+    }
+  },
+  {
+    "id": "LMBD-MOIST-001",
+    "name": "Hydra Glow Moisturizer",
+    "description": "Deep hydration with peptides. This lightweight yet deeply nourishing moisturizer provides 72-hour hydration while improving skin texture and firmness. Formulated with ceramides and squalane.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Moisturizers > Face Moisturizers",
+    "price": 65.00,
+    "currency": "USD",
+    "sku": "LMBD-MOIST-001",
+    "gtin": "0850001234562",
+    "images": ["https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=800"],
+    "inStock": true,
+    "quantity": 340,
+    "metadata": {
+      "size": "50ml",
+      "ingredients": "Water, Squalane, Peptide Complex, Hyaluronic Acid, Ceramides, Vitamin E",
+      "benefits": ["Deep hydration", "Firming", "Texture improvement", "Barrier repair"],
+      "skinType": ["All skin types", "Especially dry or dehydrated skin"],
+      "usage": "Apply morning and evening after serum, gently press into skin",
+      "tags": ["bestseller", "hero", "hydrating", "peptides"],
+      "skuClass": "HERO"
+    }
+  },
+  {
+    "id": "LMBD-SHAMP-001",
+    "name": "Silk Repair Shampoo",
+    "description": "Bond repair technology for damaged hair. Our revolutionary formula rebuilds broken bonds from within, restoring strength and shine to over-processed, color-treated, or heat-damaged hair.",
+    "brand": "Lumebondé",
+    "category": "Haircare > Shampoos > Repair Shampoos",
+    "price": 42.00,
+    "currency": "USD",
+    "sku": "LMBD-SHAMP-001",
+    "gtin": "0850001234563",
+    "images": ["https://images.unsplash.com/photo-1585232350463-65de7a84cf79?w=800"],
+    "inStock": true,
+    "quantity": 425,
+    "metadata": {
+      "size": "250ml",
+      "ingredients": "Water, Sodium Lauroyl Methyl Isethionate, Bond Complex, Keratin, Silk Amino Acids",
+      "benefits": ["Bond repair", "Strengthening", "Shine enhancement", "Color protection"],
+      "hairType": ["Damaged", "Color-treated", "Chemically processed"],
+      "usage": "Massage into wet hair, leave for 1-2 minutes, rinse thoroughly",
+      "tags": ["bestseller", "hero", "bond-repair", "salon-quality"],
+      "skuClass": "HERO"
+    }
+  },
+  {
+    "id": "LMBD-COND-001",
+    "name": "Silk Repair Conditioner",
+    "description": "Matching conditioner for the Silk Repair system. Seals in repair benefits while providing instant detangling and lasting softness. Infused with argan oil for extra nourishment.",
+    "brand": "Lumebondé",
+    "category": "Haircare > Conditioners > Repair Conditioners",
+    "price": 42.00,
+    "currency": "USD",
+    "sku": "LMBD-COND-001",
+    "gtin": "0850001234564",
+    "images": ["https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=800"],
+    "inStock": true,
+    "quantity": 320,
+    "metadata": {
+      "size": "250ml",
+      "ingredients": "Water, Cetearyl Alcohol, Behentrimonium Chloride, Bond Complex, Argan Oil",
+      "benefits": ["Detangling", "Softening", "Bond sealing", "Heat protection"],
+      "hairType": ["Damaged", "Color-treated", "Chemically processed"],
+      "usage": "Apply to mid-lengths and ends after shampooing, leave 2-3 minutes, rinse",
+      "tags": ["hero", "bond-repair", "conditioner"],
+      "skuClass": "HERO"
+    }
+  },
+  {
+    "id": "LMBD-LIPOIL-001",
+    "name": "Rose Petal Lip Oil",
+    "description": "Nourishing lip treatment with rose extract. This luxurious oil provides intense moisture while imparting a subtle rose-gold shimmer. Perfect alone or over lipstick.",
+    "brand": "Lumebondé",
+    "category": "Makeup > Lip > Lip Oils",
+    "price": 28.00,
+    "currency": "USD",
+    "sku": "LMBD-LIPOIL-001",
+    "gtin": "0850001234565",
+    "images": ["https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800"],
+    "inStock": true,
+    "quantity": 450,
+    "metadata": {
+      "size": "10ml",
+      "ingredients": "Jojoba Oil, Rose Hip Oil, Vitamin E, Rose Extract, Mica",
+      "benefits": ["Intense moisture", "Subtle shimmer", "Plumping effect", "Overnight treatment"],
+      "usage": "Apply to lips as needed, perfect alone or over lipstick",
+      "tags": ["hero", "lip-care", "rose", "shimmer"],
+      "skuClass": "HERO"
+    }
+  },
+  {
+    "id": "LMBD-KIT-SKIN",
+    "name": "Complete Skincare Set",
+    "description": "The perfect introduction to Lumebondé skincare. Includes our hero Radiance Serum and Hydra Glow Moisturizer for a complete morning and evening routine. Save 10% vs individual products.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Sets > Gift Sets",
+    "price": 139.00,
+    "compareAtPrice": 154.00,
+    "currency": "USD",
+    "sku": "LMBD-KIT-SKIN",
+    "images": ["https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800"],
+    "inStock": true,
+    "quantity": 120,
+    "metadata": {
+      "components": ["LMBD-SERUM-001", "LMBD-MOIST-001"],
+      "value": 154.00,
+      "savingsPct": 10,
+      "tags": ["bundle", "gift-set", "skincare", "value"],
+      "skuClass": "BUNDLE"
+    }
+  },
+  {
+    "id": "LMBD-KIT-HAIR",
+    "name": "Hair Repair Duo",
+    "description": "Complete bond repair system. Our shampoo and conditioner work together to rebuild hair from within. Save 12% vs individual products.",
+    "brand": "Lumebondé",
+    "category": "Haircare > Sets > Gift Sets",
+    "price": 74.00,
+    "compareAtPrice": 84.00,
+    "currency": "USD",
+    "sku": "LMBD-KIT-HAIR",
+    "images": ["https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800"],
+    "inStock": true,
+    "quantity": 95,
+    "metadata": {
+      "components": ["LMBD-SHAMP-001", "LMBD-COND-001"],
+      "value": 84.00,
+      "savingsPct": 12,
+      "tags": ["bundle", "gift-set", "haircare", "bond-repair"],
+      "skuClass": "BUNDLE"
+    }
+  },
+  {
+    "id": "LMBD-KIT-HOLIDAY",
+    "name": "Holiday Gift Set",
+    "description": "Limited edition holiday collection. Includes our bestselling Radiance Serum, two Rose Petal Lip Oils, and deluxe samples. Perfect for gifting or treating yourself. Save 15%.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Sets > Holiday Sets",
+    "price": 129.00,
+    "compareAtPrice": 152.00,
+    "currency": "USD",
+    "sku": "LMBD-KIT-HOLIDAY",
+    "images": ["https://images.unsplash.com/photo-1512909006721-3d6018887383?w=800"],
+    "inStock": true,
+    "quantity": 65,
+    "metadata": {
+      "components": ["LMBD-SERUM-001", "LMBD-LIPOIL-001", "LMBD-LIPOIL-001", "LMBD-SAMPLE-MOIST"],
+      "value": 152.00,
+      "savingsPct": 15,
+      "limitedEdition": true,
+      "tags": ["bundle", "gift-set", "holiday", "limited-edition"],
+      "skuClass": "BUNDLE"
+    }
+  },
+  {
+    "id": "LMBD-TONER-001",
+    "name": "Balancing Toner",
+    "description": "pH balancing formula that preps skin for serums and moisturizers while providing gentle exfoliation. Contains 5% glycolic acid and soothing aloe vera.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Toners > Exfoliating Toners",
+    "price": 38.00,
+    "currency": "USD",
+    "sku": "LMBD-TONER-001",
+    "images": ["https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800"],
+    "inStock": true,
+    "quantity": 180,
+    "metadata": {
+      "size": "150ml",
+      "ingredients": "Water, Witch Hazel, Glycolic Acid (5%), Niacinamide, Aloe Vera",
+      "benefits": ["pH balancing", "Gentle exfoliation", "Pore refining", "Prep for treatments"],
+      "skinType": ["Normal", "Oily", "Combination"],
+      "tags": ["toner", "exfoliating", "prep"],
+      "skuClass": "LONGTAIL"
+    }
+  },
+  {
+    "id": "LMBD-MASK-001",
+    "name": "Overnight Repair Mask",
+    "description": "Intensive overnight treatment that works while you sleep to repair and restore skin's natural barrier. With retinol, peptides, and bakuchiol for visible results by morning.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Masks > Overnight Masks",
+    "price": 52.00,
+    "currency": "USD",
+    "sku": "LMBD-MASK-001",
+    "images": ["https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800"],
+    "inStock": true,
+    "quantity": 110,
+    "metadata": {
+      "size": "75ml",
+      "ingredients": "Water, Squalane, Retinol, Peptides, Ceramides, Bakuchiol",
+      "benefits": ["Overnight repair", "Barrier restoration", "Fine line reduction", "Radiance boost"],
+      "skinType": ["All skin types", "Anti-aging concerns"],
+      "tags": ["mask", "overnight", "repair", "anti-aging"],
+      "skuClass": "LONGTAIL"
+    }
+  },
+  {
+    "id": "LMBD-MIST-001",
+    "name": "Hydrating Face Mist",
+    "description": "Refreshing facial mist for instant hydration boost anytime, anywhere. Perfect for setting makeup, mid-day refresh, or post-workout. Travel-friendly formula.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Mists > Hydrating Mists",
+    "price": 32.00,
+    "currency": "USD",
+    "sku": "LMBD-MIST-001",
+    "images": ["https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800"],
+    "inStock": true,
+    "quantity": 220,
+    "metadata": {
+      "size": "100ml",
+      "ingredients": "Rose Water, Hyaluronic Acid, Glycerin, Cucumber Extract, Aloe Vera",
+      "benefits": ["Instant hydration", "Makeup setting", "Refreshing", "Soothing"],
+      "skinType": ["All skin types"],
+      "tags": ["mist", "hydrating", "refreshing", "travel-friendly"],
+      "skuClass": "LONGTAIL"
+    }
+  },
+  {
+    "id": "LMBD-OIL-001",
+    "name": "Hair Finishing Oil",
+    "description": "Lightweight shine treatment that tames frizz and adds brilliant shine without weighing hair down. UV filters protect color from fading.",
+    "brand": "Lumebondé",
+    "category": "Haircare > Treatments > Hair Oils",
+    "price": 48.00,
+    "currency": "USD",
+    "sku": "LMBD-OIL-001",
+    "images": ["https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=800"],
+    "inStock": true,
+    "quantity": 150,
+    "metadata": {
+      "size": "50ml",
+      "ingredients": "Argan Oil, Camellia Oil, Silicones, Vitamin E, UV Filters",
+      "benefits": ["Frizz control", "Shine enhancement", "Heat protection", "Lightweight finish"],
+      "hairType": ["All hair types", "Especially frizzy or dull"],
+      "tags": ["finishing", "oil", "shine", "frizz-control"],
+      "skuClass": "LONGTAIL"
+    }
+  },
+  {
+    "id": "LMBD-SAMPLE-SERUM",
+    "name": "Serum Sample 5ml",
+    "description": "Deluxe sample of our bestselling Radiance Serum. Perfect for trial or travel. Includes 3-4 applications.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Samples > Serum Samples",
+    "price": 0.00,
+    "currency": "USD",
+    "sku": "LMBD-SAMPLE-SERUM",
+    "images": ["https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800"],
+    "inStock": true,
+    "quantity": 500,
+    "metadata": {
+      "size": "5ml",
+      "isSample": true,
+      "tags": ["sample", "gwp", "trial"],
+      "skuClass": "SAMPLE"
+    }
+  },
+  {
+    "id": "LMBD-SAMPLE-MOIST",
+    "name": "Moisturizer Sample 7ml",
+    "description": "Deluxe sample of our Hydra Glow Moisturizer. Perfect for trial or travel. Includes 5-6 applications.",
+    "brand": "Lumebondé",
+    "category": "Skincare > Samples > Moisturizer Samples",
+    "price": 0.00,
+    "currency": "USD",
+    "sku": "LMBD-SAMPLE-MOIST",
+    "images": ["https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800"],
+    "inStock": true,
+    "quantity": 500,
+    "metadata": {
+      "size": "7ml",
+      "isSample": true,
+      "tags": ["sample", "gwp", "trial"],
+      "skuClass": "SAMPLE"
+    }
+  },
+  {
+    "id": "LMBD-SAMPLE-SHAMP",
+    "name": "Shampoo Sachet 10ml",
+    "description": "Single-use sachet of Silk Repair Shampoo. Perfect for events, travel, or sampling our bond repair technology.",
+    "brand": "Lumebondé",
+    "category": "Haircare > Samples > Shampoo Samples",
+    "price": 0.00,
+    "currency": "USD",
+    "sku": "LMBD-SAMPLE-SHAMP",
+    "images": ["https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=800"],
+    "inStock": true,
+    "quantity": 800,
+    "metadata": {
+      "size": "10ml",
+      "isSample": true,
+      "tags": ["sample", "sachet", "event"],
+      "skuClass": "SAMPLE"
+    }
+  }
+]
+

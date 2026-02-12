@@ -1,0 +1,214 @@
+[
+  {
+    "id": "lb-001",
+    "name": "Lumebonde Signature Watch",
+    "description": "Our flagship timepiece featuring Swiss automatic movement, sapphire crystal, and a hand-finished case. Limited edition with serial numbering. Water resistant to 100m.",
+    "slug": "signature-watch",
+    "price": 2499.00,
+    "compareAtPrice": 2999.00,
+    "currency": "USD",
+    "category": "Watches",
+    "tags": ["luxury", "watch", "automatic", "limited-edition", "swiss-made"],
+    "images": [
+      "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=800",
+      "https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=800"
+    ],
+    "variants": [
+      { "id": "lb-001-silver", "name": "Silver Dial", "sku": "LB-SIG-SLV", "price": 2499.00, "inventory": { "nyc": 5, "la": 3, "miami": 2, "online": 10 } },
+      { "id": "lb-001-black", "name": "Black Dial", "sku": "LB-SIG-BLK", "price": 2499.00, "inventory": { "nyc": 3, "la": 4, "miami": 1, "online": 8 } },
+      { "id": "lb-001-blue", "name": "Navy Blue Dial", "sku": "LB-SIG-NVY", "price": 2699.00, "inventory": { "nyc": 2, "la": 2, "miami": 0, "online": 5 } }
+    ],
+    "attributes": {
+      "movement": "Swiss Automatic",
+      "case_size": "42mm",
+      "water_resistance": "100m",
+      "crystal": "Sapphire"
+    },
+    "rating": 4.9,
+    "reviewCount": 127
+  },
+  {
+    "id": "lb-002",
+    "name": "Heritage Leather Briefcase",
+    "description": "Crafted from full-grain Italian leather with solid brass hardware. Hand-stitched details and lifetime warranty. Perfect for the modern professional.",
+    "slug": "heritage-briefcase",
+    "price": 895.00,
+    "currency": "USD",
+    "category": "Bags",
+    "tags": ["luxury", "leather", "briefcase", "italian", "business"],
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800"
+    ],
+    "variants": [
+      { "id": "lb-002-cognac", "name": "Cognac", "sku": "LB-HER-COG", "price": 895.00, "inventory": { "nyc": 8, "la": 5, "miami": 4, "online": 15 } },
+      { "id": "lb-002-black", "name": "Black", "sku": "LB-HER-BLK", "price": 895.00, "inventory": { "nyc": 10, "la": 7, "miami": 6, "online": 20 } },
+      { "id": "lb-002-navy", "name": "Navy", "sku": "LB-HER-NVY", "price": 895.00, "inventory": { "nyc": 4, "la": 3, "miami": 2, "online": 10 } }
+    ],
+    "attributes": {
+      "material": "Full-grain Italian Leather",
+      "dimensions": "16\" x 12\" x 4\"",
+      "hardware": "Solid Brass",
+      "warranty": "Lifetime"
+    },
+    "rating": 4.8,
+    "reviewCount": 89
+  },
+  {
+    "id": "lb-003",
+    "name": "Cashmere Scarf",
+    "description": "Ultra-soft 100% Mongolian cashmere in a generous size. Naturally temperature-regulating and incredibly lightweight. The perfect year-round accessory.",
+    "slug": "cashmere-scarf",
+    "price": 295.00,
+    "currency": "USD",
+    "category": "Accessories",
+    "tags": ["luxury", "cashmere", "scarf", "mongolian", "gift"],
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800"
+    ],
+    "variants": [
+      { "id": "lb-003-camel", "name": "Camel", "sku": "LB-CSH-CML", "price": 295.00, "inventory": { "nyc": 15, "la": 12, "miami": 8, "online": 30 } },
+      { "id": "lb-003-charcoal", "name": "Charcoal", "sku": "LB-CSH-CHR", "price": 295.00, "inventory": { "nyc": 12, "la": 10, "miami": 6, "online": 25 } },
+      { "id": "lb-003-burgundy", "name": "Burgundy", "sku": "LB-CSH-BRG", "price": 295.00, "inventory": { "nyc": 8, "la": 6, "miami": 4, "online": 20 } },
+      { "id": "lb-003-ivory", "name": "Ivory", "sku": "LB-CSH-IVR", "price": 295.00, "inventory": { "nyc": 10, "la": 8, "miami": 5, "online": 22 } }
+    ],
+    "attributes": {
+      "material": "100% Mongolian Cashmere",
+      "dimensions": "80\" x 28\"",
+      "weight": "200g",
+      "care": "Dry clean only"
+    },
+    "rating": 4.9,
+    "reviewCount": 245
+  },
+  {
+    "id": "lb-004",
+    "name": "Sterling Silver Cufflinks",
+    "description": "Handcrafted sterling silver cufflinks with our signature Lumebonde monogram. Presented in a lacquered gift box. The finishing touch for any formal occasion.",
+    "slug": "silver-cufflinks",
+    "price": 245.00,
+    "currency": "USD",
+    "category": "Accessories",
+    "tags": ["luxury", "silver", "cufflinks", "formal", "gift"],
+    "images": [
+      "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800"
+    ],
+    "variants": [
+      { "id": "lb-004-polished", "name": "Polished", "sku": "LB-CUF-POL", "price": 245.00, "inventory": { "nyc": 20, "la": 15, "miami": 10, "online": 40 } },
+      { "id": "lb-004-brushed", "name": "Brushed", "sku": "LB-CUF-BRS", "price": 245.00, "inventory": { "nyc": 15, "la": 12, "miami": 8, "online": 35 } }
+    ],
+    "attributes": {
+      "material": "925 Sterling Silver",
+      "finish": "Hand-polished",
+      "packaging": "Lacquered gift box"
+    },
+    "rating": 4.7,
+    "reviewCount": 156
+  },
+  {
+    "id": "lb-005",
+    "name": "Premium Sunglasses",
+    "description": "Titanium frame with Carl Zeiss lenses. UV400 protection and anti-reflective coating. Includes premium leather case and microfiber cloth.",
+    "slug": "premium-sunglasses",
+    "price": 450.00,
+    "currency": "USD",
+    "category": "Eyewear",
+    "tags": ["luxury", "sunglasses", "titanium", "zeiss", "summer"],
+    "images": [
+      "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800"
+    ],
+    "variants": [
+      { "id": "lb-005-gunmetal", "name": "Gunmetal / Gray", "sku": "LB-SUN-GUN", "price": 450.00, "inventory": { "nyc": 12, "la": 15, "miami": 18, "online": 25 } },
+      { "id": "lb-005-gold", "name": "Gold / Brown", "sku": "LB-SUN-GLD", "price": 450.00, "inventory": { "nyc": 8, "la": 10, "miami": 12, "online": 20 } },
+      { "id": "lb-005-silver", "name": "Silver / Blue", "sku": "LB-SUN-SLV", "price": 450.00, "inventory": { "nyc": 10, "la": 12, "miami": 15, "online": 22 } }
+    ],
+    "attributes": {
+      "frame_material": "Titanium",
+      "lens": "Carl Zeiss",
+      "uv_protection": "UV400",
+      "included": "Leather case, microfiber cloth"
+    },
+    "rating": 4.8,
+    "reviewCount": 98
+  },
+  {
+    "id": "lb-006",
+    "name": "Italian Leather Belt",
+    "description": "Hand-cut from vegetable-tanned Italian leather with a brushed silver buckle. Gets better with age and comes with a 5-year warranty.",
+    "slug": "italian-belt",
+    "price": 195.00,
+    "currency": "USD",
+    "category": "Accessories",
+    "tags": ["luxury", "leather", "belt", "italian", "classic"],
+    "images": [
+      "https://images.unsplash.com/photo-1553704571-c32d20e6c74d?w=800"
+    ],
+    "variants": [
+      { "id": "lb-006-black-32", "name": "Black / 32\"", "sku": "LB-BLT-BLK-32", "price": 195.00, "inventory": { "nyc": 10, "la": 8, "miami": 6, "online": 20 } },
+      { "id": "lb-006-black-34", "name": "Black / 34\"", "sku": "LB-BLT-BLK-34", "price": 195.00, "inventory": { "nyc": 12, "la": 10, "miami": 8, "online": 25 } },
+      { "id": "lb-006-black-36", "name": "Black / 36\"", "sku": "LB-BLT-BLK-36", "price": 195.00, "inventory": { "nyc": 8, "la": 6, "miami": 5, "online": 18 } },
+      { "id": "lb-006-brown-32", "name": "Brown / 32\"", "sku": "LB-BLT-BRN-32", "price": 195.00, "inventory": { "nyc": 8, "la": 6, "miami": 4, "online": 15 } },
+      { "id": "lb-006-brown-34", "name": "Brown / 34\"", "sku": "LB-BLT-BRN-34", "price": 195.00, "inventory": { "nyc": 10, "la": 8, "miami": 6, "online": 20 } },
+      { "id": "lb-006-brown-36", "name": "Brown / 36\"", "sku": "LB-BLT-BRN-36", "price": 195.00, "inventory": { "nyc": 6, "la": 5, "miami": 3, "online": 12 } }
+    ],
+    "attributes": {
+      "material": "Vegetable-tanned Italian Leather",
+      "buckle": "Brushed Silver",
+      "width": "1.25\"",
+      "warranty": "5 years"
+    },
+    "rating": 4.7,
+    "reviewCount": 203
+  },
+  {
+    "id": "lb-007",
+    "name": "Silk Pocket Square Set",
+    "description": "Set of three Italian silk pocket squares in complementary patterns. Hand-rolled edges and presented in a signature Lumebonde box.",
+    "slug": "pocket-square-set",
+    "price": 175.00,
+    "currency": "USD",
+    "category": "Accessories",
+    "tags": ["luxury", "silk", "pocket-square", "italian", "gift-set"],
+    "images": [
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800"
+    ],
+    "variants": [
+      { "id": "lb-007-classic", "name": "Classic Collection", "sku": "LB-PSQ-CLS", "price": 175.00, "inventory": { "nyc": 15, "la": 12, "miami": 10, "online": 30 } },
+      { "id": "lb-007-bold", "name": "Bold Collection", "sku": "LB-PSQ-BLD", "price": 175.00, "inventory": { "nyc": 10, "la": 8, "miami": 6, "online": 25 } }
+    ],
+    "attributes": {
+      "material": "100% Italian Silk",
+      "set_includes": "3 pocket squares",
+      "edge_finish": "Hand-rolled",
+      "size": "13\" x 13\""
+    },
+    "rating": 4.9,
+    "reviewCount": 87
+  },
+  {
+    "id": "lb-008",
+    "name": "Leather Card Holder",
+    "description": "Slim card holder in pebbled calfskin with gold-embossed Lumebonde logo. Holds up to 6 cards with a central pocket for cash.",
+    "slug": "card-holder",
+    "price": 145.00,
+    "currency": "USD",
+    "category": "Accessories",
+    "tags": ["luxury", "leather", "wallet", "card-holder", "gift"],
+    "images": [
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800"
+    ],
+    "variants": [
+      { "id": "lb-008-black", "name": "Black", "sku": "LB-CRD-BLK", "price": 145.00, "inventory": { "nyc": 25, "la": 20, "miami": 15, "online": 50 } },
+      { "id": "lb-008-navy", "name": "Navy", "sku": "LB-CRD-NVY", "price": 145.00, "inventory": { "nyc": 18, "la": 15, "miami": 10, "online": 40 } },
+      { "id": "lb-008-burgundy", "name": "Burgundy", "sku": "LB-CRD-BRG", "price": 145.00, "inventory": { "nyc": 12, "la": 10, "miami": 8, "online": 30 } }
+    ],
+    "attributes": {
+      "material": "Pebbled Calfskin",
+      "capacity": "6 cards + cash",
+      "dimensions": "4\" x 3\"",
+      "logo": "Gold embossed"
+    },
+    "rating": 4.8,
+    "reviewCount": 312
+  }
+]
+

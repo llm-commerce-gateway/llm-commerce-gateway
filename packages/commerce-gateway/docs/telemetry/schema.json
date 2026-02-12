@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LLM Gateway Telemetry Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "timestamp",
+    "gateway",
+    "features",
+    "usage",
+    "health"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "gateway": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "runtime",
+        "deployment",
+        "uptime_seconds"
+      ],
+      "properties": {
+        "version": { "type": "string" },
+        "runtime": { "type": "string", "enum": ["node"] },
+        "deployment": { "type": "string", "enum": ["self-hosted", "hosted"] },
+        "uptime_seconds": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_enabled",
+        "federation_enabled",
+        "streaming_enabled"
+      ],
+      "properties": {
+        "registry_enabled": { "type": "boolean" },
+        "federation_enabled": { "type": "boolean" },
+        "streaming_enabled": { "type": "boolean" }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_count_24h",
+        "tool_invocations_24h",
+        "providers_used",
+        "tool_count"
+      ],
+      "properties": {
+        "request_count_24h": { "type": "integer", "minimum": 0 },
+        "tool_invocations_24h": { "type": "integer", "minimum": 0 },
+        "providers_used": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tool_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "health": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "error_rate_pct",
+        "p95_latency_ms"
+      ],
+      "properties": {
+        "error_rate_pct": { "type": "number", "minimum": 0 },
+        "p95_latency_ms": { "type": "number", "minimum": 0 }
+      }
+    }
+  }
+}
