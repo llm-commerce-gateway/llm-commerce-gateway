@@ -9,9 +9,7 @@ Universal LLM Commerce Gateway — federated product discovery across any storef
 | [@betterdata/commerce-gateway](packages/commerce-gateway) | Core gateway — tools, sessions, adapters |
 | [@betterdata/commerce-gateway-mcp](packages/commerce-gateway-mcp) | MCP server for gateway |
 | [@betterdata/registry-mcp](packages/registry-mcp) | MCP server for registry discovery |
-| [@betterdata/llm-gateway-shopify](packages/llm-gateway-shopify) | Shopify connector |
-| [@betterdata/llm-gateway-bigcommerce](packages/llm-gateway-bigcommerce) | BigCommerce connector |
-| [@betterdata/llm-gateway-woocommerce](packages/llm-gateway-woocommerce) | WooCommerce connector |
+| [commerce-gateway-connectors](packages/commerce-gateway-connectors) | Shopify, BigCommerce, WooCommerce connectors |
 | [commerce-registry-protocol](commerce-registry-protocol) | Registry protocol spec |
 
 ## Quick Start
