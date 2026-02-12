@@ -1,0 +1,75 @@
+{
+  "locations": [
+    {
+      "id": "nyc",
+      "name": "New York Flagship",
+      "address": "680 Fifth Avenue, New York, NY 10019",
+      "phone": "+1 (212) 555-0100",
+      "hours": "Mon-Sat 10am-8pm, Sun 11am-6pm",
+      "timezone": "America/New_York",
+      "isPickupEnabled": true,
+      "isShipFromEnabled": true
+    },
+    {
+      "id": "la",
+      "name": "Los Angeles Store",
+      "address": "9560 Wilshire Blvd, Beverly Hills, CA 90212",
+      "phone": "+1 (310) 555-0200",
+      "hours": "Mon-Sat 10am-7pm, Sun 12pm-6pm",
+      "timezone": "America/Los_Angeles",
+      "isPickupEnabled": true,
+      "isShipFromEnabled": true
+    },
+    {
+      "id": "miami",
+      "name": "Miami Boutique",
+      "address": "9700 Collins Ave, Bal Harbour, FL 33154",
+      "phone": "+1 (305) 555-0300",
+      "hours": "Mon-Sat 10am-9pm, Sun 12pm-7pm",
+      "timezone": "America/New_York",
+      "isPickupEnabled": true,
+      "isShipFromEnabled": false
+    },
+    {
+      "id": "online",
+      "name": "Online Warehouse",
+      "address": "100 Distribution Way, Secaucus, NJ 07094",
+      "phone": null,
+      "hours": null,
+      "timezone": "America/New_York",
+      "isPickupEnabled": false,
+      "isShipFromEnabled": true
+    }
+  ],
+  "shippingOptions": [
+    {
+      "id": "standard",
+      "name": "Standard Shipping",
+      "description": "5-7 business days",
+      "price": 0,
+      "freeThreshold": 200
+    },
+    {
+      "id": "express",
+      "name": "Express Shipping",
+      "description": "2-3 business days",
+      "price": 15.00,
+      "freeThreshold": 500
+    },
+    {
+      "id": "overnight",
+      "name": "Overnight Delivery",
+      "description": "Next business day",
+      "price": 35.00,
+      "freeThreshold": null
+    },
+    {
+      "id": "pickup",
+      "name": "Store Pickup",
+      "description": "Ready within 2 hours",
+      "price": 0,
+      "freeThreshold": null
+    }
+  ]
+}
+

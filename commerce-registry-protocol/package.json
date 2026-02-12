@@ -1,0 +1,23 @@
+{
+  "name": "commerce-registry-protocol",
+  "version": "1.0.0",
+  "description": "Commerce Gateway Registry Protocol — specification for @shop resolution and gateway federation",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "spec",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "commerce",
+    "registry",
+    "protocol",
+    "gateway",
+    "federation",
+    "shop"
+  ]
+}

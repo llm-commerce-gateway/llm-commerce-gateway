@@ -1,0 +1,24 @@
+{
+  "name": "lumebonde-demo",
+  "version": "1.0.0",
+  "description": "Lumebondé luxury retail demo",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx openai-server.ts",
+    "mcp": "tsx mcp-server.ts",
+    "dev": "tsx watch openai-server.ts"
+  },
+  "dependencies": {
+    "@betterdata/commerce-gateway": "workspace:*",
+    "@hono/node-server": "^1.13.8",
+    "hono": "^4.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "dotenv": "^16.4.5",
+    "tsx": "^4.20.0",
+    "typescript": "^5.5.3"
+  }
+}
+

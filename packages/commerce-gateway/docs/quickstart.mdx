@@ -1,0 +1,285 @@
+---
+title: Quickstart
+description: 'Get started with @betterdata/llm-gateway in 5 minutes'
+---
+
+## Prerequisites
+
+- Node.js 18+
+- npm, yarn, or pnpm
+- Optional: Redis for session storage
+
+## Installation
+
+<CodeGroup>
+
+```bash npm
+npm install @betterdata/llm-gateway
+```
+
+```bash yarn
+yarn add @betterdata/llm-gateway
+```
+
+```bash pnpm
+pnpm add @betterdata/llm-gateway
+```
+
+</CodeGroup>
+
+## Step 1: Create Your Backend
+
+The gateway needs backends to connect to your product data. Here's a minimal in-memory example:
+
+```typescript backend.ts
+import type { ProductBackend, CartBackend } from '@betterdata/llm-gateway/backends';
+
+const products = [
+  { id: '1', name: 'Blue T-Shirt', price: 29.99, inStock: true },
+  { id: '2', name: 'Red Hoodie', price: 59.99, inStock: true },
+  { id: '3', name: 'Black Jeans', price: 79.99, inStock: false },
+];
+
+export const productBackend: ProductBackend = {
+  async searchProducts(query) {
+    const q = query.toLowerCase();
+    const results = products.filter(p => p.name.toLowerCase().includes(q));
+    return { products: results, total: results.length, hasMore: false };
+  },
+  
+  async getProductDetails(id) {
+    return products.find(p => p.id === id) ?? null;
+  },
+  
+  async checkInventory(productIds) {
+    return productIds.map(id => {
+      const product = products.find(p => p.id === id);
+      return {
+        productId: id,
+        available: product?.inStock ?? false,
+        quantity: product?.inStock ? 10 : 0,
+      };
+    });
+  },
+  
+  async getRecommendations() {
+    return products.filter(p => p.inStock).map(p => ({
+      product: p,
+      score: 0.9,
+      reason: 'Popular item',
+      strategy: 'trending' as const,
+    }));
+  },
+};
+```
+
+## Step 2: Choose Your LLM Integration
+
+<Tabs>
+  <Tab title="Claude (MCP)">
+    Create an MCP server for Claude Desktop:
+
+    ```typescript mcp-server.ts
+    import { MCPServer } from '@betterdata/llm-gateway/mcp';
+    import { productBackend } from './backend';
+
+    const server = new MCPServer({
+      backends: { products: productBackend },
+      tools: ['search_products', 'get_product_details', 'check_inventory'],
+      name: 'my-shop',
+      version: '1.0.0',
+    });
+
+    server.start();
+    console.log('MCP Server started!');
+    ```
+
+    Run it:
+    ```bash
+    npx tsx mcp-server.ts
+    ```
+
+    Configure Claude Desktop (`~/.config/claude/claude_desktop_config.json`):
+    ```json
+    {
+      "mcpServers": {
+        "my-shop": {
+          "command": "npx",
+          "args": ["tsx", "/path/to/mcp-server.ts"]
+        }
+      }
+    }
+    ```
+  </Tab>
+  
+  <Tab title="OpenAI / ChatGPT">
+    Create an HTTP server for OpenAI function calling:
+
+    ```typescript openai-server.ts
+    import { serve } from '@hono/node-server';
+    import { Hono } from 'hono';
+    import { OpenAIAdapter } from '@betterdata/llm-gateway/openai';
+    import { productBackend } from './backend';
+
+    const adapter = new OpenAIAdapter({
+      apiKey: process.env.OPENAI_API_KEY!,
+      backends: { products: productBackend },
+      tools: ['search_products', 'get_product_details'],
+      model: 'gpt-4-turbo',
+    });
+
+    const app = new Hono();
+
+    app.post('/api/chat', async (c) => {
+      const body = await c.req.json();
+      const response = await adapter.handleRequest(body);
+      return c.json(response);
+    });
+
+    serve({ fetch: app.fetch, port: 3001 });
+    console.log('OpenAI Server on http://localhost:3001');
+    ```
+
+    Run it:
+    ```bash
+    OPENAI_API_KEY=sk-... npx tsx openai-server.ts
+    ```
+
+    Test it:
+    ```bash
+    curl -X POST http://localhost:3001/api/chat \
+      -H "Content-Type: application/json" \
+      -d '{"messages": [{"role": "user", "content": "What t-shirts do you have?"}]}'
+    ```
+  </Tab>
+
+  <Tab title="HTTP Gateway">
+    Create a full HTTP gateway for any client:
+
+    ```typescript gateway.ts
+    import { LLMGateway } from '@betterdata/llm-gateway';
+    import { productBackend } from './backend';
+
+    const gateway = new LLMGateway({
+      backends: { products: productBackend },
+      session: {
+        redis: { url: process.env.REDIS_URL ?? 'memory://' },
+      },
+      auth: {
+        apiKeys: [process.env.API_KEY ?? 'dev-key'],
+      },
+      llmProviders: ['anthropic', 'openai', 'grok'],
+    });
+
+    gateway.start(3000);
+    console.log('Gateway on http://localhost:3000');
+    ```
+
+    Run it:
+    ```bash
+    npx tsx gateway.ts
+    ```
+  </Tab>
+</Tabs>
+
+## Step 3: Test Your Integration
+
+<Tabs>
+  <Tab title="Claude">
+    Open Claude Desktop and try:
+    
+    > "What products do you have?"
+    
+    > "Is the red hoodie in stock?"
+    
+    > "Show me items under $50"
+  </Tab>
+  
+  <Tab title="OpenAI">
+    ```typescript
+    const response = await fetch('http://localhost:3001/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: [
+          { role: 'user', content: 'What t-shirts do you have?' }
+        ],
+      }),
+    });
+    
+    const data = await response.json();
+    console.log(data.choices[0].message.content);
+    ```
+  </Tab>
+</Tabs>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Connect Real Data"
+    icon="database"
+    href="/guides/custom-backend"
+  >
+    Connect to Shopify, WooCommerce, or your database
+  </Card>
+  <Card
+    title="Add Cart & Checkout"
+    icon="shopping-cart"
+    href="/concepts/tools"
+  >
+    Enable full shopping flow with cart and orders
+  </Card>
+  <Card
+    title="Session Management"
+    icon="cookie"
+    href="/concepts/sessions"
+  >
+    Add Redis for persistent sessions
+  </Card>
+  <Card
+    title="Deploy to Production"
+    icon="rocket"
+    href="/deployment/vercel"
+  >
+    Deploy your gateway to Vercel, AWS, or Docker
+  </Card>
+</CardGroup>
+
+## Complete Example
+
+For a full working example, check out our demos:
+
+- [Simple Product Search](/examples/simple-search) - Minimal ~50 line example
+- [E-commerce with Stripe](/examples/ecommerce-stripe) - Full checkout flow
+- [LUXE BOND Demo](/examples/luxe-bond) - Multi-location luxury retail
+- [Luxe Bond Cosmetics (OSS)](/examples/luxe-bond-cosmetics) - In-memory catalog with capability discovery
+
+## OSS vs Cloud Features
+
+The gateway supports capability discovery to help you feature-gate appropriately:
+
+```typescript
+import { FederationHub } from '@betterdata/llm-gateway/federation';
+
+const hub = await FederationHub.create({ ... });
+const caps = await hub.getCapabilities();
+
+// Check if ML ranking is available
+if (caps.features.discovery.rankedResults) {
+  // Use ML-powered ranking (Cloud Pro)
+} else {
+  // Use basic keyword search (OSS)
+}
+```
+
+| Feature | OSS | Cloud |
+|---------|-----|-------|
+| Keyword search | ✅ | ✅ |
+| CSV/JSON import | ✅ | ✅ |
+| ML-ranked results | ❌ | ✅ Pro |
+| Realtime analytics | ❌ | ✅ Pro |
+| Multi-tenant | ❌ | ✅ |
+
+See [Capability Discovery](/docs/oss/CAPABILITIES.md) for the full schema.
+

@@ -1,0 +1,28 @@
+{
+  "name": "lumebonde-cosmetics-demo",
+  "version": "1.0.0",
+  "description": "Lumebondé Cosmetics catalog demo for LLM Gateway (OSS)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "demo": "tsx demo.ts",
+    "search": "tsx demo.ts search",
+    "list": "tsx demo.ts list",
+    "start": "tsx demo.ts"
+  },
+  "keywords": [
+    "llm-gateway",
+    "cosmetics",
+    "catalog",
+    "demo",
+    "lumebonde"
+  ],
+  "dependencies": {
+    "@betterdata/commerce-gateway": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.2"
+  }
+}
+

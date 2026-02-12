@@ -1,0 +1,198 @@
+[
+  {
+    "id": "prod_001",
+    "name": "Premium Wireless Headphones",
+    "description": "High-fidelity wireless headphones with active noise cancellation, 30-hour battery life, and premium comfort for all-day listening.",
+    "slug": "premium-wireless-headphones",
+    "price": 299.99,
+    "compareAtPrice": 349.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "tags": ["headphones", "wireless", "noise-cancelling", "premium"],
+    "images": ["https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"],
+    "variants": [
+      { "id": "var_001_black", "name": "Black", "sku": "HP-PREM-BLK", "price": 299.99, "inventory": 50 },
+      { "id": "var_001_white", "name": "White", "sku": "HP-PREM-WHT", "price": 299.99, "inventory": 35 },
+      { "id": "var_001_navy", "name": "Navy", "sku": "HP-PREM-NVY", "price": 309.99, "inventory": 20 }
+    ],
+    "attributes": {
+      "batteryLife": "30 hours",
+      "connectivity": "Bluetooth 5.3",
+      "noiseCancellation": "Active",
+      "weight": "250g"
+    },
+    "inStock": true,
+    "rating": 4.8,
+    "reviewCount": 1247
+  },
+  {
+    "id": "prod_002",
+    "name": "Smart Fitness Watch",
+    "description": "Advanced fitness tracker with GPS, heart rate monitoring, sleep tracking, and 7-day battery life. Water-resistant to 50m.",
+    "slug": "smart-fitness-watch",
+    "price": 249.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "tags": ["smartwatch", "fitness", "GPS", "health"],
+    "images": ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"],
+    "variants": [
+      { "id": "var_002_black", "name": "Black/Black Band", "sku": "SW-FIT-BLK", "price": 249.99, "inventory": 100 },
+      { "id": "var_002_silver", "name": "Silver/Blue Band", "sku": "SW-FIT-SLV", "price": 249.99, "inventory": 75 }
+    ],
+    "attributes": {
+      "display": "1.4\" AMOLED",
+      "batteryLife": "7 days",
+      "waterResistance": "50m",
+      "GPS": "Built-in"
+    },
+    "inStock": true,
+    "rating": 4.6,
+    "reviewCount": 892
+  },
+  {
+    "id": "prod_003",
+    "name": "Portable Bluetooth Speaker",
+    "description": "Compact waterproof speaker with 360° sound, 12-hour playtime, and built-in microphone for calls.",
+    "slug": "portable-bluetooth-speaker",
+    "price": 79.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "tags": ["speaker", "bluetooth", "portable", "waterproof"],
+    "images": ["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800"],
+    "variants": [
+      { "id": "var_003_black", "name": "Black", "sku": "SP-PORT-BLK", "price": 79.99, "inventory": 200 },
+      { "id": "var_003_teal", "name": "Teal", "sku": "SP-PORT-TEL", "price": 79.99, "inventory": 150 },
+      { "id": "var_003_coral", "name": "Coral", "sku": "SP-PORT-CRL", "price": 79.99, "inventory": 120 }
+    ],
+    "attributes": {
+      "batteryLife": "12 hours",
+      "waterResistance": "IPX7",
+      "power": "20W",
+      "weight": "540g"
+    },
+    "inStock": true,
+    "rating": 4.5,
+    "reviewCount": 2341
+  },
+  {
+    "id": "prod_004",
+    "name": "Mechanical Gaming Keyboard",
+    "description": "RGB mechanical keyboard with hot-swappable switches, aluminum frame, and customizable per-key lighting.",
+    "slug": "mechanical-gaming-keyboard",
+    "price": 149.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "tags": ["keyboard", "gaming", "mechanical", "RGB"],
+    "images": ["https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=800"],
+    "variants": [
+      { "id": "var_004_red", "name": "Red Switches (Linear)", "sku": "KB-MECH-RED", "price": 149.99, "inventory": 45 },
+      { "id": "var_004_blue", "name": "Blue Switches (Clicky)", "sku": "KB-MECH-BLU", "price": 149.99, "inventory": 38 },
+      { "id": "var_004_brown", "name": "Brown Switches (Tactile)", "sku": "KB-MECH-BRN", "price": 149.99, "inventory": 52 }
+    ],
+    "attributes": {
+      "switches": "Hot-swappable",
+      "lighting": "Per-key RGB",
+      "frame": "Aluminum",
+      "connection": "USB-C / Wireless"
+    },
+    "inStock": true,
+    "rating": 4.7,
+    "reviewCount": 567
+  },
+  {
+    "id": "prod_005",
+    "name": "Ultra-Wide Monitor 34\"",
+    "description": "34-inch curved ultrawide monitor with 144Hz refresh rate, 1ms response time, and USB-C connectivity.",
+    "slug": "ultra-wide-monitor-34",
+    "price": 599.99,
+    "compareAtPrice": 699.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "tags": ["monitor", "ultrawide", "gaming", "curved"],
+    "images": ["https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800"],
+    "variants": [
+      { "id": "var_005_default", "name": "34\" UWQHD", "sku": "MON-UW34", "price": 599.99, "inventory": 25 }
+    ],
+    "attributes": {
+      "resolution": "3440x1440",
+      "refreshRate": "144Hz",
+      "panelType": "IPS",
+      "curve": "1500R"
+    },
+    "inStock": true,
+    "rating": 4.9,
+    "reviewCount": 324
+  },
+  {
+    "id": "prod_006",
+    "name": "Ergonomic Office Chair",
+    "description": "Premium ergonomic chair with adjustable lumbar support, breathable mesh back, and 4D armrests.",
+    "slug": "ergonomic-office-chair",
+    "price": 449.99,
+    "currency": "USD",
+    "category": "Furniture",
+    "tags": ["chair", "ergonomic", "office", "mesh"],
+    "images": ["https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=800"],
+    "variants": [
+      { "id": "var_006_black", "name": "Black", "sku": "CH-ERG-BLK", "price": 449.99, "inventory": 30 },
+      { "id": "var_006_gray", "name": "Gray", "sku": "CH-ERG-GRY", "price": 449.99, "inventory": 22 }
+    ],
+    "attributes": {
+      "material": "Breathable Mesh",
+      "weightCapacity": "300 lbs",
+      "adjustability": "Full ergonomic",
+      "warranty": "12 years"
+    },
+    "inStock": true,
+    "rating": 4.8,
+    "reviewCount": 1089
+  },
+  {
+    "id": "prod_007",
+    "name": "USB-C Docking Station",
+    "description": "14-in-1 USB-C hub with dual HDMI, ethernet, SD card reader, and 100W power delivery.",
+    "slug": "usb-c-docking-station",
+    "price": 129.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "tags": ["dock", "USB-C", "hub", "productivity"],
+    "images": ["https://images.unsplash.com/photo-1625842268584-8f3296236761?w=800"],
+    "variants": [
+      { "id": "var_007_default", "name": "14-in-1 Hub", "sku": "DOCK-14IN1", "price": 129.99, "inventory": 85 }
+    ],
+    "attributes": {
+      "ports": "14 ports",
+      "powerDelivery": "100W",
+      "video": "Dual 4K HDMI",
+      "ethernet": "Gigabit"
+    },
+    "inStock": true,
+    "rating": 4.4,
+    "reviewCount": 456
+  },
+  {
+    "id": "prod_008",
+    "name": "Wireless Charging Pad",
+    "description": "15W fast wireless charger compatible with all Qi devices. Includes USB-C cable and wall adapter.",
+    "slug": "wireless-charging-pad",
+    "price": 39.99,
+    "currency": "USD",
+    "category": "Electronics",
+    "tags": ["charger", "wireless", "Qi", "fast-charging"],
+    "images": ["https://images.unsplash.com/photo-1586816879360-004f5b0c51e3?w=800"],
+    "variants": [
+      { "id": "var_008_black", "name": "Black", "sku": "CHG-WL-BLK", "price": 39.99, "inventory": 300 },
+      { "id": "var_008_white", "name": "White", "sku": "CHG-WL-WHT", "price": 39.99, "inventory": 250 }
+    ],
+    "attributes": {
+      "power": "15W max",
+      "compatibility": "All Qi devices",
+      "cable": "USB-C included",
+      "adapter": "Included"
+    },
+    "inStock": true,
+    "rating": 4.3,
+    "reviewCount": 2156
+  }
+]
+

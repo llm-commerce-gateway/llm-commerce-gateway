@@ -1,0 +1,513 @@
+# Grok/X Integration
+
+> Build AI shopping assistants optimized for X/Twitter with Grok's conversational AI
+
+## Overview
+
+The Grok adapter enables conversational commerce on X/Twitter with:
+
+- **🎯 Grok-2 LLM** - xAI's latest model with function calling
+- **📱 Tweet-Optimized Formatting** - 280-character responses with emojis
+- **🔥 Mobile-First Design** - Concise, punchy, visual
+- **⚡ OpenAI-Compatible API** - Easy integration
+
+## Quick Start
+
+### Installation
+
+```bash
+npm install @betterdata/llm-gateway
+```
+
+### Basic Setup
+
+```typescript
+import { GrokAdapter, createTwitterFormatter } from '@betterdata/llm-gateway/grok';
+
+// Initialize Grok adapter
+const grok = new GrokAdapter({
+  apiKey: process.env.GROK_API_KEY!,
+  backends: { products, cart, orders },
+  temperature: 0.7,
+  maxTokens: 280, // Tweet length!
+});
+
+// Initialize Twitter formatter
+const formatter = createTwitterFormatter({
+  maxLength: 280,
+  useEmojis: true,
+  mobileFirst: true,
+});
+
+// Handle user message
+const response = await grok.handleRequest({
+  messages: [{ role: 'user', content: 'Show me trending sneakers' }],
+});
+
+// Format for X/Twitter
+const formatted = formatter.formatSearchResults(
+  response.data.products,
+  'trending sneakers'
+);
+
+console.log(formatted);
+// 🔍 Found 12 results for "trending sneakers"
+//
+// 1. 👟 Nike Air Max 90 💰$130 ✅
+// 2. 👟 Adidas Ultraboost 22 💰$180 ✅
+// 3. 👟 New Balance 550 💵$110 ⚠️
+//
+// ➡️ +9 more available
+```
+
+## Features
+
+### 🎯 Grok Adapter
+
+The `GrokAdapter` provides full integration with xAI's Grok API:
+
+```typescript
+const grok = new GrokAdapter({
+  apiKey: process.env.GROK_API_KEY!,
+  
+  // Backends (same as other adapters)
+  backends: {
+    products: myProductBackend,
+    cart: myCartBackend,
+    orders: myOrderBackend,
+  },
+  
+  // Tools to enable
+  tools: ['search_products', 'add_to_cart', 'create_order'],
+  
+  // Grok configuration
+  model: 'grok-2', // or 'grok-1'
+  temperature: 0.7,
+  maxTokens: 280, // Tweet-friendly
+  
+  // Session management
+  session: {
+    redis: { url: process.env.REDIS_URL!, token: process.env.REDIS_TOKEN! },
+  },
+});
+```
+
+### 📱 Twitter Formatter
+
+The `TwitterFormatter` optimizes responses for X/Twitter:
+
+```typescript
+const formatter = createTwitterFormatter({
+  maxLength: 280,      // Standard tweet length
+  useEmojis: true,     // Rich emoji support
+  mobileFirst: true,   // Concise, mobile-optimized
+  includeHashtags: false, // Optional hashtags
+});
+
+// Format different types of content
+
+// 1. Search results
+formatter.formatSearchResults(products, query, total);
+
+// 2. Product details
+formatter.formatProductDetails(product);
+
+// 3. Cart summary
+formatter.formatCart(cartItems, total);
+
+// 4. Checkout confirmation
+formatter.formatCheckout(order);
+
+// 5. Error/success messages
+formatter.formatError('Product not found');
+formatter.formatSuccess('Added to cart!');
+```
+
+## Twitter Formatting Features
+
+### Emoji Categories
+
+The formatter automatically adds relevant emojis based on product categories:
+
+| Category | Emoji | Example |
+|----------|-------|---------|
+| Electronics | 💻 | Laptops, phones |
+| Fashion | 👕 | Clothing |
+| Shoes | 👟 | Sneakers, boots |
+| Accessories | 👜 | Bags, jewelry |
+| Headphones | 🎧 | Audio gear |
+| Camera | 📷 | Photography |
+| Gaming | 🎮 | Consoles, games |
+| Beauty | 💄 | Cosmetics |
+| Fitness | 💪 | Gym equipment |
+| Food | 🍔 | Groceries |
+
+### Price Indicators
+
+Prices are displayed with contextual emojis:
+
+- **💵 < $20** - Budget-friendly
+- **💰 $20-$500** - Standard pricing
+- **💎 > $500** - Premium/luxury
+
+### Stock Status
+
+Visual indicators for availability:
+
+- **✅ In Stock** - Available now
+- **⚠️ Low Stock** - Less than 10 units
+- **❌ Out of Stock** - Not available
+
+### Mobile-First Design
+
+When `mobileFirst: true`:
+
+- Shows top 3 products (vs 4)
+- Truncates names at 30 chars (vs 50)
+- Shorter descriptions (100 chars vs 150)
+- More compact formatting
+
+## Examples
+
+### Example 1: Product Search
+
+```typescript
+const grok = new GrokAdapter({ apiKey, backends });
+const formatter = createTwitterFormatter();
+
+// User searches
+const response = await grok.handleRequest({
+  messages: [{ role: 'user', content: 'wireless headphones under $200' }],
+});
+
+// Format results
+const formatted = formatter.formatSearchResults(
+  response.data.products,
+  'wireless headphones under $200',
+  response.data.total
+);
+
+console.log(formatted);
+```
+
+**Output:**
+```
+🔍 Found 8 results for "wireless headphones under $200"
+
+1. 🎧 Sony WH-1000XM5 💰$398
+2. 🎧 Bose QC45 💰$329
+3. 🎧 AirPods Pro (2nd Gen) 💰$249 ✅
+
+➡️ +5 more available
+```
+
+### Example 2: Cart Summary
+
+```typescript
+// Add items to cart
+await grok.handleRequest({
+  messages: [
+    { role: 'user', content: 'Add AirPods Pro to my cart' },
+  ],
+});
+
+// Get cart
+const cart = await backends.cart.getCart(sessionId);
+
+// Format for X/Twitter
+const formatted = formatter.formatCart(cart.items, cart.total);
+
+console.log(formatted);
+```
+
+**Output:**
+```
+🛒 Your Cart (3 items)
+
+🎧 AirPods Pro (2nd Gen) $249
+👟 Nike Air Max 90 $130
+💻 MacBook Pro 14" $1999
+
+💰 Total: $2,378.00
+```
+
+### Example 3: Product Details
+
+```typescript
+// Get product details
+const response = await grok.handleRequest({
+  messages: [
+    { role: 'user', content: 'Tell me about the AirPods Pro' },
+  ],
+});
+
+const product = response.data.product;
+const formatted = formatter.formatProductDetails(product);
+
+console.log(formatted);
+```
+
+**Output:**
+```
+🎧 AirPods Pro (2nd Gen)
+
+💰 $249.00
+Brand: Apple
+✅ In Stock
+
+Active noise cancellation, adaptive transparency, personalized spatial audio with dynamic head tracking…
+```
+
+## API Reference
+
+### GrokAdapter
+
+```typescript
+class GrokAdapter {
+  constructor(config: GrokAdapterConfig);
+  
+  handleRequest(request: LLMRequest): Promise<LLMResponse>;
+  handleStreamRequest(request: LLMRequest): AsyncGenerator<StreamEvent>;
+}
+```
+
+**Config:**
+
+```typescript
+interface GrokAdapterConfig {
+  apiKey: string;                    // xAI API key
+  backends: GatewayBackends;          // Product/cart/order backends
+  tools?: string[];                   // Tools to enable
+  model?: 'grok-2' | 'grok-1';       // Model version (default: 'grok-2')
+  temperature?: number;               // 0-1 (default: 0.7)
+  maxTokens?: number;                 // Max response length (default: 500)
+  baseUrl?: string;                   // API endpoint (default: https://api.x.ai/v1)
+  session?: SessionConfig;            // Session management
+}
+```
+
+### TwitterFormatter
+
+```typescript
+class TwitterFormatter {
+  constructor(config?: TwitterFormatterConfig);
+  
+  formatSearchResults(products: Product[], query: string, total?: number): string;
+  formatProductDetails(product: Product): string;
+  formatCart(items: CartItem[], total: number): string;
+  formatCheckout(order: Order): string;
+  formatError(message: string): string;
+  formatSuccess(message: string): string;
+}
+```
+
+**Config:**
+
+```typescript
+interface TwitterFormatterConfig {
+  maxLength?: number;        // Max characters (default: 280)
+  useEmojis?: boolean;       // Use emojis (default: true)
+  mobileFirst?: boolean;     // Mobile optimization (default: true)
+  includeHashtags?: boolean; // Add hashtags (default: false)
+}
+```
+
+## Best Practices
+
+### 1. Tweet-Length Responses
+
+Keep responses under 280 characters for sharing on X:
+
+```typescript
+const grok = new GrokAdapter({
+  apiKey,
+  backends,
+  maxTokens: 280, // Enforce tweet length
+});
+```
+
+### 2. Emoji Usage
+
+Emojis make content more engaging and scannable:
+
+```typescript
+const formatter = createTwitterFormatter({
+  useEmojis: true, // Always recommended for X/Twitter
+});
+```
+
+### 3. Mobile Optimization
+
+Most X/Twitter users are on mobile:
+
+```typescript
+const formatter = createTwitterFormatter({
+  mobileFirst: true, // Shorter, punchier content
+});
+```
+
+### 4. Error Handling
+
+Provide clear, emoji-friendly errors:
+
+```typescript
+try {
+  const response = await grok.handleRequest(request);
+} catch (error) {
+  const formatted = formatter.formatError('Product not found 😕');
+  // Post to X/Twitter
+}
+```
+
+### 5. Hashtags for Discovery
+
+Enable hashtags for product launches or campaigns:
+
+```typescript
+const formatter = createTwitterFormatter({
+  includeHashtags: true,
+});
+
+// Results will include relevant hashtags
+// #Nike #Sneakers #Sale
+```
+
+## Environment Variables
+
+Add to your `.env`:
+
+```env
+# Grok API
+GROK_API_KEY=xai-xxx
+
+# Optional: Custom model
+GROK_MODEL=grok-2
+
+# Optional: Custom base URL
+GROK_BASE_URL=https://api.x.ai/v1
+```
+
+## Streaming Support
+
+Grok supports streaming for real-time responses:
+
+```typescript
+const stream = grok.handleStreamRequest({
+  messages: [{ role: 'user', content: 'Show me laptops' }],
+});
+
+for await (const event of stream) {
+  if (event.type === 'content') {
+    process.stdout.write(event.content);
+  } else if (event.type === 'tool_call') {
+    console.log(`\nCalling tool: ${event.toolCall.function.name}`);
+  }
+}
+```
+
+## Comparison: Standard vs Twitter Format
+
+### Standard Format (Verbose)
+```
+Product: Apple AirPods Pro (2nd Generation)
+Description: Active noise cancellation with adaptive transparency mode
+Brand: Apple
+Price: $249.00
+Category: Electronics > Audio > Headphones
+Stock Status: In Stock
+Quantity Available: 50 units
+```
+
+### Twitter Format (Concise)
+```
+🎧 AirPods Pro (2nd Gen)
+💰 $249
+✅ In Stock
+
+Active noise cancellation, adaptive transparency…
+```
+
+**Benefits:**
+- 70% shorter
+- Emoji-rich & visual
+- Mobile-friendly
+- Shareable on X/Twitter
+
+## Integration with X/Twitter
+
+### Post Search Results
+
+```typescript
+import { TwitterApi } from 'twitter-api-v2';
+
+const twitterClient = new TwitterApi({
+  appKey: process.env.TWITTER_API_KEY!,
+  appSecret: process.env.TWITTER_API_SECRET!,
+  accessToken: process.env.TWITTER_ACCESS_TOKEN!,
+  accessSecret: process.env.TWITTER_ACCESS_SECRET!,
+});
+
+// Search for products
+const response = await grok.handleRequest({
+  messages: [{ role: 'user', content: 'trending sneakers' }],
+});
+
+// Format for Twitter
+const formatted = formatter.formatSearchResults(
+  response.data.products,
+  'trending sneakers'
+);
+
+// Post to X/Twitter
+await twitterClient.v2.tweet(formatted);
+```
+
+## Troubleshooting
+
+### API Key Issues
+
+```typescript
+// Verify API key
+if (!process.env.GROK_API_KEY) {
+  throw new Error('GROK_API_KEY not set');
+}
+
+// Test connection
+try {
+  const response = await grok.handleRequest({
+    messages: [{ role: 'user', content: 'hello' }],
+  });
+  console.log('✅ Grok connected successfully');
+} catch (error) {
+  console.error('❌ Grok connection failed:', error);
+}
+```
+
+### Rate Limiting
+
+Grok API has rate limits. Handle gracefully:
+
+```typescript
+try {
+  const response = await grok.handleRequest(request);
+} catch (error) {
+  if (error.message.includes('rate limit')) {
+    // Wait and retry
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    return grok.handleRequest(request);
+  }
+  throw error;
+}
+```
+
+## Next Steps
+
+- [Grok API Documentation](https://docs.x.ai/)
+- [OpenAI Adapter](/docs/integrations/openai) - Similar function calling pattern
+- [Claude MCP](/docs/integrations/claude-mcp) - Desktop integration
+- [Examples](/examples/grok-twitter-format) - Full working examples
+
+---
+
+**Ready to build conversational commerce for X/Twitter!** 🚀
+

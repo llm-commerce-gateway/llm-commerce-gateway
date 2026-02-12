@@ -1,0 +1,282 @@
+---
+title: Backends
+description: 'Connect any e-commerce platform to the gateway'
+---
+
+Backends are the bridge between the LLM Gateway and your product data. The gateway defines clean interfaces that you implement to connect any data source.
+
+## Core Interfaces
+
+### ProductBackend
+
+Handles product search, details, and inventory:
+
+```typescript
+interface ProductBackend {
+  // Search products with optional filters
+  searchProducts(
+    query: string,
+    filters?: ProductFilters,
+    options?: { limit?: number; offset?: number }
+  ): Promise<ProductSearchResult>;
+  
+  // Get detailed product info by ID or slug
+  getProductDetails(productId: string): Promise<Product | null>;
+  
+  // Check inventory for multiple products
+  checkInventory(productIds: string[]): Promise<InventoryStatus[]>;
+  
+  // Get product recommendations
+  getRecommendations(context: {
+    productIds?: string[];
+    userId?: string;
+    strategy?: 'similar' | 'complementary' | 'trending' | 'personalized';
+  }): Promise<Recommendation[]>;
+}
+```
+
+### CartBackend
+
+Handles shopping cart operations:
+
+```typescript
+interface CartBackend {
+  // Create a new cart
+  createCart(sessionId: string): Promise<Cart>;
+  
+  // Get existing cart
+  getCart(cartId: string): Promise<Cart | null>;
+  
+  // Add item to cart
+  addToCart(
+    cartId: string,
+    input: AddToCartInput
+  ): Promise<{ cart: Cart; addedItem: CartItem }>;
+  
+  // Update item quantity
+  updateCartItem(
+    cartId: string,
+    itemId: string,
+    updates: { quantity?: number }
+  ): Promise<Cart>;
+  
+  // Remove item from cart
+  removeFromCart(cartId: string, itemId: string): Promise<Cart>;
+  
+  // Clear all items
+  clearCart(cartId: string): Promise<void>;
+}
+```
+
+### OrderBackend
+
+Handles order creation and management:
+
+```typescript
+interface OrderBackend {
+  // Create order from cart
+  createOrder(
+    cart: Cart,
+    shippingAddress: ShippingAddress,
+    paymentInfo?: PaymentInfo
+  ): Promise<Order>;
+  
+  // Get order by ID
+  getOrder(orderId: string): Promise<Order | null>;
+  
+  // Update order status
+  updateOrderStatus(
+    orderId: string,
+    status: Order['status']
+  ): Promise<Order>;
+}
+```
+
+## Type Definitions
+
+### Product
+
+```typescript
+interface Product {
+  id: string;
+  name: string;
+  description?: string;
+  slug?: string;
+  price: {
+    amount: number;
+    currency: string;
+    compareAtPrice?: number;
+  };
+  imageUrl?: string;
+  images?: string[];
+  category?: string;
+  tags?: string[];
+  variants?: ProductVariant[];
+  attributes?: Record<string, string>;
+  inStock?: boolean;
+  rating?: number;
+  reviewCount?: number;
+}
+```
+
+### Cart
+
+```typescript
+interface Cart {
+  id: string;
+  sessionId?: string;
+  items: CartItem[];
+  subtotal: number;
+  total: number;
+  currency: string;
+  itemCount: number;
+  checkoutUrl?: string;
+  metadata?: Record<string, unknown>;
+}
+```
+
+### Order
+
+```typescript
+interface Order {
+  id: string;
+  status: 'pending' | 'confirmed' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
+  items: OrderItem[];
+  subtotal: number;
+  tax: number;
+  shipping: number;
+  total: number;
+  currency: string;
+  shippingAddress: ShippingAddress;
+  paymentStatus: 'pending' | 'paid' | 'failed' | 'refunded';
+  createdAt: Date;
+  updatedAt?: Date;
+}
+```
+
+## Implementation Examples
+
+### In-Memory Backend
+
+Perfect for development and testing:
+
+```typescript
+const products = [
+  { id: '1', name: 'Product A', price: 29.99 },
+  { id: '2', name: 'Product B', price: 49.99 },
+];
+
+const backend: ProductBackend = {
+  async searchProducts(query) {
+    const q = query.toLowerCase();
+    const results = products.filter(p => 
+      p.name.toLowerCase().includes(q)
+    );
+    return { products: results, total: results.length, hasMore: false };
+  },
+  // ... other methods
+};
+```
+
+### Database Backend (Prisma)
+
+Connect to your existing database:
+
+```typescript
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
+const backend: ProductBackend = {
+  async searchProducts(query, filters, options) {
+    const products = await prisma.product.findMany({
+      where: {
+        OR: [
+          { name: { contains: query, mode: 'insensitive' } },
+          { description: { contains: query, mode: 'insensitive' } },
+        ],
+        ...(filters?.category && { category: filters.category }),
+        ...(filters?.priceMin && { price: { gte: filters.priceMin } }),
+        ...(filters?.priceMax && { price: { lte: filters.priceMax } }),
+      },
+      take: options?.limit ?? 10,
+      skip: options?.offset ?? 0,
+    });
+    
+    return {
+      products: products.map(mapProduct),
+      total: products.length,
+      hasMore: products.length === (options?.limit ?? 10),
+    };
+  },
+  // ... other methods
+};
+```
+
+### API Backend (Shopify)
+
+Connect to external APIs:
+
+```typescript
+const backend: ProductBackend = {
+  async searchProducts(query) {
+    const response = await fetch(
+      `https://${domain}/api/2024-01/graphql.json`,
+      {
+        method: 'POST',
+        headers: {
+          'X-Shopify-Storefront-Access-Token': token,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: `
+            query SearchProducts($query: String!) {
+              products(first: 10, query: $query) {
+                edges { node { id title handle } }
+              }
+            }
+          `,
+          variables: { query },
+        }),
+      }
+    );
+    
+    const data = await response.json();
+    return mapShopifyResponse(data);
+  },
+};
+```
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Implement Partial Backends">
+    You don't need to implement everything. Start with `ProductBackend`, add `CartBackend` when needed.
+  </Accordion>
+  
+  <Accordion title="Use TypeScript">
+    The type definitions catch errors early and provide excellent IDE support.
+  </Accordion>
+  
+  <Accordion title="Handle Errors Gracefully">
+    Return `null` for not found items rather than throwing. Throw for actual errors.
+  </Accordion>
+  
+  <Accordion title="Cache When Possible">
+    Product data often doesn't change frequently. Consider caching search results.
+  </Accordion>
+</AccordionGroup>
+
+## Pre-built Backends
+
+We provide ready-to-use backends for popular platforms:
+
+<CardGroup cols={2}>
+  <Card title="Shopify" href="/guides/shopify">
+    Full Storefront API integration
+  </Card>
+  <Card title="WooCommerce" href="/guides/woocommerce">
+    REST API integration
+  </Card>
+</CardGroup>
+

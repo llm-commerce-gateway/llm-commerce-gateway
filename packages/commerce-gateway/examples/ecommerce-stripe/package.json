@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce-stripe",
+  "version": "1.0.0",
+  "description": "E-commerce with Stripe checkout example",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "mcp": "tsx mcp-server.ts",
+    "openai": "tsx openai-server.ts",
+    "start": "npm run openai",
+    "dev": "tsx watch openai-server.ts"
+  },
+  "dependencies": {
+    "@betterdata/commerce-gateway": "workspace:*",
+    "@hono/node-server": "^1.13.8",
+    "hono": "^4.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "dotenv": "^16.4.5",
+    "tsx": "^4.20.0",
+    "typescript": "^5.5.3"
+  }
+}
+

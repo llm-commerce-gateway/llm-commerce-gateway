@@ -1,0 +1,233 @@
+{
+  "name": "@betterdata/commerce-gateway",
+  "version": "1.0.0",
+  "description": "Universal LLM Gateway for Conversational Commerce - Build AI-powered shopping experiences with any LLM provider and any commerce backend",
+  "license": "MIT",
+  "author": "Better Data <hello@betterdata.dev>",
+  "homepage": "https://github.com/betterdataco/llm-commerce-gateway#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betterdataco/llm-commerce-gateway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/betterdataco/llm-commerce-gateway/issues"
+  },
+  "keywords": [
+    "llm",
+    "ai",
+    "chatbot",
+    "commerce",
+    "ecommerce",
+    "conversational",
+    "anthropic",
+    "openai",
+    "grok",
+    "mcp",
+    "tool-calling",
+    "function-calling",
+    "shopify",
+    "woocommerce",
+    "federation",
+    "multi-merchant",
+    "routing"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp.d.ts",
+      "import": "./dist/mcp.js"
+    },
+    "./adapters": {
+      "types": "./dist/adapters.d.ts",
+      "import": "./dist/adapters.js"
+    },
+    "./openai": {
+      "types": "./dist/openai.d.ts",
+      "import": "./dist/openai.js"
+    },
+    "./grok": {
+      "types": "./dist/grok.d.ts",
+      "import": "./dist/grok.js"
+    },
+    "./session": {
+      "types": "./dist/session.d.ts",
+      "import": "./dist/session.js"
+    },
+    "./auth": {
+      "types": "./dist/auth.d.ts",
+      "import": "./dist/auth.js"
+    },
+    "./links": {
+      "types": "./dist/links.d.ts",
+      "import": "./dist/links.js"
+    },
+    "./backends": {
+      "types": "./dist/backends/interfaces.d.ts",
+      "import": "./dist/backends/interfaces.js"
+    },
+    "./backends/demo": {
+      "types": "./dist/backends/demo-backend.d.ts",
+      "import": "./dist/backends/demo-backend.js"
+    },
+    "./tools": {
+      "types": "./dist/tools/builtInTools.d.ts",
+      "import": "./dist/tools/builtInTools.js"
+    },
+    "./observability": {
+      "types": "./dist/observability.d.ts",
+      "import": "./dist/observability.js"
+    },
+    "./errors": {
+      "types": "./dist/core/errors.d.ts",
+      "import": "./dist/core/errors.js"
+    },
+    "./validation": {
+      "types": "./dist/core/validation.d.ts",
+      "import": "./dist/core/validation.js"
+    },
+    "./ingestion": {
+      "types": "./dist/ingestion/index.d.ts",
+      "import": "./dist/ingestion/index.js"
+    },
+    "./catalog": {
+      "types": "./dist/catalog/index.d.ts",
+      "import": "./dist/catalog/index.js"
+    },
+    "./federation": {
+      "types": "./dist/federation/index.d.ts",
+      "import": "./dist/federation/index.js"
+    },
+    "./federation/hub": {
+      "types": "./dist/federation/hub.d.ts",
+      "import": "./dist/federation/hub.js"
+    },
+    "./federation/registry": {
+      "types": "./dist/federation/registry/index.d.ts",
+      "import": "./dist/federation/registry/index.js"
+    },
+    "./registry": {
+      "types": "./dist/registry/index.d.ts",
+      "import": "./dist/registry/index.js"
+    },
+    "./federation/tools": {
+      "types": "./dist/federation/tools/index.d.ts",
+      "import": "./dist/federation/tools/index.js"
+    },
+    "./federation/discovery": {
+      "types": "./dist/federation/discovery/index.d.ts",
+      "import": "./dist/federation/discovery/index.js"
+    },
+    "./federation/auth": {
+      "types": "./dist/federation/auth/index.d.ts",
+      "import": "./dist/federation/auth/index.js"
+    },
+    "./federation/auth/dev": {
+      "types": "./dist/federation/auth/dev.d.ts",
+      "import": "./dist/federation/auth/dev.js"
+    },
+    "./federation/analytics": {
+      "types": "./dist/federation/analytics/index.d.ts",
+      "import": "./dist/federation/analytics/index.js"
+    },
+    "./federation/providers": {
+      "types": "./dist/federation/providers/index.d.ts",
+      "import": "./dist/federation/providers/index.js"
+    },
+    "./formatters": {
+      "types": "./dist/formatters/index.d.ts",
+      "import": "./dist/formatters/index.js"
+    },
+    "./capabilities": {
+      "types": "./dist/capabilities/index.d.ts",
+      "import": "./dist/capabilities/index.js"
+    },
+    "./extensions": {
+      "types": "./dist/extensions/index.d.ts",
+      "import": "./dist/extensions/index.js"
+    },
+    "./feature-flags": {
+      "types": "./dist/feature-flags.d.ts",
+      "import": "./dist/feature-flags.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "clean": "git clean -xdf .turbo dist node_modules",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:unit": "vitest run tests/unit",
+    "test:e2e": "vitest run tests/e2e",
+    "test:e2e:watch": "vitest tests/e2e",
+    "test:oss": "vitest run --config vitest.oss.config.ts",
+    "test:oss:watch": "vitest --config vitest.oss.config.ts",
+    "lint": "tsc --noEmit",
+    "check:contract": "npx tsx scripts/check-contract.ts && node ../../scripts/check-oss-boundary.mjs --package packages/commerce-gateway",
+    "check:oss-boundary": "node ../../scripts/check-oss-boundary.mjs --package packages/commerce-gateway"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "@t3-oss/env-nextjs": "^0.11.0",
+    "@upstash/ratelimit": "^2.0.0",
+    "@upstash/redis": "^1.34.0",
+    "commander": "^11.1.0",
+    "hono": "^4.5.3",
+    "jose": "^5.10.0",
+    "ora": "^7.0.1",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/supertest": "^6.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "supertest": "^6.3.3",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3",
+    "vitest": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "typescript": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  }
+}
