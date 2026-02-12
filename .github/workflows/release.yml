@@ -1,0 +1,65 @@
+name: Release to npm
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: |
+          pnpm --filter @betterdata/commerce-gateway build
+          pnpm --filter @betterdata/commerce-gateway-connectors build
+          pnpm --filter @betterdata/commerce-gateway-mcp build
+          pnpm --filter @betterdata/registry-mcp build
+
+      - name: Test
+        run: pnpm test
+
+      - name: Publish commerce-gateway
+        run: pnpm --filter @betterdata/commerce-gateway publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish commerce-gateway-connectors
+        run: pnpm --filter @betterdata/commerce-gateway-connectors publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish commerce-gateway-mcp
+        run: pnpm --filter @betterdata/commerce-gateway-mcp publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish @betterdata/registry-mcp
+        run: pnpm --filter @betterdata/registry-mcp publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Verify published packages
+        run: |
+          sleep 10
+          npm view @betterdata/commerce-gateway version
+          npm view @betterdata/commerce-gateway-connectors version
+          npm view @betterdata/commerce-gateway-mcp version
+          npm view @betterdata/registry-mcp version
