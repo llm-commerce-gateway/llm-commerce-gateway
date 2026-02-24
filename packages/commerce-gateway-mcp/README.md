@@ -1,28 +1,24 @@
-# @betterdata/gateway-mcp
+# @betterdata/commerce-gateway-mcp
 
-> **Gateway MCP Server (OSS)** — Single-tenant MCP runtime that merchants can deploy to expose their catalog and commerce tools to LLM clients (e.g. Claude Desktop).
+[![npm](https://img.shields.io/npm/v/@betterdata/commerce-gateway-mcp)](https://www.npmjs.com/package/@betterdata/commerce-gateway-mcp)
 
-## Package Exports
+MCP server wrapper for the Better Data gateway. Use it to expose commerce tools to Claude Desktop, Cursor, and other MCP-compatible clients.
 
-- `@betterdata/gateway-mcp`
-
-Avoid deep imports from `src/*`; use the export above.
-
-## Install
+## Install / Run
 
 ```bash
-npm install @betterdata/gateway-mcp
+npx @betterdata/commerce-gateway-mcp
 ```
 
-## Configuration
+By default, it loads `gateway.config.json` from your current directory.
 
-Create `gateway.config.json` in your working directory:
+## `gateway.config.json`
 
 ```json
 {
-  "slug": "nike",
-  "brandName": "Nike",
-  "endpoint": "https://nike.example.com/mcp",
+  "slug": "my-store",
+  "brandName": "My Store",
+  "endpoint": "https://my-store.example.com/mcp",
   "protocol": "mcp",
   "capabilities": {
     "catalog_search": true,
@@ -37,40 +33,62 @@ Create `gateway.config.json` in your working directory:
 }
 ```
 
-Notes:
-- `transport.type` can be `stdio` (default) or `http` (health only).
-- If `transport.type` is `http`, the server will expose `/health` on the configured port.
-- `backends.type: "demo"` uses the in-memory demo backend for quick starts.
+## Claude Desktop Config Example
 
-## Quickstart
+`claude_desktop_config.json`:
 
-```bash
-npm install @betterdata/gateway-mcp
-# Create gateway.config.json (see Configuration above)
-npx @betterdata/gateway-mcp
+```json
+{
+  "mcpServers": {
+    "commerce-gateway": {
+      "command": "npx",
+      "args": ["@betterdata/commerce-gateway-mcp"],
+      "env": {
+        "GATEWAY_CONFIG": "/absolute/path/to/gateway.config.json"
+      }
+    }
+  }
+}
 ```
 
-## Run
+## Cursor Config Example
 
-```bash
-npx @betterdata/gateway-mcp
+Add an MCP server entry that starts the same command:
+
+```json
+{
+  "mcpServers": {
+    "commerce-gateway": {
+      "command": "npx",
+      "args": ["@betterdata/commerce-gateway-mcp"],
+      "env": {
+        "GATEWAY_CONFIG": "/absolute/path/to/gateway.config.json"
+      }
+    }
+  }
+}
 ```
 
-## Health
+## Available Tools
 
-If `transport.type` is `http`, the health endpoint is available:
+This package uses `createGatewayMCPServer()` from `@betterdata/commerce-gateway/mcp`.  
+Tools are enabled by gateway capabilities:
 
-```bash
-curl http://localhost:8080/health
-```
+- `search_products`
+- `get_product_details`
+- `check_availability`
 
-## Non-goals
+## Environment Variables
 
-This package intentionally does **not**:
+| Variable | Required | Description |
+|---|---|---|
+| `GATEWAY_CONFIG` | no | Path to config file (default: `gateway.config.json`) |
 
-- Require a Better Data account or hosted registry
-- Support multi-tenant deployment (single-tenant only)
-- Provide production backends (use `@betterdata/llm-gateway` with your own backends for production)
+## Notes
+
+- `transport.type` can be `stdio` (default) or `http` (health check endpoint only)
+- if `transport.type` is `http`, `/health` is exposed on `transport.port` (default `8080`)
+- this package starts with demo backends by default (`backends.type: "demo"`)
 
 ## License
 

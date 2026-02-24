@@ -23,6 +23,8 @@ pnpm build
 
 - [betterdata.co](https://betterdata.co)
 - [Package docs](packages/commerce-gateway/README.md)
+- [OSS split checklist](OSS_SPLIT_CHECKLIST.md)
+- [Promotion runbook](PROMOTION_RUNBOOK.md)
 
 ## License
 

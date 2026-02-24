@@ -203,9 +203,16 @@ const adapter = createOpenAIAdapter(gateway);
 For Grok integration.
 
 ```typescript
-import { createGrokAdapter } from '@betterdata/commerce-gateway/grok';
+import { GrokAdapter } from '@betterdata/commerce-gateway/grok';
 
-const adapter = createGrokAdapter(gateway);
+const adapter = new GrokAdapter({
+  apiKey: process.env.GROK_API_KEY!,
+  backends: {
+    products: myProductBackend,
+    cart: myCartBackend,
+    orders: myOrderBackend,
+  },
+});
 ```
 
 ---

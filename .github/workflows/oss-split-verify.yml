@@ -1,0 +1,114 @@
+name: OSS Split Verification
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
+  workflow_dispatch:
+
+jobs:
+  build-matrix:
+    name: Build (Node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build workspace
+        run: pnpm build
+
+  contract-and-boundary:
+    name: Contract and Boundary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Core contract checks
+        run: pnpm --filter @betterdata/commerce-gateway check:contract
+
+      - name: Registry MCP OSS boundary
+        run: pnpm --filter @betterdata/registry-mcp check:oss-boundary
+
+      - name: Gateway MCP OSS boundary
+        run: pnpm --filter @betterdata/commerce-gateway-mcp check:oss-boundary
+
+      - name: Contract test suite
+        run: pnpm --filter @betterdata/commerce-gateway exec vitest run tests/contract/v0.1.test.ts tests/unit/telemetry.test.ts
+
+  typecheck:
+    name: Typecheck OSS packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck commerce-gateway
+        run: pnpm --filter @betterdata/commerce-gateway typecheck
+
+      - name: Typecheck commerce-gateway-mcp
+        run: pnpm --filter @betterdata/commerce-gateway-mcp typecheck
+
+      - name: Typecheck registry-mcp
+        run: pnpm --filter @betterdata/registry-mcp typecheck
+
+      - name: Typecheck connectors
+        run: pnpm --filter @betterdata/commerce-gateway-connectors typecheck
+
+  smoke:
+    name: OSS smoke tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Grok adapter smoke
+        run: pnpm --filter @betterdata/commerce-gateway exec vitest run tests/unit/adapters/grok-adapter.test.ts

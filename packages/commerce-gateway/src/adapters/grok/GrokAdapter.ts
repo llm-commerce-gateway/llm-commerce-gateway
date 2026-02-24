@@ -323,9 +323,10 @@ export class GrokAdapter extends BaseAdapter {
         for (const toolCall of pendingToolCalls) {
           yield { type: 'tool_call', data: toolCall };
 
+          const args = this.parseToolArguments(toolCall.function.arguments, toolCall.function.name);
           const result = await this.executeTool(
             toolCall.function.name,
-            JSON.parse(toolCall.function.arguments),
+            args,
             {
               sessionId,
               userId: request.userId,
@@ -475,7 +476,7 @@ export class GrokAdapter extends BaseAdapter {
     const results: GrokChatMessage[] = [];
 
     for (const toolCall of toolCalls) {
-      const args = JSON.parse(toolCall.function.arguments);
+      const args = this.parseToolArguments(toolCall.function.arguments, toolCall.function.name);
       const result = await this.executeTool(toolCall.function.name, args, context);
 
       results.push({
@@ -507,6 +508,26 @@ export class GrokAdapter extends BaseAdapter {
       })),
       tool_call_id: msg.tool_call_id,
     }));
+  }
+
+  /**
+   * Parse tool-call arguments safely.
+   * Invalid JSON should not crash the request loop.
+   */
+  private parseToolArguments(rawArgs: string, toolName: string): Record<string, unknown> {
+    try {
+      const parsed = JSON.parse(rawArgs) as unknown;
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+        return {
+          __toolArgParseError: `Invalid arguments for "${toolName}": expected JSON object`,
+        };
+      }
+      return parsed as Record<string, unknown>;
+    } catch {
+      return {
+        __toolArgParseError: `Invalid arguments for "${toolName}": malformed JSON`,
+      };
+    }
   }
 }
 
