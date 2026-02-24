@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Session Manager
+ * @betterdata/commerce-gateway - Session Manager
  *
  * Manages conversation sessions with pluggable storage backends.
  * Supports Redis for fast access and optional Postgres for persistence.

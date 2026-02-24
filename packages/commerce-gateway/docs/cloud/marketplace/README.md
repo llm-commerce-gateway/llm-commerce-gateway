@@ -100,7 +100,7 @@ const results = await searchProducts({
 ### Installation
 
 ```bash
-npm install @betterdata/llm-gateway
+npm install @betterdata/commerce-gateway
 ```
 
 ### Basic Setup
@@ -110,7 +110,7 @@ import {
   createMarketplaceSearchHandler,
   createCartHandler,
   createAnalyticsService 
-} from '@betterdata/llm-gateway';
+} from '@betterdata/commerce-gateway';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -197,7 +197,7 @@ import {
   marketplaceSearchToolDefinition,
   addToCartToolDefinition,
   viewCartToolDefinition,
-} from '@betterdata/llm-gateway';
+} from '@betterdata/commerce-gateway';
 
 // Register with MCP server
 server.setRequestHandler('tools/list', async () => ({
@@ -284,7 +284,7 @@ import {
   GatewayError, 
   ValidationError, 
   BackendError 
-} from '@betterdata/llm-gateway';
+} from '@betterdata/commerce-gateway';
 
 try {
   await cartHandler.addToCart(...);
@@ -320,7 +320,7 @@ import type {
   VendorCart,
   AnalyticsPeriod,
   ProviderAttribution,
-} from '@betterdata/llm-gateway';
+} from '@betterdata/commerce-gateway';
 ```
 
 ## Testing

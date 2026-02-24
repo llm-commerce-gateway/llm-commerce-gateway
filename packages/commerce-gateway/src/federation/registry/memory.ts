@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - In-Memory Merchant Registry
+ * @betterdata/commerce-gateway - In-Memory Merchant Registry
  *
  * A simple in-memory implementation of the MerchantRegistry interface.
  * Ideal for development, testing, and single-instance deployments.

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Adapter Types
+ * @betterdata/commerce-gateway - Adapter Types
  * 
  * Unified types for all LLM adapters (OpenAI, Grok, etc.)
  * 

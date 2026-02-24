@@ -1,13 +1,13 @@
 /**
- * @betterdata/llm-gateway - Federation Integration
+ * @betterdata/commerce-gateway - Federation Integration
  *
  * Integrates federation capabilities into the existing LLMGateway.
  * Provides both Hub mode (routes to merchants) and Merchant mode (advertises to hubs).
  *
  * @example
  * ```typescript
- * import { LLMGateway } from '@betterdata/llm-gateway';
- * import { integrateFederation, FederatedGatewayOptions } from '@betterdata/llm-gateway/federation';
+ * import { LLMGateway } from '@betterdata/commerce-gateway';
+ * import { integrateFederation, FederatedGatewayOptions } from '@betterdata/commerce-gateway/federation';
  *
  * // Create gateway with federation
  * const gateway = new LLMGateway({ backends: myBackends });

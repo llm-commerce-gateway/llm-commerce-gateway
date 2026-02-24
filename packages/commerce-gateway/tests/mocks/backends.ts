@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Mock Backends
+ * @betterdata/commerce-gateway - Mock Backends
  * 
  * Mock implementations of backend interfaces for testing.
  * 

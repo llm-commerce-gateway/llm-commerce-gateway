@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Observability Module
+ * @betterdata/commerce-gateway - Observability Module
  * 
  * Provides structured logging and observability utilities.
  * 

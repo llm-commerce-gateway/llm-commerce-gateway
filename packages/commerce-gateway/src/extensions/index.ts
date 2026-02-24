@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Extensions Module
+ * @betterdata/commerce-gateway - Extensions Module
  *
  * Extension interfaces and OSS defaults for multi-tenancy hooks.
  *
@@ -22,7 +22,7 @@
  *   createOSSKeyDeriver,
  *   createOSSEntitlementsChecker,
  *   OSS_GATEWAY_EXTENSIONS,
- * } from '@betterdata/llm-gateway/extensions';
+ * } from '@betterdata/commerce-gateway/extensions';
  *
  * // Use defaults (single-tenant)
  * const gateway = createGateway({

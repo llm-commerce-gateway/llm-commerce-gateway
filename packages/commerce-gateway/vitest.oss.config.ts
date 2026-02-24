@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - OSS Vitest Configuration
+ * @betterdata/commerce-gateway - OSS Vitest Configuration
  * 
  * Test configuration for OSS-only tests (no Prisma/database dependencies).
  * Run with: pnpm vitest --config vitest.oss.config.ts
@@ -46,7 +46,7 @@ export default defineConfig({
       'tests/unit/errors.test.ts',
       'tests/unit/logger.test.ts',
       'tests/unit/validation.test.ts',
-      'src/federation/__tests__/**/*.test.ts',
+      'tests/unit/capabilities.test.ts',
     ],
 
     // Exclude cloud/SaaS tests that depend on Prisma or Better Data modules

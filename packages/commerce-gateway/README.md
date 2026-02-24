@@ -515,8 +515,8 @@ The gateway supports the `@shop` namespace for brand and GTIN queries:
 
 ## 🚀 Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/betterdata/llm-gateway&env=REDIS_URL)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/betterdata/llm-gateway)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/betterdataco/llm-commerce-gateway&env=REDIS_URL)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/betterdataco/llm-commerce-gateway)
 
 ---
 
@@ -549,6 +549,6 @@ MIT © [Better Data](https://betterdata.com)
 
 - [Website](https://betterdata.com)
 - [Documentation](https://docs.betterdata.com)
-- [GitHub](https://github.com/betterdata/llm-gateway)
+- [GitHub](https://github.com/betterdataco/llm-commerce-gateway)
 - [npm](https://www.npmjs.com/package/@betterdata/commerce-gateway)
 - [Discord](https://discord.gg/betterdata)

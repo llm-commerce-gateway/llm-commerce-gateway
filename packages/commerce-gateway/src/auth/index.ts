@@ -1,11 +1,11 @@
 /**
- * @betterdata/llm-gateway/auth
+ * @betterdata/commerce-gateway/auth
  * 
  * Authentication and authorization module for the LLM Gateway.
  * 
  * @example
  * ```typescript
- * import { Auth, createAuth } from '@betterdata/llm-gateway/auth';
+ * import { Auth, createAuth } from '@betterdata/commerce-gateway/auth';
  * 
  * const auth = new Auth({
  *   strategies: {

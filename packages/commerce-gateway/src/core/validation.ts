@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Input Validation
+ * @betterdata/commerce-gateway - Input Validation
  * 
  * Zod schemas for request validation with type-safe parsing
  * and detailed error messages.

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Dub.co Link Generator
+ * @betterdata/commerce-gateway - Dub.co Link Generator
  * 
  * Link generation using Dub.co (recommended).
  * 
@@ -89,7 +89,7 @@ interface DubUpdateRequest extends Partial<DubCreateRequest> {}
  * 
  * @example
  * ```typescript
- * import { DubLinkGenerator } from '@betterdata/llm-gateway/links/dub';
+ * import { DubLinkGenerator } from '@betterdata/commerce-gateway/links/dub';
  * 
  * const links = new DubLinkGenerator({
  *   apiKey: process.env.DUB_API_KEY!,

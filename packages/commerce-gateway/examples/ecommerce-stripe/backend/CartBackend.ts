@@ -5,7 +5,7 @@
  * Falls back to in-memory if Redis is not available.
  */
 
-import type { CartBackend, Cart, CartItem, AddToCartInput, Product } from '@betterdata/llm-gateway/backends';
+import type { CartBackend, Cart, CartItem, AddToCartInput, Product } from '@betterdata/commerce-gateway/backends';
 
 interface CartStore {
   get(key: string): Promise<string | null>;

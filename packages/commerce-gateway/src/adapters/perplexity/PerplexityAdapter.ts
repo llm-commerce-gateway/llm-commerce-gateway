@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - Perplexity Adapter
+ * @betterdata/commerce-gateway - Perplexity Adapter
  *
  * Adapter for Perplexity's API (OpenAI-compatible).
  * Supports Sonar and Sonar Pro models with web search capabilities.
  *
  * @example
  * ```typescript
- * import { PerplexityAdapter } from '@betterdata/llm-gateway/adapters';
+ * import { PerplexityAdapter } from '@betterdata/commerce-gateway/adapters';
  *
  * const adapter = new PerplexityAdapter({
  *   apiKey: process.env.PERPLEXITY_API_KEY!,

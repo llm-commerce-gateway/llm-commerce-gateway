@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Router Module
+ * @betterdata/commerce-gateway - Router Module
  *
  * Provides intent parsing and merchant routing for the Federation Hub.
  *

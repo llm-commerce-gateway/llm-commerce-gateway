@@ -4,7 +4,7 @@
  * Stripe-based checkout implementation.
  */
 
-import type { OrderBackend, Order, Cart, ShippingAddress, PaymentInfo } from '@betterdata/llm-gateway/backends';
+import type { OrderBackend, Order, Cart, ShippingAddress, PaymentInfo } from '@betterdata/commerce-gateway/backends';
 
 interface StripeCheckoutSession {
   id: string;
@@ -168,7 +168,7 @@ export class StripeOrderBackend implements OrderBackend {
 }
 
 // Extend Order type with Stripe-specific fields
-declare module '@betterdata/llm-gateway/backends' {
+declare module '@betterdata/commerce-gateway/backends' {
   interface Order {
     stripeSessionId?: string;
     checkoutUrl?: string;

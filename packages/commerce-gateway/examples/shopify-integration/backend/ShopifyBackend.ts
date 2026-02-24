@@ -19,7 +19,7 @@ import type {
   ShippingAddress,
   InventoryStatus,
   Recommendation,
-} from '@betterdata/llm-gateway/backends';
+} from '@betterdata/commerce-gateway/backends';
 
 // Shopify GraphQL Types
 interface ShopifyConnection<T> {

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Capability Discovery Tests
+ * @betterdata/commerce-gateway - Capability Discovery Tests
  *
  * Tests for:
  * - Default capabilities when no providers implement getCapabilities()

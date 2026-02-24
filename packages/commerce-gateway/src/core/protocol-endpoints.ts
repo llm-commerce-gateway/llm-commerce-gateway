@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Protocol-Compliant Endpoints
+ * @betterdata/commerce-gateway - Protocol-Compliant Endpoints
  * 
  * Implements the required gateway protocol endpoints as specified in
  * commerce-gateway-implementation-spec.md Section 6

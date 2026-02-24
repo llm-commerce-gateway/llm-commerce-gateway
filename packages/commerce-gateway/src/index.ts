@@ -25,7 +25,7 @@
  * ```
  * 
  * @license MIT
- * @see https://github.com/betterdata/llm-gateway
+ * @see https://github.com/betterdataco/llm-commerce-gateway
  */
 
 // ============================================================================

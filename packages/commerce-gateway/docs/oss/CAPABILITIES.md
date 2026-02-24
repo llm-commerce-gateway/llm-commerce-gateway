@@ -2,7 +2,7 @@
 
 > **Version**: 1.0.0  
 > **Spec Version**: `2025-12-22`  
-> **Applies to**: `@betterdata/llm-gateway` v1.1.0+
+> **Applies to**: `@betterdata/commerce-gateway` v1.1.0+
 
 ## Overview
 
@@ -20,7 +20,7 @@ Capability discovery allows clients and federation hubs to query what features a
 ### Check Hub Capabilities
 
 ```typescript
-import { FederationHub } from '@betterdata/llm-gateway/federation';
+import { FederationHub } from '@betterdata/commerce-gateway/federation';
 
 const hub = await FederationHub.create({
   registry: { type: 'memory' },
@@ -48,8 +48,8 @@ if (!caps.features.verification.manualReview) {
 import type { 
   CapabilityProvider, 
   GatewayCapabilities 
-} from '@betterdata/llm-gateway/capabilities';
-import type { MerchantRegistry } from '@betterdata/llm-gateway/federation';
+} from '@betterdata/commerce-gateway/capabilities';
+import type { MerchantRegistry } from '@betterdata/commerce-gateway/federation';
 
 class MyCloudRegistry implements MerchantRegistry, CapabilityProvider {
   // ... MerchantRegistry methods ...
@@ -137,7 +137,7 @@ When multiple providers report capabilities, the hub uses intersection:
 | Version fields | Latest `specVersion`, actual `gatewayVersion` |
 
 ```typescript
-import { mergeCapabilities } from '@betterdata/llm-gateway/capabilities';
+import { mergeCapabilities } from '@betterdata/commerce-gateway/capabilities';
 
 const merged = mergeCapabilities([
   providerA.getCapabilities(),
@@ -163,7 +163,7 @@ interface GatewayCapabilities {
   specVersion: '2025-12-22';
 
   /**
-   * Package version of @betterdata/llm-gateway.
+   * Package version of @betterdata/commerce-gateway.
    */
   gatewayVersion: string;
 
@@ -263,7 +263,7 @@ if (caps.specVersion !== '2025-12-22') {
 Conservative defaults used when a provider doesn't implement capability discovery:
 
 ```typescript
-import { DEFAULT_CAPABILITIES } from '@betterdata/llm-gateway/capabilities';
+import { DEFAULT_CAPABILITIES } from '@betterdata/commerce-gateway/capabilities';
 
 // All Cloud features disabled
 // Basic OSS features enabled
@@ -290,7 +290,7 @@ import { DEFAULT_CAPABILITIES } from '@betterdata/llm-gateway/capabilities';
 Full OSS feature set (no Cloud features):
 
 ```typescript
-import { OSS_CAPABILITIES } from '@betterdata/llm-gateway/capabilities';
+import { OSS_CAPABILITIES } from '@betterdata/commerce-gateway/capabilities';
 
 // merchantWrite: true (can register locally)
 // Basic analytics events: ['search', 'click']
@@ -306,7 +306,7 @@ import { OSS_CAPABILITIES } from '@betterdata/llm-gateway/capabilities';
 Check if an object implements `CapabilityProvider`:
 
 ```typescript
-import { hasCapabilities } from '@betterdata/llm-gateway/capabilities';
+import { hasCapabilities } from '@betterdata/commerce-gateway/capabilities';
 
 function setupRegistry(registry: MerchantRegistry) {
   if (hasCapabilities(registry)) {
@@ -323,7 +323,7 @@ function setupRegistry(registry: MerchantRegistry) {
 Validate a capabilities object:
 
 ```typescript
-import { isValidCapabilities } from '@betterdata/llm-gateway/capabilities';
+import { isValidCapabilities } from '@betterdata/commerce-gateway/capabilities';
 
 const response = await fetch('/api/capabilities');
 const data = await response.json();
@@ -340,7 +340,7 @@ if (isValidCapabilities(data)) {
 Aggregate capabilities from multiple sources:
 
 ```typescript
-import { mergeCapabilities } from '@betterdata/llm-gateway/capabilities';
+import { mergeCapabilities } from '@betterdata/commerce-gateway/capabilities';
 
 const caps = mergeCapabilities([
   await registryProvider.getCapabilities(),
@@ -357,7 +357,7 @@ const caps = mergeCapabilities([
 
 **OSS deployments are single-tenant by design.**
 
-The OSS version of `@betterdata/llm-gateway` is explicitly designed for single-tenant deployments:
+The OSS version of `@betterdata/commerce-gateway` is explicitly designed for single-tenant deployments:
 
 - **No tenant isolation** - All data is stored in a single, global namespace
 - **No multi-tenant RBAC** - Permission enforcement requires Better Data Cloud
@@ -367,7 +367,7 @@ The OSS version of `@betterdata/llm-gateway` is explicitly designed for single-t
 If you need multi-tenant isolation, RBAC, or per-organization entitlements, see [Better Data Cloud](https://betterdata.dev/cloud).
 
 ```typescript
-import { OSS_TENANT_CONTEXT } from '@betterdata/llm-gateway/extensions';
+import { OSS_TENANT_CONTEXT } from '@betterdata/commerce-gateway/extensions';
 
 // OSS is always single-tenant
 console.log(OSS_TENANT_CONTEXT.organizationId); // 'default'
@@ -481,7 +481,7 @@ hub.clearCapabilitiesCache();
 | `getCachedCapabilities()` | Get cached capabilities |
 | `clearCapabilitiesCache()` | Clear the cache |
 
-### Exports from `@betterdata/llm-gateway/capabilities`
+### Exports from `@betterdata/commerce-gateway/capabilities`
 
 | Export | Type | Description |
 |--------|------|-------------|
@@ -507,5 +507,5 @@ hub.clearCapabilitiesCache();
 
 ---
 
-*For questions about capability discovery, see the [GitHub discussions](https://github.com/betterdata/llm-gateway/discussions).*
+*For questions about capability discovery, see the [GitHub discussions](https://github.com/betterdataco/llm-commerce-gateway/discussions).*
 

@@ -11,7 +11,7 @@ Last Updated: 2026-01-20
 ### MCP (Claude Desktop)
 - **MCP server**: `MCPServer` with stdio transport, tool/resource/prompt handlers.  
   Location: `packages/llm-gateway/src/mcp/MCPServer.ts`
-- **MCP exports**: `@betterdata/llm-gateway/mcp` includes server, tools, resources, prompts, formatters.  
+- **MCP exports**: `@betterdata/commerce-gateway/mcp` includes server, tools, resources, prompts, formatters.  
   Location: `packages/llm-gateway/src/mcp/index.ts`
 - **Gateway MCP server factory**: `createGatewayMCPServer()` to expose gateway capabilities over MCP.  
   Location: `packages/llm-gateway/src/mcp/gateway-server.ts`

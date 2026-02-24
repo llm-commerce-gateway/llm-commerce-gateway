@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Discovery Module
+ * @betterdata/commerce-gateway - Discovery Module
  *
  * Pluggable discovery providers for finding relevant merchants.
  *
@@ -16,7 +16,7 @@
  * import {
  *   TagBasedDiscoveryProvider,
  *   CompositeDiscoveryProvider,
- * } from '@betterdata/llm-gateway/federation';
+ * } from '@betterdata/commerce-gateway/federation';
  *
  * // Use tag-based for local development
  * const localProvider = new TagBasedDiscoveryProvider(registry);

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Link Analytics
+ * @betterdata/commerce-gateway - Link Analytics
  * 
  * Track clicks, conversions, and gather metrics for short links.
  * 
@@ -263,7 +263,7 @@ export class InMemoryAnalyticsStorage implements AnalyticsStorage {
  * 
  * @example
  * ```typescript
- * import { LinkAnalytics } from '@betterdata/llm-gateway/links';
+ * import { LinkAnalytics } from '@betterdata/commerce-gateway/links';
  * 
  * const analytics = new LinkAnalytics({
  *   storage: new RedisAnalyticsStorage({

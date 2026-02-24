@@ -67,7 +67,7 @@ The spec mentions tool names like `get_product`, `check_price`, and `check_avail
 
 ### Usage:
 ```typescript
-import { createGatewayMCPServer } from '@betterdata/llm-gateway/mcp';
+import { createGatewayMCPServer } from '@betterdata/commerce-gateway/mcp';
 
 const server = createGatewayMCPServer({
   slug: 'luxe-bond',
@@ -94,7 +94,7 @@ server.start();
 
 ### Registry MCP Server (`packages/registry-mcp`)
 
-1. **Query Parsing**: Uses `parseShopQuery()` from `@betterdata/llm-gateway/registry`
+1. **Query Parsing**: Uses `parseShopQuery()` from `@betterdata/commerce-gateway/registry`
 2. **Resolution**: Uses `RegistryClient` to resolve brands and GTINs
 3. **Gateway Client**: Creates protocol-agnostic gateway clients for calling resolved gateways
 4. **Error Handling**: Comprehensive error handling with user-friendly messages
@@ -123,7 +123,7 @@ server.start();
 ## Notes
 
 - The Registry MCP Server is a standalone package that can be installed and run independently
-- The Gateway MCP Server factory is part of the main `@betterdata/llm-gateway` package
+- The Gateway MCP Server factory is part of the main `@betterdata/commerce-gateway` package
 - Both implementations follow the MCP specification and work with Claude Desktop
 - Tool names may differ slightly from the spec for clarity, but functionality matches
 

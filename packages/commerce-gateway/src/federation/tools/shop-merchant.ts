@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Shop Merchant Tool
+ * @betterdata/commerce-gateway - Shop Merchant Tool
  *
  * Federation tool for shopping at a specific merchant's catalog.
  * Routes LLM requests to the appropriate merchant gateway.

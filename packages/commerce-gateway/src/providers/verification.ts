@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Verification Provider Interface
+ * @betterdata/commerce-gateway - Verification Provider Interface
  *
  * Verifies merchant domain ownership for trust establishment.
  * OSS: TrustAllProvider (no verification, for dev)
@@ -7,7 +7,7 @@
  *
  * @example
  * ```typescript
- * import type { VerificationProvider } from '@betterdata/llm-gateway/providers';
+ * import type { VerificationProvider } from '@betterdata/commerce-gateway/providers';
  *
  * class MyVerificationProvider implements VerificationProvider {
  *   async initiateChallenge(domain, method) {

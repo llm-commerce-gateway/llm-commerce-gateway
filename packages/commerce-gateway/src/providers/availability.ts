@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Availability Provider Interface
+ * @betterdata/commerce-gateway - Availability Provider Interface
  *
  * Provides buyer-facing product availability information.
  * This interface abstracts away internal SCM concepts (locations, quantities)
@@ -10,7 +10,7 @@
  *
  * @example
  * ```typescript
- * import type { AvailabilityProvider } from '@betterdata/llm-gateway/providers';
+ * import type { AvailabilityProvider } from '@betterdata/commerce-gateway/providers';
  *
  * class MyAvailabilityProvider implements AvailabilityProvider {
  *   async checkAvailability(input) {

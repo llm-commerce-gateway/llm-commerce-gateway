@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Custom Link Generator
+ * @betterdata/commerce-gateway - Custom Link Generator
  * 
  * Flexible link generation for self-hosted or custom link shorteners.
  * 
@@ -23,7 +23,7 @@ import { BaseLinkGenerator } from '../BaseLinkGenerator';
  * 
  * @example
  * ```typescript
- * import { CustomLinkGenerator } from '@betterdata/llm-gateway/links/custom';
+ * import { CustomLinkGenerator } from '@betterdata/commerce-gateway/links/custom';
  * 
  * const links = new CustomLinkGenerator({
  *   storeBaseUrl: 'https://mystore.com',

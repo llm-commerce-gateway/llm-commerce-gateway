@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Test Fixtures
+ * @betterdata/commerce-gateway - Test Fixtures
  * 
  * Reusable test data and factory functions.
  * 

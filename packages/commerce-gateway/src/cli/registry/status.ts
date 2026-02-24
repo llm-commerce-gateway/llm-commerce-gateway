@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway CLI - Status Command
+ * @betterdata/commerce-gateway CLI - Status Command
  * 
  * Check registration status
  */

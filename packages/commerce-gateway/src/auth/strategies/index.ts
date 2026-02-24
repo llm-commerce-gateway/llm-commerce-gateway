@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Auth Strategies
+ * @betterdata/commerce-gateway - Auth Strategies
  * 
  * Authentication strategy implementations.
  * 

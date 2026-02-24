@@ -12,7 +12,7 @@
  *
  * @example
  * ```typescript
- * import { BetterDataAnalyticsSink } from '@betterdata/llm-gateway/federation/providers';
+ * import { BetterDataAnalyticsSink } from '@betterdata/commerce-gateway/federation/providers';
  *
  * const analytics = new BetterDataAnalyticsSink({
  *   apiKey: process.env.BETTERDATA_API_KEY!,

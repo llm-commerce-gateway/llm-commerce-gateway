@@ -5,8 +5,8 @@
  * optimized for X/Twitter and mobile viewing.
  */
 
-import { GrokAdapter, createTwitterFormatter } from '@betterdata/llm-gateway/grok';
-import type { Product } from '@betterdata/llm-gateway/backends';
+import { GrokAdapter, createTwitterFormatter } from '@betterdata/commerce-gateway/grok';
+import type { Product } from '@betterdata/commerce-gateway/backends';
 
 // ============================================================================
 // Sample Product Data

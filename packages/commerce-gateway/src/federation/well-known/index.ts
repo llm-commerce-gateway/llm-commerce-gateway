@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Well-Known Module
+ * @betterdata/commerce-gateway - Well-Known Module
  *
  * Federation discovery and verification endpoints for merchant gateways.
  *

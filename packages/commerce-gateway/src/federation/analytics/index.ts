@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Analytics Module
+ * @betterdata/commerce-gateway - Analytics Module
  *
  * Provides analytics sink interface and implementations for tracking
  * federation events.
@@ -10,7 +10,7 @@
  *   NoopAnalyticsSink,
  *   ConsoleAnalyticsSink,
  *   type AnalyticsSink,
- * } from '@betterdata/llm-gateway/federation';
+ * } from '@betterdata/commerce-gateway/federation';
  *
  * // No analytics (default)
  * const noopSink = new NoopAnalyticsSink();

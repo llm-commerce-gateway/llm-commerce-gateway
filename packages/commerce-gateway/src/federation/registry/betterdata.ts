@@ -6,7 +6,7 @@
  *
  * @example
  * ```typescript
- * import { BetterDataRegistryProvider } from '@betterdata/llm-gateway/federation/providers';
+ * import { BetterDataRegistryProvider } from '@betterdata/commerce-gateway/federation/providers';
  *
  * const registry = new BetterDataRegistryProvider({
  *   apiKey: process.env.BETTERDATA_API_KEY!,

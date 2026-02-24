@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Base Link Generator
+ * @betterdata/commerce-gateway - Base Link Generator
  * 
  * Base class for link generator implementations.
  * 

@@ -20,7 +20,7 @@ Complete API reference for the Better Data LLM Gateway.
 Main gateway class that orchestrates all functionality.
 
 ```typescript
-import { LLMGateway } from '@betterdata/llm-gateway';
+import { LLMGateway } from '@betterdata/commerce-gateway';
 
 const gateway = new LLMGateway({
   backends: {
@@ -119,7 +119,7 @@ interface OrderBackend {
 ### Registering Tools
 
 ```typescript
-import { ToolRegistry } from '@betterdata/llm-gateway';
+import { ToolRegistry } from '@betterdata/commerce-gateway';
 
 ToolRegistry.register({
   name: 'my_tool',
@@ -152,7 +152,7 @@ ToolRegistry.register({
 Manages user sessions across LLM platforms.
 
 ```typescript
-import { SessionManager } from '@betterdata/llm-gateway';
+import { SessionManager } from '@betterdata/commerce-gateway';
 
 const sessionManager = new SessionManager({
   redis: { url: process.env.REDIS_URL },
@@ -183,7 +183,7 @@ await sessionManager.updateSession(sessionId, {
 For Claude integration.
 
 ```typescript
-import { createMCPAdapter } from '@betterdata/llm-gateway/mcp';
+import { createMCPAdapter } from '@betterdata/commerce-gateway/mcp';
 
 const mcpServer = createMCPAdapter(gateway);
 ```
@@ -193,7 +193,7 @@ const mcpServer = createMCPAdapter(gateway);
 For ChatGPT integration.
 
 ```typescript
-import { createOpenAIAdapter } from '@betterdata/llm-gateway/openai';
+import { createOpenAIAdapter } from '@betterdata/commerce-gateway/openai';
 
 const adapter = createOpenAIAdapter(gateway);
 ```
@@ -203,7 +203,7 @@ const adapter = createOpenAIAdapter(gateway);
 For Grok integration.
 
 ```typescript
-import { createGrokAdapter } from '@betterdata/llm-gateway/grok';
+import { createGrokAdapter } from '@betterdata/commerce-gateway/grok';
 
 const adapter = createGrokAdapter(gateway);
 ```
@@ -217,7 +217,7 @@ const adapter = createGrokAdapter(gateway);
 Multi-vendor marketplace hub.
 
 ```typescript
-import { FederationHub } from '@betterdata/llm-gateway/federation';
+import { FederationHub } from '@betterdata/commerce-gateway/federation';
 
 const hub = await FederationHub.create({
   registry: {
@@ -318,7 +318,7 @@ import {
   ProductNotFoundError,
   ValidationError,
   AuthenticationError,
-} from '@betterdata/llm-gateway/errors';
+} from '@betterdata/commerce-gateway/errors';
 
 try {
   // Your code

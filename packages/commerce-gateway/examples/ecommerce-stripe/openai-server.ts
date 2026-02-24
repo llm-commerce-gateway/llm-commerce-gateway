@@ -8,7 +8,7 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { OpenAIAdapter } from '@betterdata/llm-gateway/openai';
+import { OpenAIAdapter } from '@betterdata/commerce-gateway/openai';
 import { JsonProductBackend } from './backend/ProductBackend.js';
 import { RedisCartBackend } from './backend/CartBackend.js';
 import { StripeOrderBackend } from './backend/OrderBackend.js';

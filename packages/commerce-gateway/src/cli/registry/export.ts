@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway CLI - Export Command
+ * @betterdata/commerce-gateway CLI - Export Command
  * 
  * Export gateway data for migration
  */

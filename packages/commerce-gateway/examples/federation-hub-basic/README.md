@@ -1,6 +1,6 @@
 # Federation Hub Basic Example
 
-This example demonstrates the Federation Hub capabilities of `@betterdata/llm-gateway`.
+This example demonstrates the Federation Hub capabilities of `@betterdata/commerce-gateway`.
 
 ## What This Example Shows
 
@@ -130,7 +130,7 @@ npx tsx examples/federation-hub-basic/index.ts
 Instead of mock backends, use real commerce backends:
 
 ```typescript
-import { ShopifyBackend } from '@betterdata/llm-gateway/backends/shopify';
+import { ShopifyBackend } from '@betterdata/commerce-gateway/backends/shopify';
 
 const myRealBackend = new ShopifyBackend({
   shopDomain: 'mystore.myshopify.com',

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Anthropic Adapter Exports
+ * @betterdata/commerce-gateway - Anthropic Adapter Exports
  *
  * @license MIT
  */

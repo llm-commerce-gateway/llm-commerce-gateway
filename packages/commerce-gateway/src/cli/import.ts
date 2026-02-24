@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * @betterdata/llm-gateway CLI - Product Import
+ * @betterdata/commerce-gateway CLI - Product Import
  * 
  * Quick import from Shopify, Square, or CSV for single-store owners.
  * 

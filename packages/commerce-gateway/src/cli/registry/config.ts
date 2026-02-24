@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway CLI - Config Management
+ * @betterdata/commerce-gateway CLI - Config Management
  * 
  * Manages gateway.config.json file
  * 

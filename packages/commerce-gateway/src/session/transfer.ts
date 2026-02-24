@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Session Transfer
+ * @betterdata/commerce-gateway - Session Transfer
  * 
  * Enables cross-platform session continuity.
  * Start a conversation in Claude, continue in ChatGPT.

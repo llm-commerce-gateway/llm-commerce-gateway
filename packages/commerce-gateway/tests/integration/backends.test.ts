@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Backend Integration Tests
+ * @betterdata/commerce-gateway - Backend Integration Tests
  * 
  * Integration tests for backend implementations.
  * 

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Link Analytics
+ * @betterdata/commerce-gateway - Link Analytics
  * 
  * @license MIT
  */

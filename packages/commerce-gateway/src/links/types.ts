@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Link Types
+ * @betterdata/commerce-gateway - Link Types
  * 
  * Type definitions for link generation and analytics.
  * 

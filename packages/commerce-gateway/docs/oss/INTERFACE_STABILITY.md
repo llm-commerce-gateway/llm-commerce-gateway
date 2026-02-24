@@ -2,11 +2,11 @@
 
 > **Version**: 1.0.0  
 > **Effective Date**: 2025-12-22  
-> **Applies to**: `@betterdata/llm-gateway` (MIT-licensed OSS package)
+> **Applies to**: `@betterdata/commerce-gateway` (MIT-licensed OSS package)
 
 ## Overview
 
-This document defines the interface stability guarantees for the `@betterdata/llm-gateway` package. 
+This document defines the interface stability guarantees for the `@betterdata/commerce-gateway` package. 
 These commitments enable downstream consumers to upgrade confidently and build stable integrations.
 
 ---
@@ -110,24 +110,24 @@ The public API consists of all exports from the package entry points:
 
 | Entry Point | Description | Stability |
 |-------------|-------------|-----------|
-| `@betterdata/llm-gateway` | Main entry point | 🟢 Stable |
-| `@betterdata/llm-gateway/backends` | Backend interfaces | 🟢 Stable |
-| `@betterdata/llm-gateway/federation` | Federation hub | 🟢 Stable |
-| `@betterdata/llm-gateway/mcp` | MCP server | 🟢 Stable |
+| `@betterdata/commerce-gateway` | Main entry point | 🟢 Stable |
+| `@betterdata/commerce-gateway/backends` | Backend interfaces | 🟢 Stable |
+| `@betterdata/commerce-gateway/federation` | Federation hub | 🟢 Stable |
+| `@betterdata/commerce-gateway/mcp` | MCP server | 🟢 Stable |
 
 ### Extension Points (Stable but Extensible)
 
 | Entry Point | Description | Stability |
 |-------------|-------------|-----------|
-| `@betterdata/llm-gateway/catalog` | Search/cart services | 🟡 Extensible |
-| `@betterdata/llm-gateway/ingestion` | Product import | 🟡 Extensible |
-| `@betterdata/llm-gateway/providers` | Capability providers | 🟡 Extensible |
+| `@betterdata/commerce-gateway/catalog` | Search/cart services | 🟡 Extensible |
+| `@betterdata/commerce-gateway/ingestion` | Product import | 🟡 Extensible |
+| `@betterdata/commerce-gateway/providers` | Capability providers | 🟡 Extensible |
 
 ### Internal APIs (Not Covered)
 
 | Pattern | Description |
 |---------|-------------|
-| `@betterdata/llm-gateway/*/internal/*` | Internal implementation details |
+| `@betterdata/commerce-gateway/*/internal/*` | Internal implementation details |
 | Unexported types | Types not in `index.ts` exports |
 | Private class members | `private` or `#` prefixed members |
 
@@ -138,7 +138,7 @@ The public API consists of all exports from the package entry points:
 Starting in v1.1.0, the gateway supports runtime capability discovery:
 
 ```typescript
-import type { GatewayCapabilities } from '@betterdata/llm-gateway';
+import type { GatewayCapabilities } from '@betterdata/commerce-gateway';
 
 // Check what features a gateway supports
 const caps = await hub.getCapabilities();
@@ -198,7 +198,7 @@ ESLint warns on deprecated API usage:
 
 ### For Library Consumers
 
-1. **Pin minor versions** for stability: `"@betterdata/llm-gateway": "~1.2.0"`
+1. **Pin minor versions** for stability: `"@betterdata/commerce-gateway": "~1.2.0"`
 2. **Read CHANGELOG** before upgrading major versions
 3. **Run type checking** after upgrades: `tsc --noEmit`
 4. **Address deprecation warnings** before next major release
@@ -236,7 +236,7 @@ These will be clearly documented in security advisories.
 
 For questions about API stability:
 
-- **GitHub Issues**: [betterdata/llm-gateway](https://github.com/betterdata/llm-gateway/issues)
+- **GitHub Issues**: [betterdataco/llm-commerce-gateway](https://github.com/betterdataco/llm-commerce-gateway/issues)
 - **Email**: api-stability@betterdata.dev
 
 ---

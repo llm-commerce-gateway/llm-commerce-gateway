@@ -12,7 +12,7 @@
  *   createCloudCapabilityProvider,
  *   CapabilityGate,
  *   createCloudCapabilityGate,
- * } from '@betterdata/llm-gateway/cloud';
+ * } from '@betterdata/commerce-gateway/cloud';
  * ```
  */
 

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Telemetry Tests
+ * @betterdata/commerce-gateway - Telemetry Tests
  *
  * Ensures telemetry payload is anonymous, aggregate, and schema-locked.
  *

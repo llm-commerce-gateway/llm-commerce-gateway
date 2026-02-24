@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Merchant Registry Interface
+ * @betterdata/commerce-gateway - Merchant Registry Interface
  *
  * Defines the contract for merchant registry backends.
  * Implementations include in-memory, file-based, and HTTP (remote) registries.

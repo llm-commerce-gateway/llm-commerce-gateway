@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Main Gateway Class
+ * @betterdata/commerce-gateway - Main Gateway Class
  * 
  * The core LLM Gateway that handles tool execution, session management,
  * and multi-provider support. Designed to work with any commerce backend.

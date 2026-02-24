@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - MCP Prompts
+ * @betterdata/commerce-gateway - MCP Prompts
  * 
  * Pre-built prompt templates that help Claude understand
  * how to assist customers effectively.

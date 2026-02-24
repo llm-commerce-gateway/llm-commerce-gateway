@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Telemetry Module
+ * @betterdata/commerce-gateway - Telemetry Module
  *
  * @license MIT
  */

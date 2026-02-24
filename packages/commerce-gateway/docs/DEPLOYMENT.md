@@ -244,8 +244,8 @@ npm install -g pnpm
 ### Step 2: Clone and Build
 
 ```bash
-git clone https://github.com/betterdata/llm-gateway.git
-cd llm-gateway
+git clone https://github.com/betterdataco/llm-commerce-gateway.git
+cd llm-commerce-gateway
 pnpm install
 pnpm build
 ```
@@ -365,7 +365,7 @@ curl http://localhost:3000/health
 
 ```typescript
 // Add to your gateway
-import { prometheus } from '@betterdata/llm-gateway/observability';
+import { prometheus } from '@betterdata/commerce-gateway/observability';
 
 // Metrics are automatically exposed at /metrics
 ```

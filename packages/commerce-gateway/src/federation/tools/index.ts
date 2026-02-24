@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Federation Tools Module
+ * @betterdata/commerce-gateway - Federation Tools Module
  *
  * LLM-callable tools for federated commerce operations.
  * Compatible with MCP (Anthropic), OpenAI Functions, and other LLM formats.
@@ -10,7 +10,7 @@
  *   registerFederationTools,
  *   ShopMerchantTool,
  *   DiscoverMerchantsTool,
- * } from '@betterdata/llm-gateway/federation';
+ * } from '@betterdata/commerce-gateway/federation';
  *
  * // Register with existing LLMGateway
  * registerFederationTools(gateway, { registry, client, parser });
@@ -87,7 +87,7 @@ export interface FederationToolsOptions {
  *
  * @example
  * ```typescript
- * import { registerFederationTools, MemoryMerchantRegistry, GatewayClient, IntentParser } from '@betterdata/llm-gateway/federation';
+ * import { registerFederationTools, MemoryMerchantRegistry, GatewayClient, IntentParser } from '@betterdata/commerce-gateway/federation';
  *
  * const registry = new MemoryMerchantRegistry([...merchants]);
  * const client = new GatewayClient();

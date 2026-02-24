@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - OpenAI Adapter
+ * @betterdata/commerce-gateway - OpenAI Adapter
  * 
  * Adapter for OpenAI's Chat Completions API with Function Calling.
  * Provides seamless integration with GPT-4, GPT-3.5, and other OpenAI models.
  * 
  * @example
  * ```typescript
- * import { OpenAIAdapter } from '@betterdata/llm-gateway/openai';
+ * import { OpenAIAdapter } from '@betterdata/commerce-gateway/openai';
  * 
  * const adapter = new OpenAIAdapter({
  *   apiKey: process.env.OPENAI_API_KEY!,

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Structured Logging System
+ * @betterdata/commerce-gateway - Structured Logging System
  * 
  * Production-ready logging with support for structured output,
  * multiple log levels, and pluggable backends (Winston, Pino, etc.)
@@ -461,7 +461,7 @@ let globalLogger: Logger = new ConsoleLogger('LLMGateway');
  * @example
  * // Use with Winston
  * import winston from 'winston';
- * import { setLogger, StructuredLogger } from '@betterdata/llm-gateway/observability';
+ * import { setLogger, StructuredLogger } from '@betterdata/commerce-gateway/observability';
  * 
  * const winstonLogger = winston.createLogger({ ... });
  * setLogger(new StructuredLogger(winstonLogger));

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Telemetry Service (OSS)
+ * @betterdata/commerce-gateway - Telemetry Service (OSS)
  *
  * Optional, anonymous, aggregate telemetry payload builder.
  * Telemetry is opt-in and disabled by default.

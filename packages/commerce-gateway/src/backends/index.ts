@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Backend Exports
+ * @betterdata/commerce-gateway - Backend Exports
  * 
  * @license MIT
  */

@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway CLI - Claim GTINs Command
+ * @betterdata/commerce-gateway CLI - Claim GTINs Command
  * 
  * Claim GTINs for a gateway
  * 

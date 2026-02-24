@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Enhanced Session Manager
+ * @betterdata/commerce-gateway - Enhanced Session Manager
  * 
  * Full-featured session management with transfer, GDPR, and analytics.
  * 

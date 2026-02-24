@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Base Adapter
+ * @betterdata/commerce-gateway - Base Adapter
  * 
  * Shared logic for all LLM adapters.
  * Provides tool execution, session management, and response formatting.

@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - No-op Analytics Sink
+ * @betterdata/commerce-gateway - No-op Analytics Sink
  *
  * Default analytics sink that discards all events.
  * Use this when you don't need analytics or for testing.
  *
  * @example
  * ```typescript
- * import { FederationHub, NoopAnalyticsSink } from '@betterdata/llm-gateway/federation';
+ * import { FederationHub, NoopAnalyticsSink } from '@betterdata/commerce-gateway/federation';
  *
  * const hub = new FederationHub({
  *   registry: { type: 'memory' },
@@ -145,7 +145,7 @@ export class NoopAnalyticsSink implements AnalyticsSink, CapabilityProvider {
  *
  * @example
  * ```typescript
- * import { ConsoleAnalyticsSink } from '@betterdata/llm-gateway/federation';
+ * import { ConsoleAnalyticsSink } from '@betterdata/commerce-gateway/federation';
  *
  * const hub = new FederationHub({
  *   registry: { type: 'memory' },

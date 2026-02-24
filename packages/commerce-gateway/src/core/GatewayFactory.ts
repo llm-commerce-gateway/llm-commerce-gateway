@@ -516,7 +516,7 @@ interface AddToCartInput {
  * 
  * @example
  * ```typescript
- * import { createSimpleGateway } from '@betterdata/llm-gateway';
+ * import { createSimpleGateway } from '@betterdata/commerce-gateway';
  * import products from './products.json';
  * 
  * const gateway = createSimpleGateway({
@@ -590,7 +590,7 @@ export interface SCMGatewayConfig extends SimpleGatewayConfig {
  * @example
  * ```typescript
  * // In apps/scm
- * import { createSCMGateway } from '@betterdata/llm-gateway';
+ * import { createSCMGateway } from '@betterdata/commerce-gateway';
  * import { MarketplaceSearchService } from './catalog/search-service';
  * import { MarketplaceCartService } from './catalog/cart-service';
  * import { RankingService } from './catalog/ranking-service';

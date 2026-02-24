@@ -237,7 +237,7 @@ Use this checklist to ensure your marketplace is ready for production.
 
 - [ ] **Logging configured**
   ```typescript
-  import { setLogger, StructuredLogger } from '@betterdata/llm-gateway';
+  import { setLogger, StructuredLogger } from '@betterdata/commerce-gateway';
   setLogger(new StructuredLogger(winstonLogger));
   ```
 

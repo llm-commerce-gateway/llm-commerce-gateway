@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Capability Provider Interfaces
+ * @betterdata/commerce-gateway - Capability Provider Interfaces
  *
  * This module exports interfaces and baseline implementations for
  * merchant capability providers. These providers abstract internal
@@ -36,7 +36,7 @@
  *   SimpleAvailabilityProvider,
  *   FulfillmentProvider,
  *   StaticFulfillmentProvider,
- * } from '@betterdata/llm-gateway/providers';
+ * } from '@betterdata/commerce-gateway/providers';
  *
  * // Use baseline providers for development
  * const availability = new SimpleAvailabilityProvider(getProduct);

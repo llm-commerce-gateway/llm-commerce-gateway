@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Anthropic Adapter Types
+ * @betterdata/commerce-gateway - Anthropic Adapter Types
  *
  * Type definitions for Anthropic Claude API.
  *

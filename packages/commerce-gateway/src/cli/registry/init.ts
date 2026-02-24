@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway CLI - Init Command
+ * @betterdata/commerce-gateway CLI - Init Command
  * 
  * Initialize a new gateway project
  */

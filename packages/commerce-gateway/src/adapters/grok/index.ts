@@ -1,11 +1,11 @@
 /**
- * @betterdata/llm-gateway/grok
+ * @betterdata/commerce-gateway/grok
  * 
  * Grok (xAI) Function Calling adapter.
  * 
  * @example
  * ```typescript
- * import { GrokAdapter } from '@betterdata/llm-gateway/grok';
+ * import { GrokAdapter } from '@betterdata/commerce-gateway/grok';
  * 
  * const adapter = new GrokAdapter({
  *   apiKey: process.env.GROK_API_KEY!,

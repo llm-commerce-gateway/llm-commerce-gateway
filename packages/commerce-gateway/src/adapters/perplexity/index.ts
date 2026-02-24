@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Perplexity Adapter Exports
+ * @betterdata/commerce-gateway - Perplexity Adapter Exports
  *
  * @license MIT
  */

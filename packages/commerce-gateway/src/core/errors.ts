@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Error Handling System
+ * @betterdata/commerce-gateway - Error Handling System
  * 
  * Comprehensive error hierarchy with typed error codes,
  * HTTP status mapping, and structured error responses.

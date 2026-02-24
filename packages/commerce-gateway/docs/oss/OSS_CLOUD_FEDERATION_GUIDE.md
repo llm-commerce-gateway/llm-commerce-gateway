@@ -32,7 +32,7 @@ The Federation module enables multi-merchant marketplaces and is completely open
 
 **Usage**:
 ```typescript
-import { FederationHub } from '@betterdata/llm-gateway/federation';
+import { FederationHub } from '@betterdata/commerce-gateway/federation';
 
 const hub = await FederationHub.create({
   registry: { type: 'memory' },
@@ -59,7 +59,7 @@ Cloud modules provide entitlement-based feature gating but work in OSS mode:
 
 **OSS Behavior**:
 ```typescript
-import { createOSSCapabilityProvider } from '@betterdata/llm-gateway/cloud';
+import { createOSSCapabilityProvider } from '@betterdata/commerce-gateway/cloud';
 
 const provider = createOSSCapabilityProvider();
 const caps = await provider.getCapabilities();
@@ -68,7 +68,7 @@ const caps = await provider.getCapabilities();
 
 **Cloud Behavior**:
 ```typescript
-import { createCloudCapabilityProvider } from '@betterdata/llm-gateway/cloud';
+import { createCloudCapabilityProvider } from '@betterdata/commerce-gateway/cloud';
 
 const provider = createCloudCapabilityProvider({
   isCloud: true,
@@ -97,7 +97,7 @@ These providers connect to Better Data Cloud APIs and require API keys:
 **Access**: Via subpath import (not in main exports)
 ```typescript
 // Only available if Better Data Cloud is configured
-import { createBetterDataProviders } from '@betterdata/llm-gateway/federation/providers';
+import { createBetterDataProviders } from '@betterdata/commerce-gateway/federation/providers';
 
 const providers = createBetterDataProviders({
   apiKey: process.env.BETTERDATA_API_KEY!,
@@ -112,16 +112,16 @@ const providers = createBetterDataProviders({
 
 ### OSS Package Exports
 
-**Main package** (`@betterdata/llm-gateway`):
+**Main package** (`@betterdata/commerce-gateway`):
 - ✅ Core gateway
 - ✅ Federation types and hub
 - ✅ Cloud capability discovery (OSS mode)
 - ❌ Federation providers (Cloud-only)
 
 **Subpath exports**:
-- `@betterdata/llm-gateway/federation` - Full federation module
-- `@betterdata/llm-gateway/federation/providers` - Cloud providers (requires API key)
-- `@betterdata/llm-gateway/cloud` - Cloud capability modules
+- `@betterdata/commerce-gateway/federation` - Full federation module
+- `@betterdata/commerce-gateway/federation/providers` - Cloud providers (requires API key)
+- `@betterdata/commerce-gateway/cloud` - Cloud capability modules
 
 ### TypeScript Configuration
 

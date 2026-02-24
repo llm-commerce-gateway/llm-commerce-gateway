@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Link Generator Implementations
+ * @betterdata/commerce-gateway - Link Generator Implementations
  * 
  * @license MIT
  */

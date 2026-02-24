@@ -24,15 +24,15 @@ Step-by-step guides for integrating the Better Data LLM Gateway with various pla
 ### Step 1: Install
 
 ```bash
-npm install @betterdata/llm-gateway
+npm install @betterdata/commerce-gateway
 ```
 
 ### Step 2: Create Gateway
 
 ```typescript
 // gateway.ts
-import { LLMGateway } from '@betterdata/llm-gateway';
-import { ShopifyBackend } from '@betterdata/llm-gateway-shopify';
+import { LLMGateway } from '@betterdata/commerce-gateway';
+import { ShopifyBackend } from '@betterdata/commerce-gateway-shopify';
 
 const shopify = new ShopifyBackend({
   domain: 'your-store.myshopify.com',
@@ -75,7 +75,7 @@ import type {
   OrderBackend,
   Product,
   ProductSearchResult,
-} from '@betterdata/llm-gateway';
+} from '@betterdata/commerce-gateway';
 
 export class MyProductBackend implements ProductBackend {
   async searchProducts(
@@ -138,7 +138,7 @@ export class MyOrderBackend implements OrderBackend {
 ### Step 2: Use in Gateway
 
 ```typescript
-import { LLMGateway } from '@betterdata/llm-gateway';
+import { LLMGateway } from '@betterdata/commerce-gateway';
 import { MyProductBackend, MyCartBackend, MyOrderBackend } from './my-backend';
 
 const gateway = new LLMGateway({
@@ -204,8 +204,8 @@ Claude will use the gateway's MCP tools to search your catalog.
 
 ```typescript
 // openai-server.ts
-import { LLMGateway } from '@betterdata/llm-gateway';
-import { createOpenAIAdapter } from '@betterdata/llm-gateway/openai';
+import { LLMGateway } from '@betterdata/commerce-gateway';
+import { createOpenAIAdapter } from '@betterdata/commerce-gateway/openai';
 
 const gateway = new LLMGateway({
   backends: {
@@ -249,7 +249,7 @@ In your ChatGPT plugin configuration:
 ### Step 1: Setup Federation Hub
 
 ```typescript
-import { FederationHub } from '@betterdata/llm-gateway/federation';
+import { FederationHub } from '@betterdata/commerce-gateway/federation';
 
 const hub = await FederationHub.create({
   registry: {
@@ -304,7 +304,7 @@ const vendorResults = await hub.searchProducts({
 ```typescript
 // custom-tool.ts
 import { z } from 'zod';
-import type { ToolHandler } from '@betterdata/llm-gateway';
+import type { ToolHandler } from '@betterdata/commerce-gateway';
 
 const CustomToolSchema = z.object({
   action: z.enum(['check_stock', 'get_reviews']),
@@ -328,7 +328,7 @@ export const customTool = {
 ### Step 2: Register Tool
 
 ```typescript
-import { LLMGateway } from '@betterdata/llm-gateway';
+import { LLMGateway } from '@betterdata/commerce-gateway';
 import { customTool } from './custom-tool';
 
 const gateway = new LLMGateway({

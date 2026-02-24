@@ -6,7 +6,7 @@ This document explains how the LLM Gateway OSS works with the Commerce Registry 
 
 ## Overview
 
-The **LLM Gateway OSS** (`@betterdata/llm-gateway`) is an open-source gateway implementation that can work **standalone** or **integrated** with the Commerce Registry Protocol. The registry provides:
+The **LLM Gateway OSS** (`@betterdata/commerce-gateway`) is an open-source gateway implementation that can work **standalone** or **integrated** with the Commerce Registry Protocol. The registry provides:
 
 - **Brand Resolution**: Find gateways by brand name
 - **GTIN Resolution**: Find authoritative sources for products
@@ -27,7 +27,7 @@ The **LLM Gateway OSS** (`@betterdata/llm-gateway`) is an open-source gateway im
                      │ MCP Tool Call: shop()
                      ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              LLM Gateway OSS (@betterdata/llm-gateway)        │
+│              LLM Gateway OSS (@betterdata/commerce-gateway)        │
 │                                                               │
 │  ┌─────────────────────────────────────────────────────┐    │
 │  │  @shop Query Parser                                  │    │
@@ -86,12 +86,12 @@ The **LLM Gateway OSS** (`@betterdata/llm-gateway`) is an open-source gateway im
 
 ## Integration Points
 
-### 1. Registry Client (`@betterdata/llm-gateway/registry`)
+### 1. Registry Client (`@betterdata/commerce-gateway/registry`)
 
 The gateway includes a **Registry Client** that implements the Commerce Registry Protocol:
 
 ```typescript
-import { createRegistryClient } from '@betterdata/llm-gateway/registry';
+import { createRegistryClient } from '@betterdata/commerce-gateway/registry';
 
 // Create client (defaults to registry.betterdata.co)
 const registry = createRegistryClient({
@@ -119,7 +119,7 @@ if (gtinResolution.found) {
 The gateway parses `@shop` queries to extract brand, product query, or GTIN:
 
 ```typescript
-import { parseShopQuery } from '@betterdata/llm-gateway/registry';
+import { parseShopQuery } from '@betterdata/commerce-gateway/registry';
 
 const parsed = parseShopQuery('@shop Nike Air Max');
 // { type: 'brand', brand: 'Nike', productQuery: 'Air Max' }
@@ -301,8 +301,8 @@ const gateway = createLLMGateway({
 ### With Registry (Recommended)
 
 ```typescript
-import { createLLMGateway } from '@betterdata/llm-gateway';
-import { createRegistryClient } from '@betterdata/llm-gateway/registry';
+import { createLLMGateway } from '@betterdata/commerce-gateway';
+import { createRegistryClient } from '@betterdata/commerce-gateway/registry';
 
 const registry = createRegistryClient({
   baseUrl: 'https://registry.betterdata.co', // Optional
@@ -362,8 +362,8 @@ The LLM Gateway OSS implements this protocol, allowing it to work with:
 ## Example: Full Flow
 
 ```typescript
-import { createLLMGateway } from '@betterdata/llm-gateway';
-import { createRegistryClient } from '@betterdata/llm-gateway/registry';
+import { createLLMGateway } from '@betterdata/commerce-gateway';
+import { createRegistryClient } from '@betterdata/commerce-gateway/registry';
 
 // 1. Create registry client
 const registry = createRegistryClient({

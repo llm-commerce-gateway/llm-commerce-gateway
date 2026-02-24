@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - @shop Query Parser
+ * @betterdata/commerce-gateway - @shop Query Parser
  * 
  * Parses @shop queries to extract brand, product query, or GTIN
  * 

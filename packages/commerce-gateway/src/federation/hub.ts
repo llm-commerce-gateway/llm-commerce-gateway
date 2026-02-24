@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - Federation Hub
+ * @betterdata/commerce-gateway - Federation Hub
  *
  * The main orchestration class for the Federation Layer.
  * Combines registry, discovery, routing, and gateway client into a unified API.
  *
  * @example
  * ```typescript
- * import { FederationHub } from '@betterdata/llm-gateway/federation';
+ * import { FederationHub } from '@betterdata/commerce-gateway/federation';
  *
  * // Create hub with all components
  * const hub = await FederationHub.create({

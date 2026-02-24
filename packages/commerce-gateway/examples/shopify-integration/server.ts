@@ -8,8 +8,8 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { MCPServer } from '@betterdata/llm-gateway/mcp';
-import { OpenAIAdapter } from '@betterdata/llm-gateway/openai';
+import { MCPServer } from '@betterdata/commerce-gateway/mcp';
+import { OpenAIAdapter } from '@betterdata/commerce-gateway/openai';
 import { ShopifyBackend } from './backend/ShopifyBackend.js';
 
 // Configuration

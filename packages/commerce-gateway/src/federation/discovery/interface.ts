@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - Discovery Provider Interface
+ * @betterdata/commerce-gateway - Discovery Provider Interface
  *
  * Defines the contract for merchant discovery providers.
  * Providers can implement different strategies for finding relevant merchants.
  *
  * @example
  * ```typescript
- * import type { DiscoveryProvider } from '@betterdata/llm-gateway/federation';
+ * import type { DiscoveryProvider } from '@betterdata/commerce-gateway/federation';
  *
  * class MyCustomProvider implements DiscoveryProvider {
  *   async discoverByIntent(query, opts) {

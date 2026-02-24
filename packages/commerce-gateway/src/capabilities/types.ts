@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - Gateway Capabilities Schema
+ * @betterdata/commerce-gateway - Gateway Capabilities Schema
  *
  * Runtime capability discovery for federated gateways.
  * Enables clients to query what features a gateway supports and gracefully degrade.
  *
  * @example
  * ```typescript
- * import type { GatewayCapabilities, CapabilityProvider } from '@betterdata/llm-gateway';
+ * import type { GatewayCapabilities, CapabilityProvider } from '@betterdata/commerce-gateway';
  *
  * // Check capabilities at runtime
  * const caps = await hub.getCapabilities();
@@ -76,7 +76,7 @@ export interface GatewayCapabilities {
   specVersion: '2025-12-22';
 
   /**
-   * Version of the @betterdata/llm-gateway package.
+   * Version of the @betterdata/commerce-gateway package.
    * Follows semver (e.g., "1.1.0").
    */
   gatewayVersion: string;
@@ -290,7 +290,7 @@ export const OSS_CAPABILITIES: GatewayCapabilities = {
  *
  * @example
  * ```typescript
- * import type { CapabilityProvider, GatewayCapabilities } from '@betterdata/llm-gateway';
+ * import type { CapabilityProvider, GatewayCapabilities } from '@betterdata/commerce-gateway';
  *
  * class MyCloudRegistry implements MerchantRegistry, CapabilityProvider {
  *   async getCapabilities(): Promise<GatewayCapabilities> {

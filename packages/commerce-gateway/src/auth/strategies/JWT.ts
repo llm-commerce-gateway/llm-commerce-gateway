@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - JWT Strategy
+ * @betterdata/commerce-gateway - JWT Strategy
  * 
  * JSON Web Token authentication for stateless auth.
  * 

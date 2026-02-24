@@ -1,6 +1,6 @@
 # Gateway Protocol Compliance
 
-This document describes the protocol compliance of the @betterdata/llm-gateway implementation.
+This document describes the protocol compliance of the @betterdata/commerce-gateway implementation.
 
 ## Overview
 

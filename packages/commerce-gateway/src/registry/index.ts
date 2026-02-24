@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway/registry
+ * @betterdata/commerce-gateway/registry
  * 
  * Commerce Gateway Registry integration
  * 

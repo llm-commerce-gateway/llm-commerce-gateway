@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Federation Authentication Module
+ * @betterdata/commerce-gateway - Federation Authentication Module
  *
  * JWT signing and verification utilities for establishing trust
  * between the federation hub and merchant gateways.
@@ -25,7 +25,7 @@
  * @example
  * ```typescript
  * // Hub side: Sign requests
- * import { FederationJWTSigner, importPrivateKeyJWK } from '@betterdata/llm-gateway/federation';
+ * import { FederationJWTSigner, importPrivateKeyJWK } from '@betterdata/commerce-gateway/federation';
  *
  * const privateKey = await importPrivateKeyJWK(JSON.parse(process.env.PRIVATE_KEY_JWK!));
  * const signer = new FederationJWTSigner(privateKey, 'hub-key-1');
@@ -40,7 +40,7 @@
  * @example
  * ```typescript
  * // Merchant side: Verify requests (SECURITY: always configure trustedIssuers)
- * import { FederationJWTVerifier, importPublicKeyJWK } from '@betterdata/llm-gateway/federation';
+ * import { FederationJWTVerifier, importPublicKeyJWK } from '@betterdata/commerce-gateway/federation';
  *
  * const hubPublicKey = await importPublicKeyJWK(hubJWK);
  * const verifier = new FederationJWTVerifier(
@@ -102,7 +102,7 @@ export {
 // ============================================================================
 
 // Key generation utilities are available from:
-// import { generateKeyPairDev } from '@betterdata/llm-gateway/federation/auth/dev'
+// import { generateKeyPairDev } from '@betterdata/commerce-gateway/federation/auth/dev'
 //
 // This separation makes it clear that key generation is a setup-time operation,
 // not something to be done at runtime.

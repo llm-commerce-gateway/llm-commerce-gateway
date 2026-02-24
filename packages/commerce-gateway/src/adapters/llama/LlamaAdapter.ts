@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - Llama Adapter
+ * @betterdata/commerce-gateway - Llama Adapter
  *
  * Adapter for Llama models via OpenAI-compatible APIs.
  * Supports Together AI, Groq, and local deployments.
  *
  * @example
  * ```typescript
- * import { LlamaAdapter } from '@betterdata/llm-gateway/adapters';
+ * import { LlamaAdapter } from '@betterdata/commerce-gateway/adapters';
  *
  * // Together AI
  * const adapter = new LlamaAdapter({

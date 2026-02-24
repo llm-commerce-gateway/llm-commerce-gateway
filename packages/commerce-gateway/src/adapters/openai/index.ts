@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway/openai
+ * @betterdata/commerce-gateway/openai
  * 
  * OpenAI Function Calling and Assistants API adapters.
  * 
  * @example
  * ```typescript
  * // Function Calling (Chat Completions)
- * import { OpenAIAdapter } from '@betterdata/llm-gateway/openai';
+ * import { OpenAIAdapter } from '@betterdata/commerce-gateway/openai';
  * 
  * const adapter = new OpenAIAdapter({
  *   apiKey: process.env.OPENAI_API_KEY!,
@@ -18,7 +18,7 @@
  * });
  * 
  * // Assistants API (Persistent Threads)
- * import { OpenAIAssistantsClient } from '@betterdata/llm-gateway/openai';
+ * import { OpenAIAssistantsClient } from '@betterdata/commerce-gateway/openai';
  * 
  * const client = new OpenAIAssistantsClient({
  *   apiKey: process.env.OPENAI_API_KEY!,

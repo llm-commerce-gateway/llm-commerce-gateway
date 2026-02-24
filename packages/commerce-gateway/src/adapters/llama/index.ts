@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Llama Adapter Exports
+ * @betterdata/commerce-gateway - Llama Adapter Exports
  *
  * @license MIT
  */

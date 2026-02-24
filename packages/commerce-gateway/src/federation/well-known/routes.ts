@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Well-Known Federation Routes
+ * @betterdata/commerce-gateway - Well-Known Federation Routes
  *
  * Adds /.well-known/llm-gateway.json endpoint to merchant gateways
  * for federation discovery and verification.
@@ -7,7 +7,7 @@
  * @example
  * ```typescript
  * import { Hono } from 'hono';
- * import { createWellKnownRoutes } from '@betterdata/llm-gateway/federation';
+ * import { createWellKnownRoutes } from '@betterdata/commerce-gateway/federation';
  *
  * const app = new Hono();
  *
@@ -127,7 +127,7 @@ export interface WellKnownRouteOptions {
  * @example
  * ```typescript
  * import { Hono } from 'hono';
- * import { createWellKnownRoutes } from '@betterdata/llm-gateway/federation';
+ * import { createWellKnownRoutes } from '@betterdata/commerce-gateway/federation';
  *
  * const app = new Hono();
  *
@@ -357,7 +357,7 @@ export interface FederationConfig {
  * @example
  * ```typescript
  * import { Hono } from 'hono';
- * import { addFederationRoutes } from '@betterdata/llm-gateway/federation';
+ * import { addFederationRoutes } from '@betterdata/commerce-gateway/federation';
  *
  * const app = new Hono();
  *

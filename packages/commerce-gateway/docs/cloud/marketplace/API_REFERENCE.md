@@ -7,7 +7,7 @@
 Search for products across vendor listings with optional runtime scoping.
 
 ```typescript
-import { searchProducts } from '@betterdata/llm-gateway';
+import { searchProducts } from '@betterdata/commerce-gateway';
 
 // Global search (all vendors)
 const results = await searchProducts({
@@ -136,7 +136,7 @@ interface RankedListing {
 Match a vendor product to canonical ProductMaster.
 
 ```typescript
-import { matchOrCreateProduct } from '@betterdata/llm-gateway';
+import { matchOrCreateProduct } from '@betterdata/commerce-gateway';
 
 const result = await matchOrCreateProduct('vendor-123', {
   gtin: '883419029844',
@@ -203,7 +203,7 @@ interface MatchResult {
 Create a cart handler instance.
 
 ```typescript
-import { createCartHandler } from '@betterdata/llm-gateway';
+import { createCartHandler } from '@betterdata/commerce-gateway';
 
 const cartHandler = createCartHandler(prisma);
 ```
@@ -290,7 +290,7 @@ const result = await cartHandler.removeFromCart(
 Create an analytics service instance.
 
 ```typescript
-import { createAnalyticsService } from '@betterdata/llm-gateway';
+import { createAnalyticsService } from '@betterdata/commerce-gateway';
 
 const analytics = createAnalyticsService(prisma);
 ```
@@ -409,7 +409,7 @@ interface Recommendation {
 Rank listings by multiple factors.
 
 ```typescript
-import { rankListings } from '@betterdata/llm-gateway';
+import { rankListings } from '@betterdata/commerce-gateway';
 
 const ranked = rankListings(rawSearchResults, {
   text: 'Nike Air Max',
@@ -422,7 +422,7 @@ const ranked = rankListings(rawSearchResults, {
 Calculate distance between two coordinates.
 
 ```typescript
-import { calculateDistance } from '@betterdata/llm-gateway';
+import { calculateDistance } from '@betterdata/commerce-gateway';
 
 const miles = calculateDistance(
   { lat: 40.7128, lng: -74.0060 }, // NYC
@@ -443,7 +443,7 @@ import {
   addToCartToolDefinition,
   viewCartToolDefinition,
   removeFromCartToolDefinition,
-} from '@betterdata/llm-gateway';
+} from '@betterdata/commerce-gateway';
 ```
 
 Each tool definition includes:
@@ -463,7 +463,7 @@ import {
   ToolNotFoundError,
   SessionNotFoundError,
   CartNotFoundError,
-} from '@betterdata/llm-gateway';
+} from '@betterdata/commerce-gateway';
 ```
 
 | Error | Status | When |

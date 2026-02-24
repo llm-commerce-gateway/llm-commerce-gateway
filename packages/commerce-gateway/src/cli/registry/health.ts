@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway CLI - Health Command
+ * @betterdata/commerce-gateway CLI - Health Command
  * 
  * Test gateway health
  */

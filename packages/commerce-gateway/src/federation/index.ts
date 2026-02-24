@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Federation Module
+ * @betterdata/commerce-gateway - Federation Module
  *
  * The Federation Hub routes shopping intent to merchant-specific gateway instances.
  * It enables users to say "shop vuoriclothing.com for joggers" and have the request
@@ -7,7 +7,7 @@
  *
  * @example
  * ```typescript
- * import { FederationHub, type MerchantRegistration } from '@betterdata/llm-gateway/federation';
+ * import { FederationHub, type MerchantRegistration } from '@betterdata/commerce-gateway/federation';
  *
  * // Create a federation hub
  * const hub = await FederationHub.create({
@@ -292,11 +292,11 @@ export {
  * Better Data Cloud provider implementations.
  *
  * These are optional providers that connect to Better Data Cloud.
- * Import from '@betterdata/llm-gateway/federation/providers' for full API.
+ * Import from '@betterdata/commerce-gateway/federation/providers' for full API.
  *
  * @example
  * ```typescript
- * import { createBetterDataProviders } from '@betterdata/llm-gateway/federation/providers';
+ * import { createBetterDataProviders } from '@betterdata/commerce-gateway/federation/providers';
  *
  * const providers = createBetterDataProviders({
  *   apiKey: process.env.BETTERDATA_API_KEY!,

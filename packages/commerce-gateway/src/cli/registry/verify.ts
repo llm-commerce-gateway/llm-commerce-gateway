@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway CLI - Verify Command
+ * @betterdata/commerce-gateway CLI - Verify Command
  * 
  * Verify domain ownership
  * 

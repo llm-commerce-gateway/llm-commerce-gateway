@@ -2,7 +2,7 @@
 
 > A "Hello World" for conversational commerce in <50 lines of code.
 
-This minimal example demonstrates how to create a Claude-powered shopping assistant with @betterdata/llm-gateway.
+This minimal example demonstrates how to create a Claude-powered shopping assistant with @betterdata/commerce-gateway.
 
 ## What's Included
 
@@ -55,7 +55,7 @@ The entire implementation is in `server.ts` - under 50 lines!
 
 ```typescript
 // 1. Import the MCP server
-import { MCPServer } from '@betterdata/llm-gateway/mcp';
+import { MCPServer } from '@betterdata/commerce-gateway/mcp';
 
 // 2. Create a simple backend (in-memory product array)
 const backend = {

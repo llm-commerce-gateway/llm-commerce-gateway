@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Test Setup
+ * @betterdata/commerce-gateway - Test Setup
  * 
  * Global test configuration and utilities.
  * 

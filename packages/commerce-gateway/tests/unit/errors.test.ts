@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Error System Tests
+ * @betterdata/commerce-gateway - Error System Tests
  * 
  * Unit tests for the error handling system.
  * 

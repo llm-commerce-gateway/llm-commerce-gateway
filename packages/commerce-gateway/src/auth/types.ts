@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Auth Types
+ * @betterdata/commerce-gateway - Auth Types
  * 
  * Type definitions for authentication and authorization.
  * 

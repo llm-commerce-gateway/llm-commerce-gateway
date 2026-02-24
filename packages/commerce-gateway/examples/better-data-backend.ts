@@ -346,7 +346,7 @@ export class DubLinkGenerator implements LinkGenerator {
  * 
  * @example
  * ```typescript
- * import { createBetterDataBackends } from '@betterdata/llm-gateway/examples/better-data-backend';
+ * import { createBetterDataBackends } from '@betterdata/commerce-gateway/examples/better-data-backend';
  * import { database } from '@repo/database/server';
  * 
  * const backends = createBetterDataBackends(database, {

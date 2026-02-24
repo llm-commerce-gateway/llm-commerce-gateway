@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Rate Limiter
+ * @betterdata/commerce-gateway - Rate Limiter
  * 
  * Redis-based rate limiting with support for multiple tiers.
  * 

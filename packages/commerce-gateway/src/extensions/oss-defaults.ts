@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - OSS Defaults
+ * @betterdata/commerce-gateway - OSS Defaults
  *
  * Single-tenant stub implementations for OSS deployments.
  * These provide the extension interfaces without any isolation or enforcement.

@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - Grok Adapter
+ * @betterdata/commerce-gateway - Grok Adapter
  * 
  * Adapter for xAI's Grok API with Function Calling.
  * Grok uses an OpenAI-compatible API format with some extensions.
  * 
  * @example
  * ```typescript
- * import { GrokAdapter } from '@betterdata/llm-gateway/grok';
+ * import { GrokAdapter } from '@betterdata/commerce-gateway/grok';
  * 
  * const adapter = new GrokAdapter({
  *   apiKey: process.env.GROK_API_KEY!,

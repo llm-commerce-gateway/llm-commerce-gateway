@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Google Gemini Adapter Exports
+ * @betterdata/commerce-gateway - Google Gemini Adapter Exports
  *
  * @license MIT
  */

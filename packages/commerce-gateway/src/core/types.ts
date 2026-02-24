@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Core Types
+ * @betterdata/commerce-gateway - Core Types
  * 
  * Universal types for the LLM Gateway that work across all LLM providers.
  * 

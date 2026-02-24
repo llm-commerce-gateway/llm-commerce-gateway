@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - API Key Strategy
+ * @betterdata/commerce-gateway - API Key Strategy
  * 
  * Simple and secure API key authentication.
  * 

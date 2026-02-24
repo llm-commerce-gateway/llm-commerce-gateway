@@ -6,7 +6,7 @@
  *
  * @example
  * ```typescript
- * import { BetterDataDiscoveryProvider } from '@betterdata/llm-gateway/federation/providers';
+ * import { BetterDataDiscoveryProvider } from '@betterdata/commerce-gateway/federation/providers';
  *
  * const discovery = new BetterDataDiscoveryProvider({
  *   apiKey: process.env.BETTERDATA_API_KEY!,

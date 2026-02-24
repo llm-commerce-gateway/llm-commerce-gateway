@@ -64,8 +64,8 @@ Cloud features require:
 The OSS gateway can integrate with Cloud services:
 
 ```typescript
-import { FederationHub } from '@betterdata/llm-gateway/federation';
-import { createBetterDataProviders } from '@betterdata/llm-gateway/federation/providers';
+import { FederationHub } from '@betterdata/commerce-gateway/federation';
+import { createBetterDataProviders } from '@betterdata/commerce-gateway/federation/providers';
 
 // Use Better Data Cloud providers
 const providers = createBetterDataProviders({

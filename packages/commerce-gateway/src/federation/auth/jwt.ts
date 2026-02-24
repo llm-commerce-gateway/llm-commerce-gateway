@@ -1,5 +1,5 @@
 /**
- * @betterdata/llm-gateway - Federation JWT Authentication
+ * @betterdata/commerce-gateway - Federation JWT Authentication
  *
  * JWT signing and verification utilities for federation trust.
  * Uses Ed25519 (EdDSA) for secure, compact signatures.
@@ -11,7 +11,7 @@
  *   FederationJWTVerifier,
  *   generateKeyPair,
  *   exportPublicKeyJWK,
- * } from '@betterdata/llm-gateway/federation';
+ * } from '@betterdata/commerce-gateway/federation';
  *
  * // Generate keys for a new federation hub
  * const { publicKey, privateKey } = await generateKeyPair();
@@ -593,7 +593,7 @@ export class FederationJWTVerifier {
 /**
  * Generate a new Ed25519 key pair for federation signing.
  *
- * ⚠️ PREFER: Use `generateKeyPairDev()` from `@betterdata/llm-gateway/federation/auth/dev`
+ * ⚠️ PREFER: Use `generateKeyPairDev()` from `@betterdata/commerce-gateway/federation/auth/dev`
  * for clearer intent. This function is kept for backwards compatibility.
  *
  * For production:

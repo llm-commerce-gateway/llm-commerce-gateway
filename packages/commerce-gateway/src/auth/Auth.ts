@@ -1,12 +1,12 @@
 /**
- * @betterdata/llm-gateway - Auth Module
+ * @betterdata/commerce-gateway - Auth Module
  * 
  * Unified authentication and authorization for the LLM Gateway.
  * Supports API keys, OAuth, JWT, and custom strategies.
  * 
  * @example
  * ```typescript
- * import { Auth } from '@betterdata/llm-gateway/auth';
+ * import { Auth } from '@betterdata/commerce-gateway/auth';
  * 
  * const auth = new Auth({
  *   strategies: {

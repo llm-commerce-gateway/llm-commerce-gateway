@@ -51,7 +51,7 @@ All configs now include:
 
 ### ❌ Cloud-Only (Excluded from main exports)
 - **Federation Providers** - Better Data Cloud integrations
-  - Accessible via subpath: `@betterdata/llm-gateway/federation/providers`
+  - Accessible via subpath: `@betterdata/commerce-gateway/federation/providers`
   - Requires Better Data API keys
   - Not exported from main package
 
