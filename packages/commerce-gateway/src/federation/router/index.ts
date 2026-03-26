@@ -3,7 +3,7 @@
  *
  * Provides intent parsing and merchant routing for the Federation Hub.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

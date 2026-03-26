@@ -4,7 +4,7 @@
  * Abstract base class for e-commerce platform connectors.
  * Provides common functionality and structure for all connectors.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

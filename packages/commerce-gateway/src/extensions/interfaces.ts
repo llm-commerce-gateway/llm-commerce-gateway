@@ -18,7 +18,7 @@
  * - RBAC / entitlements
  *
  * @see docs/contracts/llm-gateway-release-contract.md
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

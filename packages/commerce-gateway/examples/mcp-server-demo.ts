@@ -18,7 +18,7 @@
  *   }
  * }
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { MCPServer } from '../src/mcp/index.js';

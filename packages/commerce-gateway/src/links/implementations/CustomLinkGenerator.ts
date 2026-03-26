@@ -3,7 +3,7 @@
  * 
  * Flexible link generation for self-hosted or custom link shorteners.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

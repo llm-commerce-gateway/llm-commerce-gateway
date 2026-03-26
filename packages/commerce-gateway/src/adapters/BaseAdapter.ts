@@ -4,7 +4,7 @@
  * Shared logic for all LLM adapters.
  * Provides tool execution, session management, and response formatting.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

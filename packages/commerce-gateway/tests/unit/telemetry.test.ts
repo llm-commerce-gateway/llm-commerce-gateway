@@ -3,7 +3,7 @@
  *
  * Ensures telemetry payload is anonymous, aggregate, and schema-locked.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';

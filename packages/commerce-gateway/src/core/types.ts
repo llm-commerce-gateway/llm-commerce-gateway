@@ -3,7 +3,7 @@
  * 
  * Universal types for the LLM Gateway that work across all LLM providers.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { GatewayBackends, Address } from '../backends/interfaces';

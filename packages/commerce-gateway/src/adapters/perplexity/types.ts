@@ -3,7 +3,7 @@
  *
  * Type definitions for Perplexity API (OpenAI-compatible).
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { BaseAdapterConfig } from '../types';

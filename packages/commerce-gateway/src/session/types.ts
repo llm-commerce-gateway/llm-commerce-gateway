@@ -3,7 +3,7 @@
  * 
  * Type definitions for session management.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { CartItem } from '../backends/interfaces';

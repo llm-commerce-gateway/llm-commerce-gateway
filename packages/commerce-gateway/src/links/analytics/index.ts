@@ -1,7 +1,7 @@
 /**
  * @betterdata/commerce-gateway - Link Analytics
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 export {

@@ -19,7 +19,7 @@
  * ```
  * 
  * @see https://docs.x.ai/
- * @license MIT
+ * @license Apache-2.0
  */
 
 // Main exports

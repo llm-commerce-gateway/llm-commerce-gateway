@@ -4,7 +4,7 @@
  * Manages tool definitions that work across all LLM providers.
  * Tools are defined once and automatically converted to provider-specific formats.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { z } from 'zod';

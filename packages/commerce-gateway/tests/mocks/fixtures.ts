@@ -3,7 +3,7 @@
  * 
  * Reusable test data and factory functions.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

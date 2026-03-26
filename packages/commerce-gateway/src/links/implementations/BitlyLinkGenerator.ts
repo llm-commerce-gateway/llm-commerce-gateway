@@ -4,7 +4,7 @@
  * Link generation using Bitly.
  * 
  * @see https://dev.bitly.com/
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

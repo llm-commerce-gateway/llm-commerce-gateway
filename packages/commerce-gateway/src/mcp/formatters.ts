@@ -4,7 +4,7 @@
  * Formats data into rich markdown and structured content for Claude.
  * Provides consistent, beautiful output across all tools.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { 

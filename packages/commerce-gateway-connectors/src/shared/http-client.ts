@@ -3,7 +3,7 @@
  * 
  * Shared HTTP client utilities for REST API connectors.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 export interface HTTPClientConfig {

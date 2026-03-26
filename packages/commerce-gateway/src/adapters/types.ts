@@ -3,7 +3,7 @@
  * 
  * Unified types for all LLM adapters (OpenAI, Grok, etc.)
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { GatewayBackends, Cart } from '../backends/interfaces';

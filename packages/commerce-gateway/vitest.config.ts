@@ -3,7 +3,7 @@
  * 
  * Test configuration for the Universal LLM Gateway.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { defineConfig } from 'vitest/config';

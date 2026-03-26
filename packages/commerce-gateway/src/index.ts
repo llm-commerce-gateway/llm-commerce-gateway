@@ -24,7 +24,7 @@
  * await gateway.start(3000);
  * ```
  * 
- * @license MIT
+ * @license Apache-2.0
  * @see https://github.com/betterdataco/llm-commerce-gateway
  */
 

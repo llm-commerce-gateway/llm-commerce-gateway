@@ -3,7 +3,7 @@
  *
  * Minimal metric name catalog + emit stub for hosted observability.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { Logger } from './Logger';

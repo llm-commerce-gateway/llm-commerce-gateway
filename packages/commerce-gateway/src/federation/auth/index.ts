@@ -54,7 +54,7 @@
  * const payload = await verifier.verify(token, 'https://api.merchant.com');
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

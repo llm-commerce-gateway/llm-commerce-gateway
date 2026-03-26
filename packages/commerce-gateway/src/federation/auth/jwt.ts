@@ -30,7 +30,7 @@
  * const payload = await verifier.verify(token, 'https://api.vuori.com/llm-gateway');
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import * as jose from 'jose';

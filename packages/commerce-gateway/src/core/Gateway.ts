@@ -4,7 +4,7 @@
  * The core LLM Gateway that handles tool execution, session management,
  * and multi-provider support. Designed to work with any commerce backend.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { Hono } from 'hono';

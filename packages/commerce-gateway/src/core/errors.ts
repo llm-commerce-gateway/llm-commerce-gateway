@@ -4,7 +4,7 @@
  * Comprehensive error hierarchy with typed error codes,
  * HTTP status mapping, and structured error responses.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

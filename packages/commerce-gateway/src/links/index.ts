@@ -27,7 +27,7 @@
  * const metrics = await analytics.getMetrics(linkId);
  * ```
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // Base class

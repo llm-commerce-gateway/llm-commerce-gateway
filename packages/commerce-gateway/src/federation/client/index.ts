@@ -3,7 +3,7 @@
  *
  * HTTP client for calling remote merchant LLM Gateways.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

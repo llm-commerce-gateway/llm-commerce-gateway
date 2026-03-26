@@ -4,7 +4,7 @@
  * Test configuration for OSS-only tests (no Prisma/database dependencies).
  * Run with: pnpm vitest --config vitest.oss.config.ts
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { defineConfig } from 'vitest/config';

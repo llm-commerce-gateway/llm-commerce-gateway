@@ -4,7 +4,7 @@
  * Creates an MCP server for individual gateways with gateway-specific tools.
  * Each gateway should expose MCP tools for direct interaction.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { MCPServer } from './MCPServer';

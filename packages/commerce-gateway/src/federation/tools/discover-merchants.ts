@@ -16,7 +16,7 @@
  * // { domain: 'nike.com', name: 'Nike', categories: ['athletic', 'footwear'], ... }
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { z } from 'zod';

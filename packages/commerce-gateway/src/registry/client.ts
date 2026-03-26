@@ -4,7 +4,7 @@
  * Client for the Commerce Gateway Registry service
  * Handles brand, GTIN, and category resolution
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { isValidWellKnownSchema, type WellKnownCommerceGateway } from './well-known-schema';

@@ -20,7 +20,7 @@
  * const result = await shopTool.execute({ merchant: 'vuori', query: 'joggers' });
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { ToolRegistry } from '../../core/ToolRegistry';

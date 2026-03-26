@@ -3,7 +3,7 @@
  * 
  * Unit tests for the structured logging system.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';

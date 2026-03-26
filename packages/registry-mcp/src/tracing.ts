@@ -3,7 +3,7 @@
  *
  * Minimal tracer wrapper for observability verification.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { createCorrelationId, startTrace } from './telemetry.ts';

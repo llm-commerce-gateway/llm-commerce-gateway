@@ -47,5 +47,5 @@ The server also exposes additional registry tools registered internally via `ALL
 
 ## License
 
-MIT
+Apache-2.0
 

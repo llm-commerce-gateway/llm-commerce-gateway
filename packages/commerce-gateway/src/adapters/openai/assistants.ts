@@ -25,7 +25,7 @@
  * const run = await client.createRun(thread.id, assistant.id, 'Find blue running shoes');
  * ```
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { GatewayBackends } from '../../backends/interfaces';

@@ -4,7 +4,7 @@
  * Optional, anonymous, aggregate telemetry payload builder.
  * Telemetry is opt-in and disabled by default.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { LLMProvider, TelemetryConfig } from '../core/types';

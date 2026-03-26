@@ -3,7 +3,7 @@
  * 
  * Base class for link generator implementations.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { Product, Cart } from '../backends/interfaces';

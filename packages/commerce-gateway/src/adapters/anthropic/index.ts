@@ -1,7 +1,7 @@
 /**
  * @betterdata/commerce-gateway - Anthropic Adapter Exports
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 export { AnthropicAdapter, createAnthropicHandler } from './AnthropicAdapter';

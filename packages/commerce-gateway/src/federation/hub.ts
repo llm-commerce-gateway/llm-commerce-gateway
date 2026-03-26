@@ -30,7 +30,7 @@
  * const result = await hub.search('shop vuori for joggers under $100');
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { MerchantRegistration, FederatedResult, DiscoveredMerchant, FederatedStatus } from './types';

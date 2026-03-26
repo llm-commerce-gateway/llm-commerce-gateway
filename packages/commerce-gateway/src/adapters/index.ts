@@ -28,7 +28,7 @@
  * import { OpenAIAdapter, GrokAdapter, AnthropicAdapter, GeminiAdapter, BaseAdapter } from '@betterdata/commerce-gateway/adapters';
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 // Base adapter

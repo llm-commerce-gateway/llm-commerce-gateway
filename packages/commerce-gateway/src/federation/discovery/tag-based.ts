@@ -19,7 +19,7 @@
  * const merchants = await provider.discoverByIntent('yoga pants');
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { MerchantRegistry } from '../registry/interface';

@@ -3,7 +3,7 @@
  *
  * Server-side, env-driven flags (reversible without redeploy).
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 export interface FeatureFlags {

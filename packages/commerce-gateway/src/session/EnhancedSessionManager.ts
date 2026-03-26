@@ -3,7 +3,7 @@
  * 
  * Full-featured session management with transfer, GDPR, and analytics.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

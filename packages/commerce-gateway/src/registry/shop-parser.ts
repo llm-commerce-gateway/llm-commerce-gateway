@@ -3,7 +3,7 @@
  * 
  * Parses @shop queries to extract brand, product query, or GTIN
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

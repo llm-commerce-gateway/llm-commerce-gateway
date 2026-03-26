@@ -3,7 +3,7 @@
  *
  * Federation discovery and verification endpoints for merchant gateways.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 export {

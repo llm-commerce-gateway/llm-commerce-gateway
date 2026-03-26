@@ -2,7 +2,7 @@
   "name": "@betterdata/commerce-gateway",
   "version": "1.0.0",
   "description": "Universal LLM Gateway for Conversational Commerce - Build AI-powered shopping experiences with any LLM provider and any commerce backend",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "author": "Better Data <hello@betterdata.dev>",
   "homepage": "https://github.com/betterdataco/llm-commerce-gateway#readme",
   "repository": {

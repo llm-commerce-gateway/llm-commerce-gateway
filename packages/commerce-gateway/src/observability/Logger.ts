@@ -4,7 +4,7 @@
  * Production-ready logging with support for structured output,
  * multiple log levels, and pluggable backends (Winston, Pino, etc.)
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

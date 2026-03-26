@@ -75,7 +75,7 @@ We welcome contributions! Check out our [Contributing Guide](https://github.com/
 
 ### 📄 License
 
-MIT - Use it freely in your projects!
+Apache-2.0 for gateway runtime packages, MIT for `commerce-registry-protocol`.
 
 ---
 
@@ -93,7 +93,7 @@ Use the main content above (Subject through License) as the blog body. Add a sho
 
 🚀 Announcing @betterdata/commerce-gateway v1.0.0 - Universal LLM Gateway for Conversational Commerce!
 
-Connect your e-commerce platform to Claude, ChatGPT, and Grok with a single API. 5 packages, MIT licensed. Start OSS, upgrade to Cloud when you need more.
+Connect your e-commerce platform to Claude, ChatGPT, and Grok with a single API. Gateway runtime packages are Apache-2.0, and the protocol spec is MIT.
 
 🔗 npm: https://www.npmjs.com/package/@betterdata/commerce-gateway
 📚 Docs: https://github.com/betterdataco/llm-commerce-gateway
@@ -174,7 +174,7 @@ A universal abstraction layer that:
 **Tech:**
 - TypeScript, Hono, Redis
 - Full type safety
-- MIT licensed (5 packages: core, connectors, gateway-mcp, registry-mcp, protocol)
+- Apache-2.0 gateway runtime packages + MIT protocol spec
 
 **Links:**
 - npm: https://www.npmjs.com/package/@betterdata/commerce-gateway

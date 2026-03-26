@@ -3,7 +3,7 @@
  * 
  * Claim GTINs for a gateway
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import ora from 'ora';

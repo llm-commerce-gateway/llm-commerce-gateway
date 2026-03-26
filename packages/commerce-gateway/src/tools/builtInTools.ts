@@ -4,7 +4,7 @@
  * These tools work with any commerce backend that implements the
  * ProductBackend, CartBackend, and OrderBackend interfaces.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { z } from 'zod';

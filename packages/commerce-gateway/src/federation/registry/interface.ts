@@ -4,7 +4,7 @@
  * Defines the contract for merchant registry backends.
  * Implementations include in-memory, file-based, and HTTP (remote) registries.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { MerchantRegistration, MerchantTier } from '../types';

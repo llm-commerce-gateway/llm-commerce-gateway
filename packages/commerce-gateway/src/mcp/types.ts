@@ -5,7 +5,7 @@
  * These types follow the MCP specification for Claude.ai integration.
  * 
  * @see https://modelcontextprotocol.io/
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { GatewayBackends, Product, Cart, Order } from '../backends/interfaces';

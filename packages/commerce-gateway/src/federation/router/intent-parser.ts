@@ -35,7 +35,7 @@
  * // → { merchant: { domain: 'macys.com', confidence: 'high' }, query: 'dresses' }
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { MerchantRegistry } from '../registry/interface';

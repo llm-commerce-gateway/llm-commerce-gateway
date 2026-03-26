@@ -3,7 +3,7 @@
  * 
  * Pre-built connectors for popular e-commerce platforms.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // Base connector

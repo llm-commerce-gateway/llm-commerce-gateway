@@ -1,7 +1,7 @@
 /**
  * @betterdata/commerce-gateway - Google Gemini Adapter Exports
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 export { GeminiAdapter, createGeminiHandler } from './GeminiAdapter';

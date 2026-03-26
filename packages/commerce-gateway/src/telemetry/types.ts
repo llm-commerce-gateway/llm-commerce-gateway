@@ -3,7 +3,7 @@
  *
  * Canonical OSS telemetry payload types and schema.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { z } from 'zod';

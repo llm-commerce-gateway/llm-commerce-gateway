@@ -3,7 +3,7 @@
  * 
  * Register a gateway with the registry
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import ora from 'ora';

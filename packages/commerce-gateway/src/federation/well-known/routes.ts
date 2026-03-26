@@ -21,7 +21,7 @@
  * // Now available: GET /.well-known/llm-gateway.json
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { Hono } from 'hono';

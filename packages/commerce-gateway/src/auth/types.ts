@@ -3,7 +3,7 @@
  * 
  * Type definitions for authentication and authorization.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

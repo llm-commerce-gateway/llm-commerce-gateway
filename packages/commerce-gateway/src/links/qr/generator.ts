@@ -4,7 +4,7 @@
  * Simple QR code generation without external dependencies.
  * Uses a basic QR encoding algorithm suitable for short URLs.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

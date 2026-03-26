@@ -13,7 +13,7 @@
  * } from '@betterdata/commerce-gateway/capabilities';
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 export {

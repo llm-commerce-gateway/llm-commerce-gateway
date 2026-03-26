@@ -4,7 +4,7 @@
  * Implements the required gateway protocol endpoints as specified in
  * commerce-gateway-implementation-spec.md Section 6
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { Hono } from 'hono';

@@ -3,7 +3,7 @@
  * 
  * Unit tests for the error handling system.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { describe, it, expect } from 'vitest';

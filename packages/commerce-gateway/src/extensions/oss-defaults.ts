@@ -12,7 +12,7 @@
  * - No permission enforcement (all checks pass or return false for entitlements)
  *
  * @see docs/contracts/llm-gateway-release-contract.md
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

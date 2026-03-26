@@ -3,7 +3,7 @@
  *
  * Lightweight logger wrapper for observability verification.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { logStructured } from './telemetry.ts';

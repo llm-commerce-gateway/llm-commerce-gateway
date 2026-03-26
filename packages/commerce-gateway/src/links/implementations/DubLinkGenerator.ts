@@ -4,7 +4,7 @@
  * Link generation using Dub.co (recommended).
  * 
  * @see https://dub.co/docs
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

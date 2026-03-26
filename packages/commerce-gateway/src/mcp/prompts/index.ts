@@ -4,7 +4,7 @@
  * Pre-built prompt templates that help Claude understand
  * how to assist customers effectively.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

@@ -4,7 +4,7 @@
  * Type definitions and validation for the .well-known/commerce-gateway.json schema
  * See: commerce-gateway-implementation-spec.md Appendix A
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

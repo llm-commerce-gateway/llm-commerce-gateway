@@ -4,7 +4,7 @@
  * A simple in-memory implementation of the MerchantRegistry interface.
  * Ideal for development, testing, and single-instance deployments.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { MerchantRegistration, MerchantTier } from '../types';

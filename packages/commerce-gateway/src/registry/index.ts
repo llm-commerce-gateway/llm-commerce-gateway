@@ -3,7 +3,7 @@
  * 
  * Commerce Gateway Registry integration
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 export { RegistryClient, createRegistryClient } from './client';

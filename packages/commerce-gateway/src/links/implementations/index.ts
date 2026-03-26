@@ -1,7 +1,7 @@
 /**
  * @betterdata/commerce-gateway - Link Generator Implementations
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 export { DubLinkGenerator } from './DubLinkGenerator';

@@ -21,7 +21,7 @@
  * }
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type { DiscoveredMerchant, MerchantTier } from '../types';

@@ -10,7 +10,7 @@
  * OSS uses global keys; Cloud uses tenant-namespaced keys.
  *
  * @see docs/contracts/llm-gateway-release-contract.md
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

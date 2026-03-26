@@ -4,7 +4,7 @@
  * Minimal counters, histograms, and structured logs for OSS.
  * No external dependencies.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import crypto from 'node:crypto';

@@ -8,7 +8,7 @@
  * For distributed/cloud setups, implement the MerchantRegistry interface
  * with your own backend (database, API, etc.).
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

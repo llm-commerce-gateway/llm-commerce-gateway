@@ -21,7 +21,7 @@
  * server.start(); // Starts stdio transport for Claude Desktop
  * ```
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // Main export

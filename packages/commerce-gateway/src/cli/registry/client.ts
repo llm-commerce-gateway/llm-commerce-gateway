@@ -3,7 +3,7 @@
  * 
  * Client for registry API operations (register, verify, claim-gtins)
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

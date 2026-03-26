@@ -4,7 +4,7 @@
  * Enables cross-platform session continuity.
  * Start a conversation in Claude, continue in ChatGPT.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

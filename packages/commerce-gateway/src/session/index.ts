@@ -26,7 +26,7 @@
  * const newSession = await sessions.transferSession(token, 'openai');
  * ```
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // Re-export from existing SessionManager with enhancements

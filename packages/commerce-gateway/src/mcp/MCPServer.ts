@@ -5,7 +5,7 @@
  * Exposes commerce backends to Claude.ai through the MCP standard.
  * 
  * @see https://modelcontextprotocol.io/
- * @license MIT
+ * @license Apache-2.0
  */
 
 import * as readline from 'readline';

@@ -5,7 +5,7 @@
  * 
  * Main entry point for registry CLI commands
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { Command } from 'commander';

@@ -19,7 +19,7 @@
  * // Returns products from Vuori's catalog with attribution
  * ```
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { z } from 'zod';

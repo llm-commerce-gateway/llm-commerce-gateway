@@ -3,7 +3,7 @@
  * 
  * Export all mocks for easy importing in tests.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // Backend mocks

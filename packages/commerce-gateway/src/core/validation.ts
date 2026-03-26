@@ -4,7 +4,7 @@
  * Zod schemas for request validation with type-safe parsing
  * and detailed error messages.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { z } from 'zod';

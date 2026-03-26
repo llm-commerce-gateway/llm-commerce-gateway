@@ -3,7 +3,7 @@
  * 
  * Global test configuration and utilities.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { beforeEach, afterEach, vi } from 'vitest';

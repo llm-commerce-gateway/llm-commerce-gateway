@@ -1,7 +1,7 @@
 /**
  * @betterdata/commerce-gateway - Backend Exports
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 export * from './interfaces';

@@ -4,7 +4,7 @@
  * Implements all commerce tools for the MCP server.
  * Each tool handler calls backend interfaces and formats responses for Claude.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { z } from 'zod';

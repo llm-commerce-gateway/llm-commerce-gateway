@@ -1,7 +1,7 @@
 /**
  * @betterdata/commerce-gateway - Perplexity Adapter Exports
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 export { PerplexityAdapter, createPerplexityHandler } from './PerplexityAdapter';

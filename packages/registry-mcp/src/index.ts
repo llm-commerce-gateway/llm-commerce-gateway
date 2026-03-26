@@ -5,7 +5,7 @@
  * Exposes @shop resolution and gateway interaction tools.
  * 
  * @see https://modelcontextprotocol.io/
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';

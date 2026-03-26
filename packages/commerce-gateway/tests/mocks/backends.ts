@@ -3,7 +3,7 @@
  * 
  * Mock implementations of backend interfaces for testing.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

@@ -4,7 +4,7 @@
  * A file-backed implementation of the MerchantRegistry interface.
  * Stores merchants in a JSON file with atomic writes for durability.
  *
- * @license MIT
+ * @license Apache-2.0
  */
 
 import { readFile, writeFile, rename, mkdir } from 'fs/promises';

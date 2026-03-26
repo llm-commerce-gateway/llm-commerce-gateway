@@ -4,7 +4,7 @@
  * These interfaces define the contract that ANY commerce platform must implement
  * to work with the LLM Gateway. They are intentionally minimal and generic.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 // ============================================================================

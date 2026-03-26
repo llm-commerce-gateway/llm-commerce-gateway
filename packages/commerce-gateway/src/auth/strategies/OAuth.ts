@@ -3,7 +3,7 @@
  * 
  * OAuth 2.0 authentication with support for Google, GitHub, and custom providers.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 import type {

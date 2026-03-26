@@ -3,7 +3,7 @@
  * 
  * Authentication strategy implementations.
  * 
- * @license MIT
+ * @license Apache-2.0
  */
 
 export { ApiKeyStrategy, createApiKeyStrategy, generateApiKey, isValidApiKeyFormat } from './ApiKey';
