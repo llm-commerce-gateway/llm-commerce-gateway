@@ -46,6 +46,18 @@ const openai = new OpenAIAdapter({
 });
 ```
 
+### Grok (xAI)
+
+```ts
+import { GrokAdapter } from '@betterdata/commerce-gateway/grok';
+
+const grok = new GrokAdapter({
+  apiKey: process.env.GROK_API_KEY!,
+  backends: connector.getBackends(),
+  tools: ['search_products', 'get_product_details', 'check_inventory'],
+});
+```
+
 ### Anthropic (MCP)
 
 ```ts
