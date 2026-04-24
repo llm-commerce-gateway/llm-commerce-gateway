@@ -1,0 +1,41 @@
+{
+  "name": "@betterdata/demo-gateway",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Reference Commerce Gateway implementation over a swappable data source. OSS example for llm-commerce-gateway.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway.git",
+    "directory": "examples/demo-gateway"
+  },
+  "homepage": "https://github.com/llm-commerce-gateway/llm-commerce-gateway/tree/main/examples/demo-gateway",
+  "bugs": {
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway/issues"
+  },
+  "keywords": [
+    "commerce-gateway",
+    "llm",
+    "example",
+    "nextjs",
+    "oss"
+  ],
+  "scripts": {
+    "dev": "next dev --port 3003",
+    "build": "next build",
+    "start": "next start --port 3003",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "15.5.9",
+    "react": "19.2.1",
+    "react-dom": "19.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.8.2"
+  }
+}

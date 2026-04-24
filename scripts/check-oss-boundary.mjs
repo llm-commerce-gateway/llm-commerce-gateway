@@ -106,10 +106,10 @@ function scanPackage(pkgPath) {
   const errors = [];
 
   // Packages (under packages/*) forbid cross-`apps/` imports but may have
-  // type-only peer deps on Prisma/Clerk etc. Apps forbid proprietary and
-  // hosted-only deps absolutely — they ship to OSS consumers who should
-  // never need a database or auth provider to run them.
-  const isApp = pkgPath.startsWith('apps/');
+  // type-only peer deps on Prisma/Clerk etc. Apps and examples forbid
+  // proprietary and hosted-only deps absolutely — they ship to OSS consumers
+  // who should never need a database or auth provider to run them.
+  const isApp = pkgPath.startsWith('apps/') || pkgPath.startsWith('examples/');
   const forbiddenForThisTarget = isApp
     ? [...BASE_FORBIDDEN_PREFIXES, ...APP_FORBIDDEN_PREFIXES]
     : [...BASE_FORBIDDEN_PREFIXES, ...PACKAGE_FORBIDDEN_PREFIXES];

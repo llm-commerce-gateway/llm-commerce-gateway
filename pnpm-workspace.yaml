@@ -1,4 +1,6 @@
 packages:
   - "packages/*"
   - "apps/*"
+  - "examples/commerce-chat-ui"
+  - "examples/demo-gateway"
   - "commerce-registry-protocol"
