@@ -12,12 +12,34 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const MONOREPO_ROOT = resolve(__dirname, '..');
 
-const FORBIDDEN_PREFIXES = [
-  'apps/',
-  'apps\\',
+/**
+ * Always-forbidden imports (regardless of whether target is a library or app).
+ * Anything that imports internal proprietary surfaces.
+ */
+const BASE_FORBIDDEN_PREFIXES = [
   'betterdata-llm-gateway-adapters',
   '@betterdata/hosted-gateway',
   '@betterdata/hosted-gateway-mcp',
+];
+
+/**
+ * Additional forbidden prefixes for library packages under packages/*.
+ * Packages must not reach back into app code.
+ */
+const PACKAGE_FORBIDDEN_PREFIXES = ['apps/', 'apps\\'];
+
+/**
+ * Additional forbidden prefixes for OSS apps (gateway-console).
+ * These are proprietary or hosted-only dependencies that must never appear
+ * in an app shipped as part of the OSS distribution. Library packages may
+ * legitimately declare some of these as type-only peer deps (e.g.
+ * @prisma/client typing), so they are only enforced for apps.
+ */
+const APP_FORBIDDEN_PREFIXES = [
+  '@repo/',
+  '@prisma/',
+  '@clerk/',
+  'next-auth',
 ];
 
 const DEFAULT_PACKAGES = [
@@ -25,6 +47,8 @@ const DEFAULT_PACKAGES = [
   'packages/registry-mcp',
   'packages/commerce-gateway-mcp',
 ];
+
+const SOURCE_DIR_CANDIDATES = ['src', 'app', 'lib', 'tests'];
 
 const SOURCE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.mjs']);
 
@@ -79,19 +103,47 @@ function scanPackage(pkgPath) {
   // Use process.cwd() as package root when pkgPath is ".".
   const absPath =
     pkgPath === '.' ? resolve(process.cwd()) : resolve(MONOREPO_ROOT, pkgPath);
-  const srcDir = join(absPath, 'src');
   const errors = [];
 
-  const files = collectSourceFiles(srcDir);
-  for (const file of files) {
-    const content = readFileSync(file, 'utf-8');
-    const imports = extractImports(content);
-    for (const specifier of imports) {
-      for (const prefix of FORBIDDEN_PREFIXES) {
-        if (specifier.startsWith(prefix)) {
-          errors.push(
-            `Forbidden import "${specifier}" in ${relative(MONOREPO_ROOT, file)}`
-          );
+  // Packages (under packages/*) forbid cross-`apps/` imports but may have
+  // type-only peer deps on Prisma/Clerk etc. Apps forbid proprietary and
+  // hosted-only deps absolutely — they ship to OSS consumers who should
+  // never need a database or auth provider to run them.
+  const isApp = pkgPath.startsWith('apps/');
+  const forbiddenForThisTarget = isApp
+    ? [...BASE_FORBIDDEN_PREFIXES, ...APP_FORBIDDEN_PREFIXES]
+    : [...BASE_FORBIDDEN_PREFIXES, ...PACKAGE_FORBIDDEN_PREFIXES];
+
+  // Scan any source-like directory that exists. This covers both library
+  // packages (src/) and Next.js apps (app/, lib/).
+  const dirsToScan = SOURCE_DIR_CANDIDATES
+    .map((dir) => join(absPath, dir))
+    .filter((dir) => {
+      try {
+        return statSync(dir).isDirectory();
+      } catch {
+        return false;
+      }
+    });
+
+  if (dirsToScan.length === 0) {
+    return [
+      `No source directory found under ${relative(MONOREPO_ROOT, absPath)} (looked for: ${SOURCE_DIR_CANDIDATES.join(', ')})`,
+    ];
+  }
+
+  for (const dir of dirsToScan) {
+    const files = collectSourceFiles(dir);
+    for (const file of files) {
+      const content = readFileSync(file, 'utf-8');
+      const imports = extractImports(content);
+      for (const specifier of imports) {
+        for (const prefix of forbiddenForThisTarget) {
+          if (specifier.startsWith(prefix)) {
+            errors.push(
+              `Forbidden import "${specifier}" in ${relative(MONOREPO_ROOT, file)}`
+            );
+          }
         }
       }
     }

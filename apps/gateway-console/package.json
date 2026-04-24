@@ -1,0 +1,47 @@
+{
+  "name": "@betterdata/gateway-console",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Self-hosted, single-tenant operator UI for the open-source Commerce Gateway.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway.git",
+    "directory": "apps/gateway-console"
+  },
+  "homepage": "https://github.com/llm-commerce-gateway/llm-commerce-gateway/tree/main/apps/gateway-console",
+  "bugs": {
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway/issues"
+  },
+  "keywords": [
+    "commerce-gateway",
+    "llm",
+    "mcp",
+    "self-hosted",
+    "console",
+    "operator-ui"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3012",
+    "build": "next build",
+    "start": "next start -p 3012",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@betterdata/commerce-gateway": "workspace:*",
+    "@betterdata/commerce-gateway-mcp": "workspace:*",
+    "@betterdata/registry-mcp": "workspace:*",
+    "next": "15.5.9",
+    "react": "19.2.1",
+    "react-dom": "19.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.8.2"
+  }
+}
