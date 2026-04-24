@@ -1,0 +1,47 @@
+{
+  "name": "@betterdata/commerce-chat-ui",
+  "version": "0.1.0",
+  "private": false,
+  "description": "LLM chat UI that queries a Commerce Gateway via tool calls. OSS example for llm-commerce-gateway.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway.git",
+    "directory": "examples/commerce-chat-ui"
+  },
+  "homepage": "https://github.com/llm-commerce-gateway/llm-commerce-gateway/tree/main/examples/commerce-chat-ui",
+  "bugs": {
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway/issues"
+  },
+  "keywords": [
+    "commerce-gateway",
+    "llm",
+    "chat",
+    "example",
+    "nextjs",
+    "oss"
+  ],
+  "scripts": {
+    "dev": "next dev --port 3002",
+    "build": "next build",
+    "start": "next start --port 3002",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "next": "15.5.9",
+    "openai": "^4.104.0",
+    "react": "19.2.1",
+    "react-dom": "19.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2"
+  }
+}
