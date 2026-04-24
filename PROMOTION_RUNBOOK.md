@@ -26,6 +26,25 @@ as part of this repository (not published to npm):
   in `bd-forge-main`. See the "Gateway Console promotion" section
   below for boundary rules.
 
+## OSS example surface
+
+The following runnable examples live under `examples/` and are shipped
+with the repo (not published to npm). They exist to teach the pattern
+`LLM → Commerce Gateway → Data source` end to end.
+
+- `@betterdata/commerce-chat-ui` — LLM chat UI at `examples/commerce-chat-ui/`.
+  Provider picked by `LLM_PROVIDER` env var, no in-app toggles.
+- `@betterdata/demo-gateway` — reference Commerce Gateway at
+  `examples/demo-gateway/`. Works out of the box over a static JSON catalog
+  (`DATA_SOURCE=demo`); swap in a custom backend with `DATA_SOURCE=custom`.
+- `examples/demo-data/luxe-bond/` — bundled static catalog.
+- `examples/recipes/*/` — per-recipe README + `.env.example` that configure
+  the two apps for different use cases.
+
+See the "Examples promotion" section below for boundary rules. These
+examples were promoted out of `bd-forge-main/apps/{commerce-demo,demo-gateway}`
+in 2026-04 and now live canonically in this repository.
+
 ## Step 1: Develop in internal repo
 
 1. Implement feature/fix in `bd-forge-main`.
@@ -153,3 +172,99 @@ land in this app:
 
 If a feature request for Gateway Console would require any of the
 above, the answer is "build it in SCM" — not here.
+
+---
+
+## Examples promotion
+
+The runnable examples in `examples/` implement a single pattern:
+**LLM → Commerce Gateway → Data source**. They are deliberately narrow
+and should stay that way. Architecture details live in
+`docs/architecture/examples.md`.
+
+### Invariants
+
+Any change under `examples/` must preserve all of the following:
+
+- **LLM is always present.** There is no non-LLM code path. If text goes
+  in, an LLM sees it.
+- **LLM provider is env-driven.** Selection happens in
+  `LLM_PROVIDER={anthropic|openai|xai}`. There is no in-app toggle.
+  Add a new provider by implementing `LlmProvider`, never by adding a
+  button.
+- **No route fragmentation.** `commerce-chat-ui` exposes exactly one
+  API route: `POST /api/chat`. Alternate transports (staging-only, direct,
+  remote MCP) belong in their own future recipe, not inline in this app.
+- **No workflow toggles.** No governed / standard / custom switcher in
+  the UI. Governance belongs in a separate loop-engine OSS surface.
+- **Data source is the primary variable.** `DATA_SOURCE={demo|custom}`
+  in `demo-gateway` is the main knob; recipes differ on this value.
+- **Gateway contract is constant.** Every recipe — and anything a third
+  party plugs in — speaks `POST /api/gateway/query` with the shape
+  documented in `packages/commerce-gateway`.
+
+### Boundary rules
+
+Examples inherit every constraint imposed on apps. They must remain:
+
+- **Free of `@repo/*`, `@prisma/*`, `@clerk/*`, `next-auth` imports.**
+  Enforced by `scripts/check-oss-boundary.mjs` (which treats
+  `examples/*` with the same strict rules as `apps/*`).
+- **Free of hosted-gateway / proprietary backend imports.** No reaching
+  back into `bd-forge-main` shapes.
+- **Runnable with no external services.** `DATA_SOURCE=demo` must not
+  need a database, Redis, queue, or cloud account.
+- **Single-process, single-user.** No auth, no tenant IDs, no
+  multi-user assumptions.
+
+### OSS compliance requirements
+
+| Requirement | Enforced by |
+|---|---|
+| `license: "Apache-2.0"` in each example's `package.json` | Code review + boundary check |
+| No forbidden imports under `examples/**` | `scripts/check-oss-boundary.mjs --package examples/commerce-chat-ui --package examples/demo-gateway` |
+| `.env.example` documents every required env var | Code review |
+| Each recipe has a `README.md` with goal, data source, run steps, expected behavior | Code review |
+| Typecheck + build passes for both apps | `oss-split-verify` workflow |
+| `examples/demo-data/luxe-bond/products.json` stays in sync with `demo-gateway/lib/static-catalog.ts` fallback | Code review when editing either |
+
+### Verification steps
+
+Run from repository root:
+
+```bash
+pnpm install --frozen-lockfile
+node scripts/check-oss-boundary.mjs \
+  --package examples/commerce-chat-ui \
+  --package examples/demo-gateway
+pnpm --filter @betterdata/commerce-chat-ui typecheck
+pnpm --filter @betterdata/commerce-chat-ui build
+pnpm --filter @betterdata/demo-gateway typecheck
+pnpm --filter @betterdata/demo-gateway build
+```
+
+All six commands must pass before merging example changes to `main`.
+CI runs the same steps via `oss-split-verify`.
+
+### What does NOT belong in `examples/`
+
+- Control-plane UIs, dashboards, toggle farms.
+- Multi-tenant, auth, billing, or org concepts.
+- Workflow governance (approvals, evidence rails) — that belongs in a
+  future loop-engine OSS surface.
+- Backend-specific code paths (Prisma, PlanetScale, Shopify SDK, etc.).
+  A recipe that needs one of those should implement a `DataSource`
+  under `examples/demo-gateway/lib/data-source/`, not fork the apps.
+- Anything named "demo control panel". If you find yourself building
+  one, stop and write a recipe instead.
+
+### Adding a new recipe
+
+1. Create `examples/recipes/<name>/README.md` explaining goal, data
+   source, env vars, run steps, and expected behavior.
+2. Create `examples/recipes/<name>/.env.example` split between
+   `commerce-chat-ui` and `demo-gateway` values.
+3. If a new data source is needed, implement it under
+   `examples/demo-gateway/lib/data-source/<name>.ts` and register it in
+   `lib/data-source/index.ts`. Do not fork the chat UI.
+4. Link the recipe from `examples/README.md`.

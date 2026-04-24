@@ -62,6 +62,9 @@ jobs:
       - name: Gateway Console OSS boundary
         run: node scripts/check-oss-boundary.mjs --package apps/gateway-console
 
+      - name: Examples OSS boundary (commerce-chat-ui, demo-gateway)
+        run: node scripts/check-oss-boundary.mjs --package examples/commerce-chat-ui --package examples/demo-gateway
+
       - name: Contract test suite
         run: pnpm --filter @betterdata/commerce-gateway exec vitest run tests/contract/v0.1.test.ts tests/unit/telemetry.test.ts
 
@@ -103,6 +106,26 @@ jobs:
 
       - name: Test gateway-console
         run: pnpm --filter @betterdata/gateway-console test
+
+      - name: Typecheck commerce-chat-ui example
+        run: pnpm --filter @betterdata/commerce-chat-ui typecheck
+
+      - name: Build commerce-chat-ui example
+        run: pnpm --filter @betterdata/commerce-chat-ui build
+        env:
+          LLM_PROVIDER: anthropic
+          ANTHROPIC_API_KEY: sk-ant-ci-placeholder
+          GATEWAY_BASE_URL: http://localhost:3003
+          GATEWAY_API_TOKEN: ci-token
+
+      - name: Typecheck demo-gateway example
+        run: pnpm --filter @betterdata/demo-gateway typecheck
+
+      - name: Build demo-gateway example
+        run: pnpm --filter @betterdata/demo-gateway build
+        env:
+          DEMO_GATEWAY_TOKEN: ci-token
+          DATA_SOURCE: demo
 
   smoke:
     name: OSS smoke tests
