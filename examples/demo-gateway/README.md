@@ -1,5 +1,7 @@
 # demo-gateway
 
+**Publishing:** `package.json` is `private: true` — this example is **source-only** in the public repo; npm publish needs a **deliberate operator decision** and runbook update (CG-G Option 2).
+
 A reference [Commerce Gateway](../../packages/commerce-gateway) implementation.
 Serves a product catalog over a single authenticated endpoint:
 

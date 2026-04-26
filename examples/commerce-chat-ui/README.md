@@ -1,5 +1,7 @@
 # commerce-chat-ui
 
+**Publishing:** `package.json` is `private: true` — this example is **source-only** in the public repo; npm publish needs a **deliberate operator decision** and runbook update (CG-G Option 2).
+
 An LLM chat UI that queries a Commerce Gateway through tool calls.
 
 ```

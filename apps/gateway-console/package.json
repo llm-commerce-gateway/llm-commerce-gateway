@@ -1,7 +1,7 @@
 {
   "name": "@betterdata/gateway-console",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "description": "Self-hosted, single-tenant operator UI for the open-source Commerce Gateway.",
   "license": "Apache-2.0",
   "repository": {

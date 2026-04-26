@@ -1,7 +1,7 @@
 {
   "name": "@betterdata/demo-gateway",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "description": "Reference Commerce Gateway implementation over a swappable data source. OSS example for llm-commerce-gateway.",
   "license": "Apache-2.0",
   "type": "module",

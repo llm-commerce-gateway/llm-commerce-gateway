@@ -6,6 +6,8 @@ Gateway Console is a local-first, login-free Next.js app that lets operators con
 
 Part of the [Commerce Gateway](https://github.com/llm-commerce-gateway/llm-commerce-gateway) open-source distribution. Apache-2.0.
 
+**Publishing:** `package.json` is `private: true` — this app is **source-only** in the public repo. Publishing to npm needs a **deliberate operator decision** plus runbook and docs update (defensive default per CG-G Option 2; optional to flip `private` later for a real publish).
+
 ---
 
 ## What this is (and isn't)
