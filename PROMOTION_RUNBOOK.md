@@ -4,8 +4,8 @@ This runbook defines the promotion path from internal development in `bd-forge-m
 
 ## Repositories
 
-- Internal source repo: `/Users/toddp/Projects/bd-forge-main`
-- OSS release repo: `/Users/toddp/Projects/llm-commerce-gateway`
+- Internal source repo: `/Users/toddp/Projects/betterdata-platform/bd-forge-main`
+- OSS release repo: `/Users/toddp/Projects/betterdata-oss/commerce-gateway`
 
 ## OSS package surface
 
