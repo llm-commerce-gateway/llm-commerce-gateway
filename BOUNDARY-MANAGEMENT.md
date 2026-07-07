@@ -178,12 +178,12 @@ Implementations built against `RegistryStore`, `AuthAdapter`, and `RegistryAuthP
 
 ## The Registry Boundary
 
-The Commerce Gateway registry is a separate concern from the Loop Engine registry.
+The Commerce Gateway registry is a separate concern from the Boss Loops registry.
 
 | Registry | URL | Stores | Protocol |
 |---|---|---|---|
 | Commerce Gateway Registry | `registry.betterdata.co` | Merchant/gateway routing records | `commerce-registry-protocol` (MIT) |
-| Loop Engine Registry | `registry.loopengine.dev` | Loop definitions | Loop Registry API (MIT) |
+| Boss Loops Registry | `registry.loopengine.dev` | Loop definitions | Loop Registry API (MIT) |
 
 The `commerce-registry-protocol` specification is MIT. The hosted implementation at `registry.betterdata.co` is proprietary infrastructure. Anyone can implement a compatible registry using the open protocol spec.
 
