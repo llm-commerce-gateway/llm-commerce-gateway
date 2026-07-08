@@ -6,7 +6,7 @@
  * @license Apache-2.0
  */
 
-import { createCorrelationId, startTrace } from './telemetry.ts';
+import { createCorrelationId, startTrace } from './telemetry.js';
 
 export const tracer = {
   startSpan(name: string, correlationId?: string) {

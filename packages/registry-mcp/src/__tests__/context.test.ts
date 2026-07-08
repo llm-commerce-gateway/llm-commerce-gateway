@@ -1,4 +1,4 @@
-import { validateTenantContext } from '../context';
+import { validateTenantContext } from '../context.js';
 
 describe('MCP Tenant Context', () => {
   it('should accept valid organizationId', () => {

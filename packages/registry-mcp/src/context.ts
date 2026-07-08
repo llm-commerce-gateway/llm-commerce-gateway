@@ -3,7 +3,7 @@
  * Uses RegistryAuthContext for tool execution.
  */
 
-import type { RegistryAuthContext, RegistryPermissions } from './auth/interfaces.js';
+import type { RegistryAuthContext } from './auth/interfaces.js';
 
 export interface RegistryMCPContext {
   organizationId: string;

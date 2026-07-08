@@ -6,7 +6,7 @@
  * @license Apache-2.0
  */
 
-import { logStructured } from './telemetry.ts';
+import { logStructured } from './telemetry.js';
 
 export const logger = {
   info(message: string, fields: Record<string, unknown> = {}) {
