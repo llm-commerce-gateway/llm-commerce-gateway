@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway
+ * @commercegateway/commerce-gateway
  * 
  * Universal LLM Gateway for Conversational Commerce
  * 
@@ -7,7 +7,7 @@
  * 
  * @example
  * ```typescript
- * import { LLMGateway } from '@betterdata/commerce-gateway';
+ * import { LLMGateway } from '@commercegateway/commerce-gateway';
  * import { MyShopifyBackend } from './my-backend';
  * 
  * const gateway = new LLMGateway({
@@ -465,7 +465,7 @@ export {
 } from './federation/integration.js';
 
 // For full federation module access, use:
-// import { ... } from '@betterdata/commerce-gateway/federation';
+// import { ... } from '@commercegateway/commerce-gateway/federation';
 
 // ============================================================================
 // Capability Providers (NEW - Merchant Capability Interfaces)

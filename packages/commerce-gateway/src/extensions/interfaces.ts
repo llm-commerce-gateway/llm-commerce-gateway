@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Extension Interfaces
+ * @commercegateway/commerce-gateway - Extension Interfaces
  *
  * These interfaces define the extension points for multi-tenancy, key derivation,
  * and entitlements checking. OSS deployments use single-tenant stubs.

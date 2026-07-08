@@ -191,7 +191,7 @@ Gateway Console ships in the Commerce Gateway OSS distribution and has no hidden
 - Multi-tenant backend services
 - Any Better Data account or API key
 
-The app's only runtime dependencies are `next`, `react`, `react-dom`, and the sibling OSS packages `@betterdata/commerce-gateway`, `@betterdata/commerce-gateway-mcp`, and `@betterdata/registry-mcp`.
+The app's only runtime dependencies are `next`, `react`, `react-dom`, and the sibling OSS packages `@commercegateway/commerce-gateway`, `@commercegateway/commerce-gateway-mcp`, and `@commercegateway/registry-mcp`.
 
 ---
 

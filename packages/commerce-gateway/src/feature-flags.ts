@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Feature Flags
+ * @commercegateway/commerce-gateway - Feature Flags
  *
  * Runtime feature flags for gating experimental and Cloud-only capabilities.
  *
@@ -13,7 +13,7 @@
  * ## Usage
  *
  * ```typescript
- * import { featureFlags, isFeatureEnabled } from '@betterdata/commerce-gateway';
+ * import { featureFlags, isFeatureEnabled } from '@commercegateway/commerce-gateway';
  *
  * if (isFeatureEnabled('ENABLE_LOT_EXPIRY')) {
  *   // Include lot/expiry fields in inventory response

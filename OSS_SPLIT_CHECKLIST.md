@@ -6,10 +6,10 @@ This checklist defines the release gate for a clean OSS split. The goal is that 
 
 The OSS package surface is:
 
-- `@betterdata/commerce-gateway`
-- `@betterdata/commerce-gateway-mcp`
-- `@betterdata/registry-mcp`
-- `@betterdata/commerce-gateway-connectors`
+- `@commercegateway/commerce-gateway`
+- `@commercegateway/commerce-gateway-mcp`
+- `@commercegateway/registry-mcp`
+- `@commercegateway/commerce-gateway-connectors`
 
 Any required runtime behavior for these packages must be fully contained in this repository.
 
@@ -32,17 +32,17 @@ Run from repository root:
 pnpm install --frozen-lockfile
 pnpm build
 
-pnpm --filter @betterdata/commerce-gateway check:contract
-pnpm --filter @betterdata/commerce-gateway-mcp check:oss-boundary
-pnpm --filter @betterdata/registry-mcp check:oss-boundary
+pnpm --filter @commercegateway/commerce-gateway check:contract
+pnpm --filter @commercegateway/commerce-gateway-mcp check:oss-boundary
+pnpm --filter @commercegateway/registry-mcp check:oss-boundary
 
-pnpm --filter @betterdata/commerce-gateway typecheck
-pnpm --filter @betterdata/commerce-gateway-mcp typecheck
-pnpm --filter @betterdata/registry-mcp typecheck
-pnpm --filter @betterdata/commerce-gateway-connectors typecheck
+pnpm --filter @commercegateway/commerce-gateway typecheck
+pnpm --filter @commercegateway/commerce-gateway-mcp typecheck
+pnpm --filter @commercegateway/registry-mcp typecheck
+pnpm --filter @commercegateway/commerce-gateway-connectors typecheck
 
-pnpm --filter @betterdata/commerce-gateway exec vitest run tests/contract/v0.1.test.ts tests/unit/telemetry.test.ts
-pnpm --filter @betterdata/commerce-gateway exec vitest run tests/unit/adapters/grok-adapter.test.ts
+pnpm --filter @commercegateway/commerce-gateway exec vitest run tests/contract/v0.1.test.ts tests/unit/telemetry.test.ts
+pnpm --filter @commercegateway/commerce-gateway exec vitest run tests/unit/adapters/grok-adapter.test.ts
 ```
 
 ## CI Enforcement

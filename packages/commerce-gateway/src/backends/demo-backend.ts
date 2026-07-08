@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway - Demo Backend
+ * @commercegateway/commerce-gateway - Demo Backend
  * 
  * A simple in-memory backend implementation for testing and examples.
  * This backend uses mock data and doesn't require any external dependencies.
  * 
  * @example
  * ```typescript
- * import { DemoBackend } from '@betterdata/commerce-gateway/backends/demo';
+ * import { DemoBackend } from '@commercegateway/commerce-gateway/backends/demo';
  * 
  * const gateway = new LLMGateway({
  *   backends: DemoBackend.create(),

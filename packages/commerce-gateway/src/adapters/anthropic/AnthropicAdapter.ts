@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway - Anthropic Claude Adapter
+ * @commercegateway/commerce-gateway - Anthropic Claude Adapter
  *
  * Adapter for Anthropic's Messages API with tool use support.
  * Provides integration with Claude 3.5 Sonnet, Claude 3 Opus, and other models.
  *
  * @example
  * ```typescript
- * import { AnthropicAdapter } from '@betterdata/commerce-gateway/adapters';
+ * import { AnthropicAdapter } from '@commercegateway/commerce-gateway/adapters';
  *
  * const adapter = new AnthropicAdapter({
  *   apiKey: process.env.ANTHROPIC_API_KEY!,

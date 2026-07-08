@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway/links
+ * @commercegateway/commerce-gateway/links
  * 
  * Link generation and analytics module.
  * 
  * @example
  * ```typescript
  * // Dub.co (recommended)
- * import { DubLinkGenerator } from '@betterdata/commerce-gateway/links';
+ * import { DubLinkGenerator } from '@commercegateway/commerce-gateway/links';
  * 
  * const links = new DubLinkGenerator({
  *   apiKey: process.env.DUB_API_KEY!,
@@ -17,7 +17,7 @@
  * const link = await links.createProductLink(product, context);
  * 
  * // Analytics
- * import { LinkAnalytics, createLinkAnalytics } from '@betterdata/commerce-gateway/links';
+ * import { LinkAnalytics, createLinkAnalytics } from '@commercegateway/commerce-gateway/links';
  * 
  * const analytics = createLinkAnalytics({
  *   redis: { url: process.env.REDIS_URL },

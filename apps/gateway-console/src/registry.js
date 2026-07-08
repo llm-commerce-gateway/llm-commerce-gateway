@@ -12,7 +12,7 @@ const REQUEST_TIMEOUT_MS = 5000;
 
 async function checkGatewayConnectivityWithFallback(registryUrl) {
   try {
-    const module = await import("@betterdata/commerce-gateway/registry");
+    const module = await import("@commercegateway/commerce-gateway/registry");
     return module.checkGatewayConnectivity(registryUrl);
   } catch {
     const controller = new AbortController();

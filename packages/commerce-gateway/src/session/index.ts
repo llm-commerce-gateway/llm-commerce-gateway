@@ -1,11 +1,11 @@
 /**
- * @betterdata/commerce-gateway/session
+ * @commercegateway/commerce-gateway/session
  * 
  * Production-grade session management with Redis and optional Postgres.
  * 
  * @example
  * ```typescript
- * import { SessionManager } from '@betterdata/commerce-gateway/session';
+ * import { SessionManager } from '@commercegateway/commerce-gateway/session';
  * 
  * const sessions = new SessionManager({
  *   redis: { url: process.env.REDIS_URL },

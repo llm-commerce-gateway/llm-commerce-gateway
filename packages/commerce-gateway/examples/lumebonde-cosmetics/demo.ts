@@ -310,8 +310,8 @@ function runFullDemo(catalog: InMemoryCatalog): void {
   To use this catalog with LLM Gateway:
 
   \`\`\`typescript
-  import { LLMGateway } from '@betterdata/commerce-gateway';
-  import { createInMemoryCatalog } from '@betterdata/commerce-gateway/catalog';
+  import { LLMGateway } from '@commercegateway/commerce-gateway';
+  import { createInMemoryCatalog } from '@commercegateway/commerce-gateway/catalog';
   import catalog from './data/catalog.json';
 
   const productCatalog = createInMemoryCatalog(catalog);

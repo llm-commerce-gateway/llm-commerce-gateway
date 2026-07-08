@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway-connectors - HTTP Client Utilities
+ * @commercegateway/commerce-gateway-connectors - HTTP Client Utilities
  * 
  * Shared HTTP client utilities for REST API connectors.
  * 

@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Federation Auth Development Utilities
+ * @commercegateway/commerce-gateway - Federation Auth Development Utilities
  *
  * ⚠️ DEVELOPMENT ONLY - DO NOT USE IN PRODUCTION ⚠️
  *
@@ -23,7 +23,7 @@
  * // ✅ CORRECT: One-time key generation during setup
  * // Run this script once, then store keys securely
  *
- * import { generateKeyPairDev, exportKeysDev } from '@betterdata/commerce-gateway/federation/auth/dev';
+ * import { generateKeyPairDev, exportKeysDev } from '@commercegateway/commerce-gateway/federation/auth/dev';
  *
  * async function generateFederationKeys() {
  *   const { publicKey, privateKey } = await generateKeyPairDev();

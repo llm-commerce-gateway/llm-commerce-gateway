@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway - Google Gemini Adapter
+ * @commercegateway/commerce-gateway - Google Gemini Adapter
  *
  * Adapter for Google's Generative AI / Gemini API with function calling.
  * Supports Gemini 1.5 Pro, Gemini 1.5 Flash, and other models.
  *
  * @example
  * ```typescript
- * import { GeminiAdapter } from '@betterdata/commerce-gateway/adapters';
+ * import { GeminiAdapter } from '@commercegateway/commerce-gateway/adapters';
  *
  * const adapter = new GeminiAdapter({
  *   apiKey: process.env.GOOGLE_API_KEY!,

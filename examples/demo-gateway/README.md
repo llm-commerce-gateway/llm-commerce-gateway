@@ -70,7 +70,7 @@ To add your own:
 **Isn't:** a control plane, a multi-tenant server, or a production Gateway
 runtime. For production, use
 [`@betterdata/gateway-console`](../../apps/gateway-console) over the real
-[`@betterdata/commerce-gateway`](../../packages/commerce-gateway) runtime.
+[`@commercegateway/commerce-gateway`](../../packages/commerce-gateway) runtime.
 
 ## License
 

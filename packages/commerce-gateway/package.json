@@ -1,16 +1,16 @@
 {
-  "name": "@betterdata/commerce-gateway",
+  "name": "@commercegateway/commerce-gateway",
   "version": "1.0.0",
   "description": "Universal LLM Gateway for Conversational Commerce - Build AI-powered shopping experiences with any LLM provider and any commerce backend",
   "license": "Apache-2.0",
   "author": "Better Data <hello@betterdata.dev>",
-  "homepage": "https://github.com/betterdataco/llm-commerce-gateway#readme",
+  "homepage": "https://github.com/llm-commerce-gateway/llm-commerce-gateway#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/betterdataco/llm-commerce-gateway.git"
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway.git"
   },
   "bugs": {
-    "url": "https://github.com/betterdataco/llm-commerce-gateway/issues"
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway/issues"
   },
   "keywords": [
     "llm",

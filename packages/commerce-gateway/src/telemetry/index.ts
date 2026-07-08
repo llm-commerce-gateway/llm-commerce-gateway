@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Telemetry Module
+ * @commercegateway/commerce-gateway - Telemetry Module
  *
  * @license Apache-2.0
  */

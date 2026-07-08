@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway-connectors - Base Connector Exports
+ * @commercegateway/commerce-gateway-connectors - Base Connector Exports
  * 
  * @license Apache-2.0
  */

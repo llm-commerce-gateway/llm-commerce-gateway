@@ -93,7 +93,7 @@ Defined in `packages/registry-mcp/src/tools/index.ts` (via `ALL_TOOLS`).
 | `registry_get_audit_logs` | Retrieve audit log entries |
 | Impersonation tools | SuperAdmin operations |
 
-These are excluded from `@betterdata/registry-mcp` npm publish. See [BOUNDARY-MANAGEMENT.md](BOUNDARY-MANAGEMENT.md).
+These are excluded from `@commercegateway/registry-mcp` npm publish. See [BOUNDARY-MANAGEMENT.md](BOUNDARY-MANAGEMENT.md).
 
 ---
 
@@ -114,17 +114,17 @@ Defined in `packages/commerce-gateway/src/core/protocol-endpoints.ts`.
 
 ## Package Subpath Exports
 
-### `@betterdata/commerce-gateway`
+### `@commercegateway/commerce-gateway`
 
 ```typescript
 // Main entry — gateway factory
-import { createCommerceGateway, type GatewayConfig } from '@betterdata/commerce-gateway';
+import { createCommerceGateway, type GatewayConfig } from '@commercegateway/commerce-gateway';
 
 // MCP server
-import { createMCPServer, type MCPServerConfig } from '@betterdata/commerce-gateway/mcp';
+import { createMCPServer, type MCPServerConfig } from '@commercegateway/commerce-gateway/mcp';
 
 // Tool definitions and registry
-import { builtInTools, registerTool } from '@betterdata/commerce-gateway/tools';
+import { builtInTools, registerTool } from '@commercegateway/commerce-gateway/tools';
 
 // Registry client and store interface
 import {
@@ -133,20 +133,20 @@ import {
   type RegistryAuthProvider,
   MemoryRegistryStore,
   StaticAuthProvider,
-} from '@betterdata/commerce-gateway/registry';
+} from '@commercegateway/commerce-gateway/registry';
 
 // Federation layer
-import { createFederationLayer, type FederationConfig } from '@betterdata/commerce-gateway/federation';
+import { createFederationLayer, type FederationConfig } from '@commercegateway/commerce-gateway/federation';
 
 // Pluggable adapter interfaces
 import {
   type AuthAdapter,
   type AuthResult,
   EnvAuthAdapter,
-} from '@betterdata/commerce-gateway/adapters';
+} from '@commercegateway/commerce-gateway/adapters';
 
 // Zod validation utilities
-import { validateToolCall, validateToolResult } from '@betterdata/commerce-gateway/validation';
+import { validateToolCall, validateToolResult } from '@commercegateway/commerce-gateway/validation';
 
 // Error types
 import {
@@ -154,10 +154,10 @@ import {
   ToolNotFoundError,
   AuthError,
   ConnectorError,
-} from '@betterdata/commerce-gateway/errors';
+} from '@commercegateway/commerce-gateway/errors';
 
 // Observability hooks
-import { createObserver, type GatewayEvent } from '@betterdata/commerce-gateway/observability';
+import { createObserver, type GatewayEvent } from '@commercegateway/commerce-gateway/observability';
 
 // Catalog types (shared schema)
 import type {
@@ -167,30 +167,30 @@ import type {
   InventoryResult,
   CartResult,
   OrderResult,
-} from '@betterdata/commerce-gateway/catalog';
+} from '@commercegateway/commerce-gateway/catalog';
 ```
 
-### `@betterdata/commerce-gateway-connectors`
+### `@commercegateway/commerce-gateway-connectors`
 
 ```typescript
-import { ShopifyConnector } from '@betterdata/commerce-gateway-connectors';
-import { BigCommerceConnector } from '@betterdata/commerce-gateway-connectors';
-import { WooCommerceConnector } from '@betterdata/commerce-gateway-connectors';
+import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors';
+import { BigCommerceConnector } from '@commercegateway/commerce-gateway-connectors';
+import { WooCommerceConnector } from '@commercegateway/commerce-gateway-connectors';
 ```
 
-### `@betterdata/commerce-gateway-mcp`
+### `@commercegateway/commerce-gateway-mcp`
 
 ```typescript
-import { createMCPServer } from '@betterdata/commerce-gateway-mcp';
+import { createMCPServer } from '@commercegateway/commerce-gateway-mcp';
 // Claude, ChatGPT, and Grok adapters via MCP/SSE transport
 ```
 
-### `@betterdata/registry-mcp`
+### `@commercegateway/registry-mcp`
 
 ```typescript
-import { createRegistryMCPServer } from '@betterdata/registry-mcp';
-import { type RegistryStore, MemoryRegistryStore } from '@betterdata/registry-mcp';
-import { type RegistryAuthProvider, StaticAuthProvider } from '@betterdata/registry-mcp';
+import { createRegistryMCPServer } from '@commercegateway/registry-mcp';
+import { type RegistryStore, MemoryRegistryStore } from '@commercegateway/registry-mcp';
+import { type RegistryAuthProvider, StaticAuthProvider } from '@commercegateway/registry-mcp';
 ```
 
 ---

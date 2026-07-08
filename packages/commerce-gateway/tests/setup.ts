@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Test Setup
+ * @commercegateway/commerce-gateway - Test Setup
  * 
  * Global test configuration and utilities.
  * 

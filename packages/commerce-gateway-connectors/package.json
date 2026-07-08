@@ -1,5 +1,5 @@
 {
-  "name": "@betterdata/commerce-gateway-connectors",
+  "name": "@commercegateway/commerce-gateway-connectors",
   "version": "1.0.0",
   "description": "Commerce platform connectors for the LLM Commerce Gateway — Shopify, BigCommerce, WooCommerce",
   "license": "Apache-2.0",
@@ -33,10 +33,10 @@
     "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
-    "@betterdata/commerce-gateway": "^1.0.0"
+    "@commercegateway/commerce-gateway": "^1.0.0"
   },
   "devDependencies": {
-    "@betterdata/commerce-gateway": "workspace:*",
+    "@commercegateway/commerce-gateway": "workspace:*",
     "@types/node": "^22.13.9",
     "tsup": "^8.1.0",
     "typescript": "^5.5.3"

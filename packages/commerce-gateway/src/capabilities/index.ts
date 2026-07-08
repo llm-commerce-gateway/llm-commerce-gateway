@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Capabilities Module
+ * @commercegateway/commerce-gateway - Capabilities Module
  *
  * Runtime capability discovery for federated gateways.
  *
@@ -10,7 +10,7 @@
  *   type CapabilityProvider,
  *   hasCapabilities,
  *   DEFAULT_CAPABILITIES,
- * } from '@betterdata/commerce-gateway/capabilities';
+ * } from '@commercegateway/commerce-gateway/capabilities';
  * ```
  *
  * @license Apache-2.0

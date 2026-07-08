@@ -1,65 +1,24 @@
-name: Release to npm
+# RETIRED (GATEWAY-OSS-02) — Gateway OSS publishes from betterdataco/bd-forge-main only.
+# This workflow intentionally cannot publish. Mirror is docs/examples only.
+# See: bd-forge-main/docs/internal/architecture/gateway-oss-01-scope-reconcile-publish-plan.md
+
+name: Release to npm (RETIRED)
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: 'This workflow is retired — publish from bd-forge-main oss-release.yml (GATEWAY-OSS-03)'
+        required: true
+        type: boolean
+        default: false
 
 jobs:
-  publish:
+  retired:
+    name: Publish path retired
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 8
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
+      - name: Block publish
         run: |
-          pnpm --filter @betterdata/commerce-gateway build
-          pnpm --filter @betterdata/commerce-gateway-connectors build
-          pnpm --filter @betterdata/commerce-gateway-mcp build
-          pnpm --filter @betterdata/registry-mcp build
-
-      - name: Test
-        run: pnpm test
-
-      - name: Publish commerce-gateway
-        run: pnpm --filter @betterdata/commerce-gateway publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish commerce-gateway-connectors
-        run: pnpm --filter @betterdata/commerce-gateway-connectors publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish commerce-gateway-mcp
-        run: pnpm --filter @betterdata/commerce-gateway-mcp publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish @betterdata/registry-mcp
-        run: pnpm --filter @betterdata/registry-mcp publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Verify published packages
-        run: |
-          sleep 10
-          npm view @betterdata/commerce-gateway version
-          npm view @betterdata/commerce-gateway-connectors version
-          npm view @betterdata/commerce-gateway-mcp version
-          npm view @betterdata/registry-mcp version
+          echo "::error::Mirror publish retired (GATEWAY-OSS-02). Canonical publish: betterdataco/bd-forge-main oss-release.yml"
+          exit 1

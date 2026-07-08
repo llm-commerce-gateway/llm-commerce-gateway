@@ -28,7 +28,7 @@
 
 3. **Rebuild search index**
    ```typescript
-   import { updateSearchIndex } from '@betterdata/commerce-gateway';
+   import { updateSearchIndex } from '@commercegateway/commerce-gateway';
    
    const listings = await prisma.productListing.findMany({
      where: { vendorOrgId: 'your-vendor-id', active: true },
@@ -366,7 +366,7 @@
 
 2. **Enable debug logging**
    ```typescript
-   import { setLogger, ConsoleLogger } from '@betterdata/commerce-gateway';
+   import { setLogger, ConsoleLogger } from '@commercegateway/commerce-gateway';
    setLogger(new ConsoleLogger('Gateway'));
    ```
 
@@ -428,7 +428,7 @@ If you're still stuck:
 
 1. **Check logs**
    ```typescript
-   import { setLogger, ConsoleLogger } from '@betterdata/commerce-gateway';
+   import { setLogger, ConsoleLogger } from '@commercegateway/commerce-gateway';
    setLogger(new ConsoleLogger('Debug'));
    ```
 

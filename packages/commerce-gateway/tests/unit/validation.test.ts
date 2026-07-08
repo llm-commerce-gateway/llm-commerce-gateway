@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Validation Tests
+ * @commercegateway/commerce-gateway - Validation Tests
  * 
  * Unit tests for the Zod validation schemas and helpers.
  * 

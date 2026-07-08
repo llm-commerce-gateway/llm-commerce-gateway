@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Llama Adapter Exports
+ * @commercegateway/commerce-gateway - Llama Adapter Exports
  *
  * @license Apache-2.0
  */

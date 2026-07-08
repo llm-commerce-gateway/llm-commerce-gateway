@@ -143,8 +143,8 @@ packages/llm-gateway/src/cli/registry/
 ## Installation
 
 The CLI is available via:
-- **Global install**: `npm install -g @betterdata/commerce-gateway`
-- **npx**: `npx @betterdata/commerce-gateway <command>`
+- **Global install**: `npm install -g @commercegateway/commerce-gateway`
+- **npx**: `npx @commercegateway/commerce-gateway <command>`
 - **Short alias**: `npx @betterdata/gateway <command>` (configured in package.json)
 
 ---

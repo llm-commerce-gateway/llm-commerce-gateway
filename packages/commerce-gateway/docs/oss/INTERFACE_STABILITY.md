@@ -2,11 +2,11 @@
 
 > **Version**: 1.0.0  
 > **Effective Date**: 2025-12-22  
-> **Applies to**: `@betterdata/commerce-gateway` (MIT-licensed OSS package)
+> **Applies to**: `@commercegateway/commerce-gateway` (MIT-licensed OSS package)
 
 ## Overview
 
-This document defines the interface stability guarantees for the `@betterdata/commerce-gateway` package. 
+This document defines the interface stability guarantees for the `@commercegateway/commerce-gateway` package. 
 These commitments enable downstream consumers to upgrade confidently and build stable integrations.
 
 ---
@@ -110,24 +110,24 @@ The public API consists of all exports from the package entry points:
 
 | Entry Point | Description | Stability |
 |-------------|-------------|-----------|
-| `@betterdata/commerce-gateway` | Main entry point | 🟢 Stable |
-| `@betterdata/commerce-gateway/backends` | Backend interfaces | 🟢 Stable |
-| `@betterdata/commerce-gateway/federation` | Federation hub | 🟢 Stable |
-| `@betterdata/commerce-gateway/mcp` | MCP server | 🟢 Stable |
+| `@commercegateway/commerce-gateway` | Main entry point | 🟢 Stable |
+| `@commercegateway/commerce-gateway/backends` | Backend interfaces | 🟢 Stable |
+| `@commercegateway/commerce-gateway/federation` | Federation hub | 🟢 Stable |
+| `@commercegateway/commerce-gateway/mcp` | MCP server | 🟢 Stable |
 
 ### Extension Points (Stable but Extensible)
 
 | Entry Point | Description | Stability |
 |-------------|-------------|-----------|
-| `@betterdata/commerce-gateway/catalog` | Search/cart services | 🟡 Extensible |
-| `@betterdata/commerce-gateway/ingestion` | Product import | 🟡 Extensible |
-| `@betterdata/commerce-gateway/providers` | Capability providers | 🟡 Extensible |
+| `@commercegateway/commerce-gateway/catalog` | Search/cart services | 🟡 Extensible |
+| `@commercegateway/commerce-gateway/ingestion` | Product import | 🟡 Extensible |
+| `@commercegateway/commerce-gateway/providers` | Capability providers | 🟡 Extensible |
 
 ### Internal APIs (Not Covered)
 
 | Pattern | Description |
 |---------|-------------|
-| `@betterdata/commerce-gateway/*/internal/*` | Internal implementation details |
+| `@commercegateway/commerce-gateway/*/internal/*` | Internal implementation details |
 | Unexported types | Types not in `index.ts` exports |
 | Private class members | `private` or `#` prefixed members |
 
@@ -138,7 +138,7 @@ The public API consists of all exports from the package entry points:
 Starting in v1.1.0, the gateway supports runtime capability discovery:
 
 ```typescript
-import type { GatewayCapabilities } from '@betterdata/commerce-gateway';
+import type { GatewayCapabilities } from '@commercegateway/commerce-gateway';
 
 // Check what features a gateway supports
 const caps = await hub.getCapabilities();
@@ -198,7 +198,7 @@ ESLint warns on deprecated API usage:
 
 ### For Library Consumers
 
-1. **Pin minor versions** for stability: `"@betterdata/commerce-gateway": "~1.2.0"`
+1. **Pin minor versions** for stability: `"@commercegateway/commerce-gateway": "~1.2.0"`
 2. **Read CHANGELOG** before upgrading major versions
 3. **Run type checking** after upgrades: `tsc --noEmit`
 4. **Address deprecation warnings** before next major release

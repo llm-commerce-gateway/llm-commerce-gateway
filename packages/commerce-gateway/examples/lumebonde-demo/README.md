@@ -3,7 +3,7 @@
 > Full-featured luxury retail demo with multi-location inventory, recommendations, and analytics.
 > *Lumebondé is a fictitious brand used for demonstration purposes only.*
 
-This comprehensive example showcases all the capabilities of `@betterdata/commerce-gateway` for a luxury accessories brand.
+This comprehensive example showcases all the capabilities of `@commercegateway/commerce-gateway` for a luxury accessories brand.
 
 ## Features
 

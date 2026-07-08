@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway CLI - Status Command
+ * @commercegateway/commerce-gateway CLI - Status Command
  * 
  * Check registration status
  */

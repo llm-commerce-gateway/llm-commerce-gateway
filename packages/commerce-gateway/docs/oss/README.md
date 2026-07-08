@@ -1,6 +1,6 @@
 # Open Source (OSS) Documentation
 
-This directory contains documentation for the open-source features of `@betterdata/commerce-gateway`.
+This directory contains documentation for the open-source features of `@commercegateway/commerce-gateway`.
 
 ## Overview
 
@@ -49,11 +49,11 @@ For Cloud/proprietary features, see [../cloud/README.md](../cloud/README.md).
 ## Quick Start
 
 ```bash
-npm install @betterdata/commerce-gateway
+npm install @commercegateway/commerce-gateway
 ```
 
 ```typescript
-import { LLMGateway } from '@betterdata/commerce-gateway';
+import { LLMGateway } from '@commercegateway/commerce-gateway';
 
 const gateway = new LLMGateway({
   backends: {

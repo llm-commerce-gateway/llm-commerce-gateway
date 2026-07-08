@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway - Tag-Based Discovery Provider
+ * @commercegateway/commerce-gateway - Tag-Based Discovery Provider
  *
  * Discovery provider using keyword extraction and synonym expansion.
  * More sophisticated than StaticDiscoveryProvider but still OSS.
  *
  * @example
  * ```typescript
- * import { TagBasedDiscoveryProvider, MemoryMerchantRegistry } from '@betterdata/commerce-gateway/federation';
+ * import { TagBasedDiscoveryProvider, MemoryMerchantRegistry } from '@commercegateway/commerce-gateway/federation';
  *
  * const registry = new MemoryMerchantRegistry([...merchants]);
  * const provider = new TagBasedDiscoveryProvider(registry, {

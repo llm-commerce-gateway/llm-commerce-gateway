@@ -4,7 +4,7 @@ about: Report a bug in the LLM Commerce Gateway
 labels: bug
 ---
 
-**Package:** (e.g., @betterdata/commerce-gateway)
+**Package:** (e.g., @commercegateway/commerce-gateway)
 **Version:**
 **Node.js version:**
 **OS:**

@@ -8,7 +8,7 @@ This document exists so the intent is unambiguous to future contributors: **Gate
 
 ## Two UIs, one protocol
 
-Commerce Gateway has two operator-facing consoles. Both speak to the same `@betterdata/commerce-gateway` runtime, but they target fundamentally different deployment models.
+Commerce Gateway has two operator-facing consoles. Both speak to the same `@commercegateway/commerce-gateway` runtime, but they target fundamentally different deployment models.
 
 | | **Gateway Console** (OSS) | **SCM Gateway UI** (hosted) |
 |---|---|---|
@@ -29,7 +29,7 @@ The two UIs are **not substitutable.** An OSS operator cannot use SCM; a multi-t
 
 1. **License contagion.** Gateway Console is Apache-2.0. SCM contains proprietary code (`@repo/*`), proprietary dependencies (Prisma, Clerk, Better Data billing), and hosted multi-tenant logic that cannot ship under Apache-2.0. Keeping them in separate trees prevents any accidental cross-pollination.
 
-2. **Dependency footprint.** Gateway Console has four runtime dependencies: `next`, `react`, `react-dom`, and the sibling `@betterdata/commerce-gateway*` packages. SCM has hundreds, including a database client, auth provider, email templates, background workers, and a telemetry pipeline. An OSS user should not need any of that to operate their own gateway.
+2. **Dependency footprint.** Gateway Console has four runtime dependencies: `next`, `react`, `react-dom`, and the sibling `@commercegateway/commerce-gateway*` packages. SCM has hundreds, including a database client, auth provider, email templates, background workers, and a telemetry pipeline. An OSS user should not need any of that to operate their own gateway.
 
 3. **Operational model.** Gateway Console assumes you are the only user, you trust your own network, and your config lives in a file. SCM assumes multi-tenant isolation, RBAC, audit, and managed infrastructure. These are incompatible posture choices, not two points on a slider.
 
@@ -70,7 +70,7 @@ The two UIs are **not substitutable.** An OSS operator cannot use SCM; a multi-t
                  ▼
 ┌─────────────────────────────────────────────────────┐
 │  Your Commerce Gateway process                      │
-│  (uses @betterdata/commerce-gateway to serve MCP    │
+│  (uses @commercegateway/commerce-gateway to serve MCP    │
 │   and protocol endpoints against the config above)  │
 └─────────────────────────────────────────────────────┘
 ```
@@ -95,9 +95,9 @@ These are enforced by `scripts/check-oss-boundary.mjs --package apps/gateway-con
 
 Gateway Console may depend on:
 
-- `@betterdata/commerce-gateway`
-- `@betterdata/commerce-gateway-mcp`
-- `@betterdata/registry-mcp`
+- `@commercegateway/commerce-gateway`
+- `@commercegateway/commerce-gateway-mcp`
+- `@commercegateway/registry-mcp`
 - Standard Next.js / React / Node.js APIs
 - Node built-in modules (`node:fs`, `node:path`, `node:crypto`)
 

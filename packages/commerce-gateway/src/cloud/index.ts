@@ -12,7 +12,7 @@
  *   createCloudCapabilityProvider,
  *   CapabilityGate,
  *   createCloudCapabilityGate,
- * } from '@betterdata/commerce-gateway/cloud';
+ * } from '@commercegateway/commerce-gateway/cloud';
  * ```
  */
 

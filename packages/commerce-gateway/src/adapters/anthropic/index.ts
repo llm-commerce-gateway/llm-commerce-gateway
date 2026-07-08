@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Anthropic Adapter Exports
+ * @commercegateway/commerce-gateway - Anthropic Adapter Exports
  *
  * @license Apache-2.0
  */

@@ -7,7 +7,7 @@
  * ## Quick Start
  * 
  * ```typescript
- * import { importProducts } from '@betterdata/commerce-gateway/ingestion';
+ * import { importProducts } from '@commercegateway/commerce-gateway/ingestion';
  * 
  * const result = await importProducts({
  *   platform: 'shopify',

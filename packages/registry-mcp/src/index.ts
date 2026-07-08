@@ -16,7 +16,7 @@ import {
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 import { jwtVerify } from 'jose';
-import { RegistryClient, parseShopQuery, type BrandResolution, type GTINResolution } from '@betterdata/commerce-gateway';
+import { RegistryClient, parseShopQuery, type BrandResolution, type GTINResolution } from '@commercegateway/commerce-gateway';
 import {
   METRICS,
   createCorrelationId,

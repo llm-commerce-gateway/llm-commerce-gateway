@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway CLI - Update Command
+ * @commercegateway/commerce-gateway CLI - Update Command
  * 
  * Update gateway configuration
  */

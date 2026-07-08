@@ -7,7 +7,7 @@
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import type { ProductBackend, Product, ProductFilters, ProductSearchResult, InventoryStatus, Recommendation } from '@betterdata/commerce-gateway/backends';
+import type { ProductBackend, Product, ProductFilters, ProductSearchResult, InventoryStatus, Recommendation } from '@commercegateway/commerce-gateway/backends';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

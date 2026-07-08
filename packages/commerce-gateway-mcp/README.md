@@ -1,13 +1,13 @@
-# @betterdata/commerce-gateway-mcp
+# @commercegateway/commerce-gateway-mcp
 
-[![npm](https://img.shields.io/npm/v/@betterdata/commerce-gateway-mcp)](https://www.npmjs.com/package/@betterdata/commerce-gateway-mcp)
+[![npm](https://img.shields.io/npm/v/@commercegateway/commerce-gateway-mcp)](https://www.npmjs.com/package/@commercegateway/commerce-gateway-mcp)
 
 MCP server wrapper for the Better Data gateway. Use it to expose commerce tools to Claude Desktop, Cursor, and other MCP-compatible clients.
 
 ## Install / Run
 
 ```bash
-npx @betterdata/commerce-gateway-mcp
+npx @commercegateway/commerce-gateway-mcp
 ```
 
 By default, it loads `gateway.config.json` from your current directory.
@@ -42,7 +42,7 @@ By default, it loads `gateway.config.json` from your current directory.
   "mcpServers": {
     "commerce-gateway": {
       "command": "npx",
-      "args": ["@betterdata/commerce-gateway-mcp"],
+      "args": ["@commercegateway/commerce-gateway-mcp"],
       "env": {
         "GATEWAY_CONFIG": "/absolute/path/to/gateway.config.json"
       }
@@ -60,7 +60,7 @@ Add an MCP server entry that starts the same command:
   "mcpServers": {
     "commerce-gateway": {
       "command": "npx",
-      "args": ["@betterdata/commerce-gateway-mcp"],
+      "args": ["@commercegateway/commerce-gateway-mcp"],
       "env": {
         "GATEWAY_CONFIG": "/absolute/path/to/gateway.config.json"
       }
@@ -71,7 +71,7 @@ Add an MCP server entry that starts the same command:
 
 ## Available Tools
 
-This package uses `createGatewayMCPServer()` from `@betterdata/commerce-gateway/mcp`.  
+This package uses `createGatewayMCPServer()` from `@commercegateway/commerce-gateway/mcp`.  
 Tools are enabled by gateway capabilities:
 
 - `search_products`

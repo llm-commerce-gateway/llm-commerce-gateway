@@ -53,28 +53,28 @@ The following are open source under Apache-2.0, except `commerce-registry-protoc
 
 | Package | Description |
 |---|---|
-| `@betterdata/commerce-gateway` | Core gateway runtime, tool dispatch, session management, protocol |
-| `@betterdata/commerce-gateway-mcp` | MCP server — Claude, ChatGPT, Grok adapter support via SSE transport |
-| `@betterdata/registry-mcp` | MCP server for registry discovery (OSS tools only — see admin tool note below) |
-| `@betterdata/commerce-gateway-connectors` | Shopify, BigCommerce, WooCommerce connectors |
+| `@commercegateway/commerce-gateway` | Core gateway runtime, tool dispatch, session management, protocol |
+| `@commercegateway/commerce-gateway-mcp` | MCP server — Claude, ChatGPT, Grok adapter support via SSE transport |
+| `@commercegateway/registry-mcp` | MCP server for registry discovery (OSS tools only — see admin tool note below) |
+| `@commercegateway/commerce-gateway-connectors` | Shopify, BigCommerce, WooCommerce connectors |
 
 ### Subpath exports (all Apache-2.0)
 
-All subpath exports of `@betterdata/commerce-gateway` are Apache-2.0:
+All subpath exports of `@commercegateway/commerce-gateway` are Apache-2.0:
 
-- `@betterdata/commerce-gateway` — main entry
-- `@betterdata/commerce-gateway/mcp`
-- `@betterdata/commerce-gateway/tools`
-- `@betterdata/commerce-gateway/registry`
-- `@betterdata/commerce-gateway/federation`
-- `@betterdata/commerce-gateway/adapters`
-- `@betterdata/commerce-gateway/validation`
-- `@betterdata/commerce-gateway/errors`
-- `@betterdata/commerce-gateway/observability`
-- `@betterdata/commerce-gateway/ingestion`
-- `@betterdata/commerce-gateway/catalog`
-- `@betterdata/commerce-gateway/capabilities`
-- `@betterdata/commerce-gateway/extensions`
+- `@commercegateway/commerce-gateway` — main entry
+- `@commercegateway/commerce-gateway/mcp`
+- `@commercegateway/commerce-gateway/tools`
+- `@commercegateway/commerce-gateway/registry`
+- `@commercegateway/commerce-gateway/federation`
+- `@commercegateway/commerce-gateway/adapters`
+- `@commercegateway/commerce-gateway/validation`
+- `@commercegateway/commerce-gateway/errors`
+- `@commercegateway/commerce-gateway/observability`
+- `@commercegateway/commerce-gateway/ingestion`
+- `@commercegateway/commerce-gateway/catalog`
+- `@commercegateway/commerce-gateway/capabilities`
+- `@commercegateway/commerce-gateway/extensions`
 
 ### Protocol specification
 
@@ -114,7 +114,7 @@ These implement the open interfaces against Better Data's internal database. The
 
 ### Admin registry tools
 
-The following registry MCP tools are cloud-only and are NOT included in the published `@betterdata/registry-mcp` package:
+The following registry MCP tools are cloud-only and are NOT included in the published `@commercegateway/registry-mcp` package:
 
 - User/org impersonation tools
 - SuperAdmin write operations

@@ -1,8 +1,8 @@
-# @betterdata/commerce-gateway-connectors
+# @commercegateway/commerce-gateway-connectors
 
-[![npm](https://img.shields.io/npm/v/@betterdata/commerce-gateway-connectors)](https://www.npmjs.com/package/@betterdata/commerce-gateway-connectors)
+[![npm](https://img.shields.io/npm/v/@commercegateway/commerce-gateway-connectors)](https://www.npmjs.com/package/@commercegateway/commerce-gateway-connectors)
 
-Commerce platform adapters for `@betterdata/commerce-gateway`.
+Commerce platform adapters for `@commercegateway/commerce-gateway`.
 
 ## Supported Platforms
 
@@ -13,15 +13,15 @@ Commerce platform adapters for `@betterdata/commerce-gateway`.
 ## Install
 
 ```bash
-npm install @betterdata/commerce-gateway @betterdata/commerce-gateway-connectors
+npm install @commercegateway/commerce-gateway @commercegateway/commerce-gateway-connectors
 ```
 
 ## Subpath Imports
 
 ```ts
-import { ShopifyConnector } from '@betterdata/commerce-gateway-connectors/shopify';
-import { WooCommerceConnector } from '@betterdata/commerce-gateway-connectors/woocommerce';
-import { BigCommerceConnector } from '@betterdata/commerce-gateway-connectors/bigcommerce';
+import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors/shopify';
+import { WooCommerceConnector } from '@commercegateway/commerce-gateway-connectors/woocommerce';
+import { BigCommerceConnector } from '@commercegateway/commerce-gateway-connectors/bigcommerce';
 ```
 
 ## Connector Setup
@@ -29,7 +29,7 @@ import { BigCommerceConnector } from '@betterdata/commerce-gateway-connectors/bi
 ### Shopify
 
 ```ts
-import { ShopifyConnector } from '@betterdata/commerce-gateway-connectors/shopify';
+import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors/shopify';
 
 const shopify = new ShopifyConnector({
   domain: 'your-store.myshopify.com',
@@ -45,7 +45,7 @@ const shopify = new ShopifyConnector({
 ### WooCommerce
 
 ```ts
-import { WooCommerceConnector } from '@betterdata/commerce-gateway-connectors/woocommerce';
+import { WooCommerceConnector } from '@commercegateway/commerce-gateway-connectors/woocommerce';
 
 const woocommerce = new WooCommerceConnector({
   url: 'https://your-store.com/',
@@ -62,7 +62,7 @@ const woocommerce = new WooCommerceConnector({
 ### BigCommerce
 
 ```ts
-import { BigCommerceConnector } from '@betterdata/commerce-gateway-connectors/bigcommerce';
+import { BigCommerceConnector } from '@commercegateway/commerce-gateway-connectors/bigcommerce';
 
 const bigcommerce = new BigCommerceConnector({
   storeHash: process.env.BIGCOMMERCE_STORE_HASH!,
@@ -78,7 +78,7 @@ const bigcommerce = new BigCommerceConnector({
 ## Use with Gateway
 
 ```ts
-import { LLMGateway } from '@betterdata/commerce-gateway';
+import { LLMGateway } from '@commercegateway/commerce-gateway';
 
 const gateway = new LLMGateway({
   backends: shopify.getBackends(),
@@ -91,7 +91,7 @@ const gateway = new LLMGateway({
 You can skip this package and implement your own connector by returning `GatewayBackends`:
 
 ```ts
-import type { GatewayBackends } from '@betterdata/commerce-gateway/backends';
+import type { GatewayBackends } from '@commercegateway/commerce-gateway/backends';
 
 export function createMyConnector(): GatewayBackends {
   return {

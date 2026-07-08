@@ -40,7 +40,7 @@ import type {
   Order,
   Address,
   PaymentInfo,
-} from '@betterdata/commerce-gateway/backends';
+} from '@commercegateway/commerce-gateway/backends';
 
 // ============================================================================
 // Configuration

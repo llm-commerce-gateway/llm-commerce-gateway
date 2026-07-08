@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Link Generator Implementations
+ * @commercegateway/commerce-gateway - Link Generator Implementations
  * 
  * @license Apache-2.0
  */

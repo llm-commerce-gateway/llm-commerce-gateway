@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Telemetry Types
+ * @commercegateway/commerce-gateway - Telemetry Types
  *
  * Canonical OSS telemetry payload types and schema.
  *

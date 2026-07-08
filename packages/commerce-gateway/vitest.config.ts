@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Vitest Configuration
+ * @commercegateway/commerce-gateway - Vitest Configuration
  * 
  * Test configuration for the Universal LLM Gateway.
  * 

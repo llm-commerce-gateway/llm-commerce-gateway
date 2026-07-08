@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Federation Client Module
+ * @commercegateway/commerce-gateway - Federation Client Module
  *
  * HTTP client for calling remote merchant LLM Gateways.
  *

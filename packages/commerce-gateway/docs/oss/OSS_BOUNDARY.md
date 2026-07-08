@@ -25,13 +25,13 @@ node scripts/check-oss-boundary.mjs
 From a package:
 
 ```bash
-pnpm --filter @betterdata/commerce-gateway check:oss-boundary
-pnpm --filter @betterdata/registry-mcp check:oss-boundary
-pnpm --filter @betterdata/commerce-gateway-mcp check:oss-boundary
+pnpm --filter @commercegateway/commerce-gateway check:oss-boundary
+pnpm --filter @commercegateway/registry-mcp check:oss-boundary
+pnpm --filter @commercegateway/commerce-gateway-mcp check:oss-boundary
 ```
 
 ## CI Integration
 
-- `@betterdata/commerce-gateway` runs the check as part of `check:contract`.
-- `@betterdata/registry-mcp` and `@betterdata/commerce-gateway-mcp` expose `test` scripts
+- `@commercegateway/commerce-gateway` runs the check as part of `check:contract`.
+- `@commercegateway/registry-mcp` and `@commercegateway/commerce-gateway-mcp` expose `test` scripts
   that run this boundary scan.

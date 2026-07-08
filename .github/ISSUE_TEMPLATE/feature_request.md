@@ -4,7 +4,7 @@ about: Suggest an improvement
 labels: enhancement
 ---
 
-**Which package?** (e.g., @betterdata/commerce-gateway)
+**Which package?** (e.g., @commercegateway/commerce-gateway)
 
 **What problem does this solve?**
 

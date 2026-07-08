@@ -110,7 +110,7 @@ import type {
   ProductSearchResult,
   Cart,
   Order,
-} from '@betterdata/commerce-gateway';
+} from '@commercegateway/commerce-gateway';
 
 export class CustomProductBackend implements ProductBackend {
   constructor(private config: { apiUrl: string; apiKey: string }) {}
@@ -193,7 +193,7 @@ export class CustomOrderBackend implements OrderBackend {
 ## Using Your Connector
 
 ```typescript
-import { LLMGateway } from '@betterdata/commerce-gateway';
+import { LLMGateway } from '@commercegateway/commerce-gateway';
 import { CustomProductBackend, CustomCartBackend, CustomOrderBackend } from './connector';
 
 const gateway = new LLMGateway({
@@ -221,9 +221,9 @@ gateway.start(3000);
 
 ## Available Connectors
 
-- **Shopify** - `@betterdata/commerce-gateway-shopify`
-- **BigCommerce** - `@betterdata/commerce-gateway-bigcommerce`
-- **WooCommerce** - `@betterdata/commerce-gateway-woocommerce`
+- **Shopify** - `@commercegateway/commerce-gateway-shopify`
+- **BigCommerce** - `@commercegateway/commerce-gateway-bigcommerce`
+- **WooCommerce** - `@commercegateway/commerce-gateway-woocommerce`
 
 See the individual connector packages for platform-specific documentation.
 

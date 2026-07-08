@@ -3,7 +3,7 @@
 > **In-memory product catalog demo for LLM Gateway**
 > No SCM dependencies, no auth required.
 
-This example showcases the `@betterdata/commerce-gateway` with a beauty/cosmetics catalog aligned with the [Lumebondé Data Bible](/demo/docs/LUMEBONDE_DATA_BIBLE.md).
+This example showcases the `@commercegateway/commerce-gateway` with a beauty/cosmetics catalog aligned with the [Lumebondé Data Bible](/demo/docs/LUMEBONDE_DATA_BIBLE.md).
 
 ## 🌟 Features
 
@@ -79,8 +79,8 @@ lumebonde-cosmetics/
 ### Using with LLM Gateway
 
 ```typescript
-import { LLMGateway } from '@betterdata/commerce-gateway';
-import { createInMemoryCatalog } from '@betterdata/commerce-gateway/catalog';
+import { LLMGateway } from '@commercegateway/commerce-gateway';
+import { createInMemoryCatalog } from '@commercegateway/commerce-gateway/catalog';
 import catalog from './data/catalog.json';
 
 // Create in-memory catalog
@@ -98,8 +98,8 @@ await gateway.start(3000);
 ### Using with MCP Server (Claude)
 
 ```typescript
-import { MCPServer } from '@betterdata/commerce-gateway/mcp';
-import { createInMemoryCatalog, BasicSearchService } from '@betterdata/commerce-gateway/catalog';
+import { MCPServer } from '@commercegateway/commerce-gateway/mcp';
+import { createInMemoryCatalog, BasicSearchService } from '@commercegateway/commerce-gateway/catalog';
 import catalog from './data/catalog.json';
 
 const productCatalog = createInMemoryCatalog(catalog);
@@ -120,8 +120,8 @@ server.start();
 ### Programmatic Import
 
 ```typescript
-import { importFromJSON, importFromCSV, importToCatalog } from '@betterdata/commerce-gateway/ingestion';
-import { createInMemoryCatalog } from '@betterdata/commerce-gateway/catalog';
+import { importFromJSON, importFromCSV, importToCatalog } from '@commercegateway/commerce-gateway/ingestion';
+import { createInMemoryCatalog } from '@commercegateway/commerce-gateway/catalog';
 
 // Option 1: Import from JSON file
 const jsonResult = await importFromJSON('./data/catalog.json');
@@ -199,7 +199,7 @@ The CSV file uses these columns:
 Use runtime capability discovery to feature-gate appropriately:
 
 ```typescript
-import { FederationHub } from '@betterdata/commerce-gateway/federation';
+import { FederationHub } from '@commercegateway/commerce-gateway/federation';
 
 const hub = await FederationHub.create({
   registry: { type: 'memory' },

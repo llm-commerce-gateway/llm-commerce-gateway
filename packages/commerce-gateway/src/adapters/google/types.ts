@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Google Gemini Adapter Types
+ * @commercegateway/commerce-gateway - Google Gemini Adapter Types
  *
  * Type definitions for Google Generative AI / Gemini API.
  *

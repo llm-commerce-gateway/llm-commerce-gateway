@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway CLI - Claim GTINs Command
+ * @commercegateway/commerce-gateway CLI - Claim GTINs Command
  * 
  * Claim GTINs for a gateway
  * 

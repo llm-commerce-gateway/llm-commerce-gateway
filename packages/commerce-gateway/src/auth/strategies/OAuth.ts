@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - OAuth Strategy
+ * @commercegateway/commerce-gateway - OAuth Strategy
  * 
  * OAuth 2.0 authentication with support for Google, GitHub, and custom providers.
  * 

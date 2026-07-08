@@ -52,7 +52,7 @@ Check `packages/commerce-gateway/src/tools/builtInTools.ts` first. If the tool c
 
 ## Building a Connector
 
-Connectors implement the `CommerceConnector` interface from `@betterdata/commerce-gateway`.
+Connectors implement the `CommerceConnector` interface from `@commercegateway/commerce-gateway`.
 
 ### File location
 ```
@@ -75,7 +75,7 @@ Optional (implement if the platform supports it):
 - `createOrder(order)` — order creation
 - `getOrderStatus(orderId)` — order status
 
-All methods must return types from `@betterdata/commerce-gateway/catalog`. Do not return platform-native types — map to the open schema.
+All methods must return types from `@commercegateway/commerce-gateway/catalog`. Do not return platform-native types — map to the open schema.
 
 ### Connector review criteria
 

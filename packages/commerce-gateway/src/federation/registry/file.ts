@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - File-Based Merchant Registry
+ * @commercegateway/commerce-gateway - File-Based Merchant Registry
  *
  * A file-backed implementation of the MerchantRegistry interface.
  * Stores merchants in a JSON file with atomic writes for durability.

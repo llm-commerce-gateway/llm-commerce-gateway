@@ -16,7 +16,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@betterdata/commerce-gateway@^1.0.0": "workspace:*"
+      "@commercegateway/commerce-gateway@^1.0.0": "workspace:*"
     }
   },
   "devDependencies": {

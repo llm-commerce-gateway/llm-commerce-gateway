@@ -13,7 +13,7 @@
  *
  * @example
  * ```typescript
- * import { createBetterDataProviders } from '@betterdata/commerce-gateway/federation/providers';
+ * import { createBetterDataProviders } from '@commercegateway/commerce-gateway/federation/providers';
  *
  * const providers = createBetterDataProviders({
  *   apiKey: process.env.BETTERDATA_API_KEY!,

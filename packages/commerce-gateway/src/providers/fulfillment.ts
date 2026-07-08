@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Fulfillment Provider Interface
+ * @commercegateway/commerce-gateway - Fulfillment Provider Interface
  *
  * Provides buyer-facing shipping and fulfillment options.
  * This interface abstracts away internal SCM concepts (warehouses, allocation)
@@ -10,7 +10,7 @@
  *
  * @example
  * ```typescript
- * import type { FulfillmentProvider } from '@betterdata/commerce-gateway/providers';
+ * import type { FulfillmentProvider } from '@commercegateway/commerce-gateway/providers';
  *
  * class MyFulfillmentProvider implements FulfillmentProvider {
  *   async getFulfillmentOptions(input) {

@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - MCP Server
+ * @commercegateway/commerce-gateway - MCP Server
  * 
  * Production-ready Model Context Protocol (MCP) server implementation.
  * Exposes commerce backends to Claude.ai through the MCP standard.
@@ -39,7 +39,7 @@ import { createRegistryClient, type RegistryClient } from '../registry/client';
  * 
  * @example
  * ```typescript
- * import { MCPServer } from '@betterdata/commerce-gateway/mcp';
+ * import { MCPServer } from '@commercegateway/commerce-gateway/mcp';
  * import { MyBackend } from './my-backend';
  * 
  * const server = new MCPServer({

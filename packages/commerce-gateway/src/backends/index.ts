@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Backend Exports
+ * @commercegateway/commerce-gateway - Backend Exports
  * 
  * @license Apache-2.0
  */

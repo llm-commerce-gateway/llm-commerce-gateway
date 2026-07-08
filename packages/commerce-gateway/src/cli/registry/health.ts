@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway CLI - Health Command
+ * @commercegateway/commerce-gateway CLI - Health Command
  * 
  * Test gateway health
  */

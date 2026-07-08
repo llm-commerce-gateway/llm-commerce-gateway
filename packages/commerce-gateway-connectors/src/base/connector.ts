@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway-connectors - Base Connector
+ * @commercegateway/commerce-gateway-connectors - Base Connector
  * 
  * Abstract base class for e-commerce platform connectors.
  * Provides common functionality and structure for all connectors.
@@ -12,7 +12,7 @@ import type {
   CartBackend,
   OrderBackend,
   GatewayBackends,
-} from '@betterdata/commerce-gateway/backends';
+} from '@commercegateway/commerce-gateway/backends';
 
 /**
  * Base configuration interface for all connectors

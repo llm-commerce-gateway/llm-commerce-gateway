@@ -10,7 +10,7 @@
     "dev": "tsx server.ts"
   },
   "dependencies": {
-    "@betterdata/commerce-gateway": "file:../.."
+    "@commercegateway/commerce-gateway": "file:../.."
   },
   "devDependencies": {
     "@types/node": "^20.14.10",

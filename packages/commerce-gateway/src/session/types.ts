@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Session Types
+ * @commercegateway/commerce-gateway - Session Types
  * 
  * Type definitions for session management.
  * 

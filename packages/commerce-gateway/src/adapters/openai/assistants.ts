@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway - OpenAI Assistants API
+ * @commercegateway/commerce-gateway - OpenAI Assistants API
  * 
  * Support for OpenAI's Assistants API with persistent threads and runs.
  * Provides a managed conversation experience with tool execution.
  * 
  * @example
  * ```typescript
- * import { OpenAIAssistantsClient } from '@betterdata/commerce-gateway/openai';
+ * import { OpenAIAssistantsClient } from '@commercegateway/commerce-gateway/openai';
  * 
  * const client = new OpenAIAssistantsClient({
  *   apiKey: process.env.OPENAI_API_KEY!,

@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway CLI - Config Management
+ * @commercegateway/commerce-gateway CLI - Config Management
  * 
  * Manages gateway.config.json file
  * 

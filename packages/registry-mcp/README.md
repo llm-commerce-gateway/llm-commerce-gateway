@@ -1,13 +1,13 @@
-# @betterdata/registry-mcp
+# @commercegateway/registry-mcp
 
-[![npm](https://img.shields.io/npm/v/@betterdata/registry-mcp)](https://www.npmjs.com/package/@betterdata/registry-mcp)
+[![npm](https://img.shields.io/npm/v/@commercegateway/registry-mcp)](https://www.npmjs.com/package/@commercegateway/registry-mcp)
 
 MCP server for registry discovery workflows. It resolves brands/GTINs and exposes discovery tools to MCP clients.
 
 ## Setup
 
 ```bash
-npx @betterdata/registry-mcp
+npx @commercegateway/registry-mcp
 ```
 
 ## Available Tools
@@ -36,7 +36,7 @@ The server also exposes additional registry tools registered internally via `ALL
   "mcpServers": {
     "commerce-registry": {
       "command": "npx",
-      "args": ["@betterdata/registry-mcp"],
+      "args": ["@commercegateway/registry-mcp"],
       "env": {
         "REGISTRY_URL": "https://your-registry.example.com"
       }

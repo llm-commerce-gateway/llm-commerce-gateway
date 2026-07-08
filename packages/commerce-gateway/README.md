@@ -1,6 +1,6 @@
-# @betterdata/commerce-gateway
+# @commercegateway/commerce-gateway
 
-[![npm](https://img.shields.io/npm/v/@betterdata/commerce-gateway)](https://www.npmjs.com/package/@betterdata/commerce-gateway)
+[![npm](https://img.shields.io/npm/v/@commercegateway/commerce-gateway)](https://www.npmjs.com/package/@commercegateway/commerce-gateway)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 Core routing engine for conversational commerce. It normalizes tool execution across LLM providers and routes those tools to your real commerce backend.
@@ -8,14 +8,14 @@ Core routing engine for conversational commerce. It normalizes tool execution ac
 ## Install
 
 ```bash
-npm install @betterdata/commerce-gateway
+npm install @commercegateway/commerce-gateway
 ```
 
 ## Minimal TypeScript Setup
 
 ```ts
-import { LLMGateway } from '@betterdata/commerce-gateway';
-import { ShopifyConnector } from '@betterdata/commerce-gateway-connectors/shopify';
+import { LLMGateway } from '@commercegateway/commerce-gateway';
+import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors/shopify';
 
 const connector = new ShopifyConnector({
   domain: process.env.SHOPIFY_STORE_DOMAIN!,
@@ -37,7 +37,7 @@ await gateway.start(3000);
 ### OpenAI
 
 ```ts
-import { OpenAIAdapter } from '@betterdata/commerce-gateway/openai';
+import { OpenAIAdapter } from '@commercegateway/commerce-gateway/openai';
 
 const openai = new OpenAIAdapter({
   apiKey: process.env.OPENAI_API_KEY!,
@@ -49,7 +49,7 @@ const openai = new OpenAIAdapter({
 ### Grok (xAI)
 
 ```ts
-import { GrokAdapter } from '@betterdata/commerce-gateway/grok';
+import { GrokAdapter } from '@commercegateway/commerce-gateway/grok';
 
 const grok = new GrokAdapter({
   apiKey: process.env.GROK_API_KEY!,
@@ -61,7 +61,7 @@ const grok = new GrokAdapter({
 ### Anthropic (MCP)
 
 ```ts
-import { MCPServer } from '@betterdata/commerce-gateway/mcp';
+import { MCPServer } from '@commercegateway/commerce-gateway/mcp';
 
 const mcp = new MCPServer({
   backends: connector.getBackends(),
@@ -75,7 +75,7 @@ mcp.start();
 ## Connector Setup (Shopify)
 
 ```ts
-import { ShopifyConnector } from '@betterdata/commerce-gateway-connectors/shopify';
+import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors/shopify';
 
 const connector = new ShopifyConnector({
   domain: 'your-store.myshopify.com',
@@ -135,7 +135,7 @@ try {
 Use exported error helpers for application-level handling:
 
 ```ts
-import { isGatewayError, safeErrorMessage } from '@betterdata/commerce-gateway/errors';
+import { isGatewayError, safeErrorMessage } from '@commercegateway/commerce-gateway/errors';
 ```
 
 ## Docs

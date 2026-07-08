@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Logger Tests
+ * @commercegateway/commerce-gateway - Logger Tests
  * 
  * Unit tests for the structured logging system.
  * 

@@ -7,8 +7,8 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { OpenAIAdapter } from '@betterdata/commerce-gateway/openai';
-import { DubLinkGenerator, createLinkAnalytics } from '@betterdata/commerce-gateway/links';
+import { OpenAIAdapter } from '@commercegateway/commerce-gateway/openai';
+import { DubLinkGenerator, createLinkAnalytics } from '@commercegateway/commerce-gateway/links';
 import { LumebondeBackend } from './backend/LumebondeBackend.js';
 
 // Initialize backend

@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway/mcp
+ * @commercegateway/commerce-gateway/mcp
  * 
  * Model Context Protocol (MCP) server module for Claude.ai integration.
  * Expose your commerce backend to Claude through the MCP standard.
  * 
  * @example
  * ```typescript
- * import { MCPServer } from '@betterdata/commerce-gateway/mcp';
+ * import { MCPServer } from '@commercegateway/commerce-gateway/mcp';
  * import { MyBackend } from './my-backend';
  * 
  * const server = new MCPServer({

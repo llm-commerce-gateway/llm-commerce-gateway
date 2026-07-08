@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Rate Limiter
+ * @commercegateway/commerce-gateway - Rate Limiter
  * 
  * Redis-based rate limiting with support for multiple tiers.
  * 

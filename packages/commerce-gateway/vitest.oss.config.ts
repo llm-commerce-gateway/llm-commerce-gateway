@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - OSS Vitest Configuration
+ * @commercegateway/commerce-gateway - OSS Vitest Configuration
  * 
  * Test configuration for OSS-only tests (no Prisma/database dependencies).
  * Run with: pnpm vitest --config vitest.oss.config.ts

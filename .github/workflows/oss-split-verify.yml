@@ -51,13 +51,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Core contract checks
-        run: pnpm --filter @betterdata/commerce-gateway check:contract
+        run: pnpm --filter @commercegateway/commerce-gateway check:contract
 
       - name: Registry MCP OSS boundary
-        run: pnpm --filter @betterdata/registry-mcp check:oss-boundary
+        run: pnpm --filter @commercegateway/registry-mcp check:oss-boundary
 
       - name: Gateway MCP OSS boundary
-        run: pnpm --filter @betterdata/commerce-gateway-mcp check:oss-boundary
+        run: pnpm --filter @commercegateway/commerce-gateway-mcp check:oss-boundary
 
       - name: Gateway Console OSS boundary
         run: node scripts/check-oss-boundary.mjs --package apps/gateway-console
@@ -66,7 +66,7 @@ jobs:
         run: node scripts/check-oss-boundary.mjs --package examples/commerce-chat-ui --package examples/demo-gateway
 
       - name: Contract test suite
-        run: pnpm --filter @betterdata/commerce-gateway exec vitest run tests/contract/v0.1.test.ts tests/unit/telemetry.test.ts
+        run: pnpm --filter @commercegateway/commerce-gateway exec vitest run tests/contract/v0.1.test.ts tests/unit/telemetry.test.ts
 
   typecheck:
     name: Typecheck OSS packages
@@ -87,16 +87,16 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Typecheck commerce-gateway
-        run: pnpm --filter @betterdata/commerce-gateway typecheck
+        run: pnpm --filter @commercegateway/commerce-gateway typecheck
 
       - name: Typecheck commerce-gateway-mcp
-        run: pnpm --filter @betterdata/commerce-gateway-mcp typecheck
+        run: pnpm --filter @commercegateway/commerce-gateway-mcp typecheck
 
       - name: Typecheck registry-mcp
-        run: pnpm --filter @betterdata/registry-mcp typecheck
+        run: pnpm --filter @commercegateway/registry-mcp typecheck
 
       - name: Typecheck connectors
-        run: pnpm --filter @betterdata/commerce-gateway-connectors typecheck
+        run: pnpm --filter @commercegateway/commerce-gateway-connectors typecheck
 
       - name: Typecheck gateway-console
         run: pnpm --filter @betterdata/gateway-console typecheck
@@ -146,4 +146,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Grok adapter smoke
-        run: pnpm --filter @betterdata/commerce-gateway exec vitest run tests/unit/adapters/grok-adapter.test.ts
+        run: pnpm --filter @commercegateway/commerce-gateway exec vitest run tests/unit/adapters/grok-adapter.test.ts

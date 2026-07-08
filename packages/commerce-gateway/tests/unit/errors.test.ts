@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Error System Tests
+ * @commercegateway/commerce-gateway - Error System Tests
  * 
  * Unit tests for the error handling system.
  * 

@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Control-Plane Metrics (Scaffolding)
+ * @commercegateway/commerce-gateway - Control-Plane Metrics (Scaffolding)
  *
  * Minimal metric name catalog + emit stub for hosted observability.
  *

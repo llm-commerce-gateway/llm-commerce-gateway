@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - MCP Resources
+ * @commercegateway/commerce-gateway - MCP Resources
  * 
  * Provides resource endpoints for Claude to read product catalogs,
  * categories, and other static data that enhances tool functionality.

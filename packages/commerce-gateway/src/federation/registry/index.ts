@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Merchant Registry Module
+ * @commercegateway/commerce-gateway - Merchant Registry Module
  *
  * Provides backend implementations for the merchant registry:
  * - MemoryMerchantRegistry: In-memory storage (dev/testing)

@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway CLI - Register Command
+ * @commercegateway/commerce-gateway CLI - Register Command
  * 
  * Register a gateway with the registry
  * 

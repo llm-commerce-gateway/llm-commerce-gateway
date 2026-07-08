@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway - Static Discovery Provider
+ * @commercegateway/commerce-gateway - Static Discovery Provider
  *
  * Simple discovery provider that uses basic category matching.
  * Good for development, testing, or small merchant catalogs.
  *
  * @example
  * ```typescript
- * import { StaticDiscoveryProvider, MemoryMerchantRegistry } from '@betterdata/commerce-gateway/federation';
+ * import { StaticDiscoveryProvider, MemoryMerchantRegistry } from '@commercegateway/commerce-gateway/federation';
  *
  * const registry = new MemoryMerchantRegistry([...merchants]);
  * const provider = new StaticDiscoveryProvider(registry);

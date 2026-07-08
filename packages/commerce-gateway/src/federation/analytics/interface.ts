@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway - Analytics Sink Interface
+ * @commercegateway/commerce-gateway - Analytics Sink Interface
  *
  * Defines the contract for tracking federation events.
  * Implement this interface to collect analytics for your own dashboards.
  *
  * @example
  * ```typescript
- * import type { AnalyticsSink, SearchEvent } from '@betterdata/commerce-gateway/federation';
+ * import type { AnalyticsSink, SearchEvent } from '@commercegateway/commerce-gateway/federation';
  *
  * class MyAnalyticsSink implements AnalyticsSink {
  *   async trackSearch(event: SearchEvent) {

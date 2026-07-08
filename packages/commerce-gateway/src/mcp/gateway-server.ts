@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Gateway MCP Server Factory
+ * @commercegateway/commerce-gateway - Gateway MCP Server Factory
  * 
  * Creates an MCP server for individual gateways with gateway-specific tools.
  * Each gateway should expose MCP tools for direct interaction.
@@ -38,7 +38,7 @@ export interface GatewayConfig {
  * 
  * @example
  * ```typescript
- * import { createGatewayMCPServer } from '@betterdata/commerce-gateway/mcp';
+ * import { createGatewayMCPServer } from '@commercegateway/commerce-gateway/mcp';
  * 
  * const server = createGatewayMCPServer({
  *   slug: 'lumebonde',

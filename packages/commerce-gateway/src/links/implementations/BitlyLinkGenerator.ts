@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Bitly Link Generator
+ * @commercegateway/commerce-gateway - Bitly Link Generator
  * 
  * Link generation using Bitly.
  * 
@@ -92,7 +92,7 @@ interface BitlyCountriesResponse {
  * 
  * @example
  * ```typescript
- * import { BitlyLinkGenerator } from '@betterdata/commerce-gateway/links/bitly';
+ * import { BitlyLinkGenerator } from '@commercegateway/commerce-gateway/links/bitly';
  * 
  * const links = new BitlyLinkGenerator({
  *   apiKey: process.env.BITLY_API_KEY!,

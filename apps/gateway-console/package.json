@@ -31,9 +31,9 @@
     "test": "node --test tests/*.test.js"
   },
   "dependencies": {
-    "@betterdata/commerce-gateway": "workspace:*",
-    "@betterdata/commerce-gateway-mcp": "workspace:*",
-    "@betterdata/registry-mcp": "workspace:*",
+    "@commercegateway/commerce-gateway": "workspace:*",
+    "@commercegateway/commerce-gateway-mcp": "workspace:*",
+    "@commercegateway/registry-mcp": "workspace:*",
     "next": "15.5.9",
     "react": "19.2.1",
     "react-dom": "19.2.1"

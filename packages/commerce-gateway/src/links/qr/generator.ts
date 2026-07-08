@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - QR Code Generator
+ * @commercegateway/commerce-gateway - QR Code Generator
  * 
  * Simple QR code generation without external dependencies.
  * Uses a basic QR encoding algorithm suitable for short URLs.

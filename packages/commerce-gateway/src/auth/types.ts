@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Auth Types
+ * @commercegateway/commerce-gateway - Auth Types
  * 
  * Type definitions for authentication and authorization.
  * 

@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway-connectors - Connector Exports
+ * @commercegateway/commerce-gateway-connectors - Connector Exports
  * 
  * Pre-built connectors for popular e-commerce platforms.
  * 

@@ -1,13 +1,13 @@
 /**
- * @betterdata/commerce-gateway - Intent Parser
+ * @commercegateway/commerce-gateway - Intent Parser
  *
  * Extracts merchant intent and search query from natural language user input.
  * Supports URL detection, brand name matching, and filter extraction.
  *
  * @example
  * ```typescript
- * import { IntentParser } from '@betterdata/commerce-gateway/federation';
- * import { MemoryMerchantRegistry } from '@betterdata/commerce-gateway/federation';
+ * import { IntentParser } from '@commercegateway/commerce-gateway/federation';
+ * import { MemoryMerchantRegistry } from '@commercegateway/commerce-gateway/federation';
  *
  * const registry = new MemoryMerchantRegistry([
  *   {

@@ -11,8 +11,8 @@ import { resolve as resolvePath } from 'node:path';
 import {
   createGatewayMCPServer,
   type GatewayConfig,
-} from '@betterdata/commerce-gateway/mcp';
-import { DemoBackend } from '@betterdata/commerce-gateway/backends/demo';
+} from '@commercegateway/commerce-gateway/mcp';
+import { DemoBackend } from '@commercegateway/commerce-gateway/backends/demo';
 
 type TransportConfig = {
   type?: 'stdio' | 'http';

@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Llama Adapter Types
+ * @commercegateway/commerce-gateway - Llama Adapter Types
  *
  * Type definitions for Llama-compatible APIs (Together, Groq, local).
  *

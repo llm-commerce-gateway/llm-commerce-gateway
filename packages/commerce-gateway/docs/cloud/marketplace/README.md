@@ -100,7 +100,7 @@ const results = await searchProducts({
 ### Installation
 
 ```bash
-npm install @betterdata/commerce-gateway
+npm install @commercegateway/commerce-gateway
 ```
 
 ### Basic Setup
@@ -110,7 +110,7 @@ import {
   createMarketplaceSearchHandler,
   createCartHandler,
   createAnalyticsService 
-} from '@betterdata/commerce-gateway';
+} from '@commercegateway/commerce-gateway';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -197,7 +197,7 @@ import {
   marketplaceSearchToolDefinition,
   addToCartToolDefinition,
   viewCartToolDefinition,
-} from '@betterdata/commerce-gateway';
+} from '@commercegateway/commerce-gateway';
 
 // Register with MCP server
 server.setRequestHandler('tools/list', async () => ({
@@ -284,7 +284,7 @@ import {
   GatewayError, 
   ValidationError, 
   BackendError 
-} from '@betterdata/commerce-gateway';
+} from '@commercegateway/commerce-gateway';
 
 try {
   await cartHandler.addToCart(...);
@@ -320,7 +320,7 @@ import type {
   VendorCart,
   AnalyticsPeriod,
   ProviderAttribution,
-} from '@betterdata/commerce-gateway';
+} from '@commercegateway/commerce-gateway';
 ```
 
 ## Testing

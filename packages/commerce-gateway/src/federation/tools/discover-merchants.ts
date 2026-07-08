@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Discover Merchants Tool
+ * @commercegateway/commerce-gateway - Discover Merchants Tool
  *
  * Federation tool for discovering merchants by category or product type.
  * Helps users find stores when they don't have a specific merchant in mind.

@@ -18,7 +18,7 @@ import type {
   ShippingAddress,
   InventoryStatus,
   Recommendation,
-} from '@betterdata/commerce-gateway/backends';
+} from '@commercegateway/commerce-gateway/backends';
 
 // WooCommerce API Types
 interface WooProduct {

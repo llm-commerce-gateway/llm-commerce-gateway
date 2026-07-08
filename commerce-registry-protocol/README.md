@@ -24,7 +24,7 @@ MIT License - See [LICENSE](./LICENSE) file for details.
 
 ## Related Projects
 
-- **Commerce Gateway (OSS)**: `@betterdata/commerce-gateway` - Open source gateway implementation
+- **Commerce Gateway (OSS)**: `@commercegateway/commerce-gateway` - Open source gateway implementation
 - **Commerce Registry (Proprietary)**: Registry service implementation (Better Data operated)
 
 ## Contributing

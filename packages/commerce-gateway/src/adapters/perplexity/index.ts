@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Perplexity Adapter Exports
+ * @commercegateway/commerce-gateway - Perplexity Adapter Exports
  *
  * @license Apache-2.0
  */

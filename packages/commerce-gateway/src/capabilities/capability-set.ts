@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Capability Sets (Commerce + SCM + Governance)
+ * @commercegateway/commerce-gateway - Capability Sets (Commerce + SCM + Governance)
  *
  * Structured capability model for tool gating across runtimes.
  *

@@ -6,7 +6,7 @@ LLMs are becoming operational agents. But they have no standard way to talk to c
 
 Commerce Gateway is the open layer that fixes that.
 
-[![npm](https://img.shields.io/npm/v/@betterdata/commerce-gateway)](https://www.npmjs.com/package/@betterdata/commerce-gateway)
+[![npm](https://img.shields.io/npm/v/@commercegateway/commerce-gateway)](https://www.npmjs.com/package/@commercegateway/commerce-gateway)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Discord](https://img.shields.io/discord/commercegateway)](https://discord.gg/commercegateway)
 
@@ -34,24 +34,24 @@ The gateway handles federation, tool dispatch, auth, observability, and the prot
 
 | Package | Description |
 |---|---|
-| [`@betterdata/commerce-gateway`](packages/commerce-gateway) | Core gateway — tools, sessions, adapters, protocol |
-| [`@betterdata/commerce-gateway-mcp`](packages/commerce-gateway-mcp) | MCP server for gateway operations |
-| [`@betterdata/registry-mcp`](packages/registry-mcp) | MCP server for merchant registry discovery |
-| [`@betterdata/commerce-gateway-connectors`](packages/commerce-gateway-connectors) | Shopify, BigCommerce, WooCommerce connectors |
+| [`@commercegateway/commerce-gateway`](packages/commerce-gateway) | Core gateway — tools, sessions, adapters, protocol |
+| [`@commercegateway/commerce-gateway-mcp`](packages/commerce-gateway-mcp) | MCP server for gateway operations |
+| [`@commercegateway/registry-mcp`](packages/registry-mcp) | MCP server for merchant registry discovery |
+| [`@commercegateway/commerce-gateway-connectors`](packages/commerce-gateway-connectors) | Shopify, BigCommerce, WooCommerce connectors |
 
 ---
 
 ## Quickstart
 
 ```bash
-npm install @betterdata/commerce-gateway @betterdata/commerce-gateway-mcp
+npm install @commercegateway/commerce-gateway @commercegateway/commerce-gateway-mcp
 ```
 
 Create a gateway:
 
 ```typescript
-import { createCommerceGateway } from '@betterdata/commerce-gateway';
-import { createMCPServer } from '@betterdata/commerce-gateway-mcp';
+import { createCommerceGateway } from '@commercegateway/commerce-gateway';
+import { createMCPServer } from '@commercegateway/commerce-gateway-mcp';
 
 const gateway = createCommerceGateway({
   // Optional: inject your own auth adapter
@@ -71,7 +71,7 @@ await server.listen({ port: 3000 });
 Connect a storefront:
 
 ```typescript
-import { ShopifyConnector } from '@betterdata/commerce-gateway-connectors';
+import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors';
 
 gateway.registerConnector(
   new ShopifyConnector({
@@ -149,20 +149,20 @@ The gateway exposes a standard HTTP protocol surface:
 
 ## Package Subpath Exports
 
-`@betterdata/commerce-gateway` exposes focused subpath exports:
+`@commercegateway/commerce-gateway` exposes focused subpath exports:
 
 ```typescript
-import { createCommerceGateway } from '@betterdata/commerce-gateway';
-import { createMCPServer }        from '@betterdata/commerce-gateway/mcp';
-import { builtInTools }           from '@betterdata/commerce-gateway/tools';
-import { createRegistryClient }   from '@betterdata/commerce-gateway/registry';
-import { createFederationLayer }  from '@betterdata/commerce-gateway/federation';
+import { createCommerceGateway } from '@commercegateway/commerce-gateway';
+import { createMCPServer }        from '@commercegateway/commerce-gateway/mcp';
+import { builtInTools }           from '@commercegateway/commerce-gateway/tools';
+import { createRegistryClient }   from '@commercegateway/commerce-gateway/registry';
+import { createFederationLayer }  from '@commercegateway/commerce-gateway/federation';
 
 // Lower-level access
-import type { AuthAdapter }       from '@betterdata/commerce-gateway/adapters';
-import { validateToolCall }       from '@betterdata/commerce-gateway/validation';
-import { GatewayError }           from '@betterdata/commerce-gateway/errors';
-import { createObserver }         from '@betterdata/commerce-gateway/observability';
+import type { AuthAdapter }       from '@commercegateway/commerce-gateway/adapters';
+import { validateToolCall }       from '@commercegateway/commerce-gateway/validation';
+import { GatewayError }           from '@commercegateway/commerce-gateway/errors';
+import { createObserver }         from '@commercegateway/commerce-gateway/observability';
 ```
 
 ---
@@ -174,7 +174,7 @@ Commerce Gateway is designed around two pluggable interfaces that keep the core 
 ### AuthAdapter
 
 ```typescript
-import type { AuthAdapter, AuthResult } from '@betterdata/commerce-gateway/adapters';
+import type { AuthAdapter, AuthResult } from '@commercegateway/commerce-gateway/adapters';
 
 interface AuthAdapter {
   validateApiKey(apiKey: string): Promise<AuthResult | null>;
@@ -193,7 +193,7 @@ Default: `EnvAuthAdapter` reads `COMMERCE_GATEWAY_API_KEY` and `COMMERCE_GATEWAY
 ### RegistryStore
 
 ```typescript
-import type { RegistryStore } from '@betterdata/commerce-gateway/registry';
+import type { RegistryStore } from '@commercegateway/commerce-gateway/registry';
 
 interface RegistryStore {
   getGateway(id: string, orgId: string): Promise<Gateway | null>;
@@ -212,10 +212,10 @@ Default: `MemoryRegistryStore` — in-memory, zero dependencies, suitable for se
 
 | LLM | Transport | Package |
 |---|---|---|
-| Claude (Anthropic) | Remote MCP / SSE | `@betterdata/commerce-gateway-mcp` |
-| ChatGPT (OpenAI) | Remote MCP / SSE | `@betterdata/commerce-gateway-mcp` |
-| Grok (xAI) | Remote MCP / SSE | `@betterdata/commerce-gateway-mcp` |
-| Custom agents | SSE transport | `@betterdata/commerce-gateway-mcp` |
+| Claude (Anthropic) | Remote MCP / SSE | `@commercegateway/commerce-gateway-mcp` |
+| ChatGPT (OpenAI) | Remote MCP / SSE | `@commercegateway/commerce-gateway-mcp` |
+| Grok (xAI) | Remote MCP / SSE | `@commercegateway/commerce-gateway-mcp` |
+| Custom agents | SSE transport | `@commercegateway/commerce-gateway-mcp` |
 
 ---
 

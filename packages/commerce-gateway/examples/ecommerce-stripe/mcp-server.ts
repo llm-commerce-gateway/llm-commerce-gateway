@@ -7,7 +7,7 @@
  * - Stripe checkout
  */
 
-import { MCPServer } from '@betterdata/commerce-gateway/mcp';
+import { MCPServer } from '@commercegateway/commerce-gateway/mcp';
 import { JsonProductBackend } from './backend/ProductBackend.js';
 import { RedisCartBackend } from './backend/CartBackend.js';
 import { StripeOrderBackend } from './backend/OrderBackend.js';

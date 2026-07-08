@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Mock Backends
+ * @commercegateway/commerce-gateway - Mock Backends
  * 
  * Mock implementations of backend interfaces for testing.
  * 

@@ -11,7 +11,7 @@ We release patches for security vulnerabilities for the following versions:
 
 ## Reporting a Vulnerability
 
-We take the security of @betterdata/commerce-gateway seriously. If you believe you have found a security vulnerability, please report it to us as described below.
+We take the security of @commercegateway/commerce-gateway seriously. If you believe you have found a security vulnerability, please report it to us as described below.
 
 ### Please Do Not
 
@@ -37,7 +37,7 @@ We take the security of @betterdata/commerce-gateway seriously. If you believe y
 
 ## Security Best Practices
 
-When using @betterdata/commerce-gateway, follow these security best practices:
+When using @commercegateway/commerce-gateway, follow these security best practices:
 
 ### API Keys and Secrets
 
@@ -240,7 +240,7 @@ We follow responsible disclosure practices and will:
 - Credit you in our security advisory (if desired)
 - Not take legal action against researchers who report vulnerabilities in good faith
 
-Thank you for helping keep @betterdata/commerce-gateway and its users safe!
+Thank you for helping keep @commercegateway/commerce-gateway and its users safe!
 
 ## Contact
 

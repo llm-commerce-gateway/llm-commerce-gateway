@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Base Link Generator
+ * @commercegateway/commerce-gateway - Base Link Generator
  * 
  * Base class for link generator implementations.
  * 

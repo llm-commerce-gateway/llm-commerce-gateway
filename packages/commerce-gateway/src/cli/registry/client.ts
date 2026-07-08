@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway CLI - Registry API Client
+ * @commercegateway/commerce-gateway CLI - Registry API Client
  * 
  * Client for registry API operations (register, verify, claim-gtins)
  * 

@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Universal Tool Registry
+ * @commercegateway/commerce-gateway - Universal Tool Registry
  * 
  * Manages tool definitions that work across all LLM providers.
  * Tools are defined once and automatically converted to provider-specific formats.

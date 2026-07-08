@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Federation Types & Interfaces
+ * @commercegateway/commerce-gateway - Federation Types & Interfaces
  *
  * Core type definitions for the Federation Hub that routes shopping intent
  * to merchant-specific gateway instances.
@@ -28,11 +28,11 @@
  *    - Meta tag in page head
  *    - API callback challenge-response
  *
- * See `@betterdata/commerce-gateway/federation/auth` for implementation details.
+ * See `@commercegateway/commerce-gateway/federation/auth` for implementation details.
  *
  * @example
  * ```typescript
- * import type { MerchantRegistration, FederatedResult } from '@betterdata/commerce-gateway/federation';
+ * import type { MerchantRegistration, FederatedResult } from '@commercegateway/commerce-gateway/federation';
  *
  * const merchant: MerchantRegistration = {
  *   domain: 'vuoriclothing.com',

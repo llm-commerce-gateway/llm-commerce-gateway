@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Link Analytics
+ * @commercegateway/commerce-gateway - Link Analytics
  * 
  * @license Apache-2.0
  */

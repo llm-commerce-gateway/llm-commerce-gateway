@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Test Mocks Index
+ * @commercegateway/commerce-gateway - Test Mocks Index
  * 
  * Export all mocks for easy importing in tests.
  * 

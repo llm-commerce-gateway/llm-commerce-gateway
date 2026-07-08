@@ -1,5 +1,5 @@
 /**
- * Simple Demo - @betterdata/commerce-gateway
+ * Simple Demo - @commercegateway/commerce-gateway
  * 
  * A minimal example showing how to set up the LLM Gateway with mock backends.
  * Perfect for testing and development.

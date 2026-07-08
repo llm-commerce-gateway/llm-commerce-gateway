@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - API Key Strategy
+ * @commercegateway/commerce-gateway - API Key Strategy
  * 
  * Simple and secure API key authentication.
  * 

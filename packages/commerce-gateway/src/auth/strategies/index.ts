@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Auth Strategies
+ * @commercegateway/commerce-gateway - Auth Strategies
  * 
  * Authentication strategy implementations.
  * 

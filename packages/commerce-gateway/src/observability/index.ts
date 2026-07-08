@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Observability Module
+ * @commercegateway/commerce-gateway - Observability Module
  * 
  * Provides structured logging and observability utilities.
  * 

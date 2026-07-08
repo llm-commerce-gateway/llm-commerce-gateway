@@ -1,6 +1,6 @@
 # Release Announcement Template
 
-## Subject: Announcing @betterdata/commerce-gateway v1.0.0 - Universal LLM Gateway for Conversational Commerce
+## Subject: Announcing @commercegateway/commerce-gateway v1.0.0 - Universal LLM Gateway for Conversational Commerce
 
 ---
 
@@ -12,10 +12,10 @@ The **LLM Commerce Gateway** is a universal abstraction layer that enables any e
 
 | Package | Description |
 |---------|-------------|
-| `@betterdata/commerce-gateway` | Core gateway runtime |
-| `@betterdata/commerce-gateway-connectors` | Shopify, BigCommerce, WooCommerce connectors |
-| `@betterdata/commerce-gateway-mcp` | MCP server for gateway operations |
-| `@betterdata/registry-mcp` | MCP server for registry resolution |
+| `@commercegateway/commerce-gateway` | Core gateway runtime |
+| `@commercegateway/commerce-gateway-connectors` | Shopify, BigCommerce, WooCommerce connectors |
+| `@commercegateway/commerce-gateway-mcp` | MCP server for gateway operations |
+| `@commercegateway/registry-mcp` | MCP server for registry resolution |
 | `commerce-registry-protocol` | Open protocol specification (MIT) |
 
 ### 🚀 Key Features
@@ -31,11 +31,11 @@ The **LLM Commerce Gateway** is a universal abstraction layer that enables any e
 ### 📦 Quick Start
 
 ```bash
-npm install @betterdata/commerce-gateway
+npm install @commercegateway/commerce-gateway
 ```
 
 ```typescript
-import { LLMGateway } from '@betterdata/commerce-gateway';
+import { LLMGateway } from '@commercegateway/commerce-gateway';
 
 const gateway = new LLMGateway({
   backends: {
@@ -50,7 +50,7 @@ await gateway.start(3000);
 
 ### 🔗 Links
 
-- **npm**: https://www.npmjs.com/package/@betterdata/commerce-gateway
+- **npm**: https://www.npmjs.com/package/@commercegateway/commerce-gateway
 - **GitHub**: https://github.com/betterdataco/llm-commerce-gateway
 - **Documentation**: https://github.com/betterdataco/llm-commerce-gateway/tree/main/packages/commerce-gateway/docs
 - **Deploy**: [Vercel](https://vercel.com/new/clone?repository-url=https://github.com/betterdataco/llm-commerce-gateway) | [Railway](https://railway.app/new/template?template=https://github.com/betterdataco/llm-commerce-gateway)
@@ -91,11 +91,11 @@ Use the main content above (Subject through License) as the blog body. Add a sho
 
 ### Twitter/X
 
-🚀 Announcing @betterdata/commerce-gateway v1.0.0 - Universal LLM Gateway for Conversational Commerce!
+🚀 Announcing @commercegateway/commerce-gateway v1.0.0 - Universal LLM Gateway for Conversational Commerce!
 
 Connect your e-commerce platform to Claude, ChatGPT, and Grok with a single API. Gateway runtime packages are Apache-2.0, and the protocol spec is MIT.
 
-🔗 npm: https://www.npmjs.com/package/@betterdata/commerce-gateway
+🔗 npm: https://www.npmjs.com/package/@commercegateway/commerce-gateway
 📚 Docs: https://github.com/betterdataco/llm-commerce-gateway
 
 #AI #Ecommerce #OpenSource #LLM
@@ -113,11 +113,11 @@ Key benefits:
 
 Perfect for e-commerce platforms, marketplace operators, and developers building AI-powered shopping experiences. Start with OSS, upgrade to Cloud when you need advanced features.
 
-Try it today: https://www.npmjs.com/package/@betterdata/commerce-gateway
+Try it today: https://www.npmjs.com/package/@commercegateway/commerce-gateway
 
 ### Reddit (r/node, r/javascript, r/ecommerce)
 
-**Title**: Announcing @betterdata/commerce-gateway - Universal LLM Gateway for Conversational Commerce (Open Source)
+**Title**: Announcing @commercegateway/commerce-gateway - Universal LLM Gateway for Conversational Commerce (Open Source)
 
 **Body**:
 
@@ -144,7 +144,7 @@ Every e-commerce platform needs to integrate with multiple AI assistants, but ea
 - Full TypeScript types
 
 **Links:**
-- npm: https://www.npmjs.com/package/@betterdata/commerce-gateway
+- npm: https://www.npmjs.com/package/@commercegateway/commerce-gateway
 - GitHub: https://github.com/betterdataco/llm-commerce-gateway
 - Docs: https://github.com/betterdataco/llm-commerce-gateway/tree/main/packages/commerce-gateway/docs
 
@@ -154,7 +154,7 @@ Would love feedback from the community!
 
 ## Hacker News
 
-**Title**: Show HN: @betterdata/commerce-gateway – Universal LLM Gateway for E-commerce (Open Source)
+**Title**: Show HN: @commercegateway/commerce-gateway – Universal LLM Gateway for E-commerce (Open Source)
 
 **Body**:
 
@@ -177,7 +177,7 @@ A universal abstraction layer that:
 - Apache-2.0 gateway runtime packages + MIT protocol spec
 
 **Links:**
-- npm: https://www.npmjs.com/package/@betterdata/commerce-gateway
+- npm: https://www.npmjs.com/package/@commercegateway/commerce-gateway
 - GitHub: https://github.com/betterdataco/llm-commerce-gateway
 - Docs: https://github.com/betterdataco/llm-commerce-gateway/tree/main/packages/commerce-gateway/docs
 

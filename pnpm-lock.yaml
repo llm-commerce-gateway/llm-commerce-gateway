@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@betterdata/commerce-gateway@^1.0.0': workspace:*
+  '@commercegateway/commerce-gateway@^1.0.0': workspace:*
 
 importers:
 
@@ -20,13 +20,13 @@ importers:
 
   apps/gateway-console:
     dependencies:
-      '@betterdata/commerce-gateway':
+      '@commercegateway/commerce-gateway':
         specifier: workspace:*
         version: link:../../packages/commerce-gateway
-      '@betterdata/commerce-gateway-mcp':
+      '@commercegateway/commerce-gateway-mcp':
         specifier: workspace:*
         version: link:../../packages/commerce-gateway-mcp
-      '@betterdata/registry-mcp':
+      '@commercegateway/registry-mcp':
         specifier: workspace:*
         version: link:../../packages/registry-mcp
       next:
@@ -194,7 +194,7 @@ importers:
 
   packages/commerce-gateway-connectors:
     devDependencies:
-      '@betterdata/commerce-gateway':
+      '@commercegateway/commerce-gateway':
         specifier: workspace:*
         version: link:../commerce-gateway
       '@types/node':
@@ -209,7 +209,7 @@ importers:
 
   packages/commerce-gateway-mcp:
     dependencies:
-      '@betterdata/commerce-gateway':
+      '@commercegateway/commerce-gateway':
         specifier: workspace:*
         version: link:../commerce-gateway
     devDependencies:
@@ -225,7 +225,7 @@ importers:
 
   packages/registry-mcp:
     dependencies:
-      '@betterdata/commerce-gateway':
+      '@commercegateway/commerce-gateway':
         specifier: workspace:*
         version: link:../commerce-gateway
       '@modelcontextprotocol/sdk':

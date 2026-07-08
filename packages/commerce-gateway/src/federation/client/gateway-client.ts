@@ -1,12 +1,12 @@
 /**
- * @betterdata/commerce-gateway - Federation Gateway Client
+ * @commercegateway/commerce-gateway - Federation Gateway Client
  *
  * HTTP client for calling remote merchant LLM Gateways.
  * Handles authentication, retries, timeouts, and result mapping.
  *
  * @example
  * ```typescript
- * import { GatewayClient } from '@betterdata/commerce-gateway/federation';
+ * import { GatewayClient } from '@commercegateway/commerce-gateway/federation';
  *
  * const client = new GatewayClient({
  *   timeout: 10000,
@@ -172,7 +172,7 @@ export class GatewayClient {
     this.jwtSigningKey = options.jwtSigningKey;
     this.jwtKeyId = options.jwtKeyId;
     this.jwtIssuer = options.jwtIssuer ?? 'federation-hub';
-    this.userAgent = options.userAgent ?? '@betterdata/commerce-gateway-client/1.0';
+    this.userAgent = options.userAgent ?? '@commercegateway/commerce-gateway-client/1.0';
     this.debug = options.debug ?? false;
   }
 

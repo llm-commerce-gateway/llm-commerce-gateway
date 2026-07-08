@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - MCP Tool Handlers
+ * @commercegateway/commerce-gateway - MCP Tool Handlers
  * 
  * Implements all commerce tools for the MCP server.
  * Each tool handler calls backend interfaces and formats responses for Claude.

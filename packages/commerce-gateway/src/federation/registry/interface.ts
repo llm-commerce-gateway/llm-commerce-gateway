@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Merchant Registry Interface
+ * @commercegateway/commerce-gateway - Merchant Registry Interface
  *
  * Defines the contract for merchant registry backends.
  * Implementations include in-memory, file-based, and HTTP (remote) registries.

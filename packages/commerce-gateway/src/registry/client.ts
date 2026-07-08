@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Registry Client
+ * @commercegateway/commerce-gateway - Registry Client
  * 
  * Client for the Commerce Gateway Registry service
  * Handles brand, GTIN, and category resolution

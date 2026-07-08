@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - MCP Types
+ * @commercegateway/commerce-gateway - MCP Types
  * 
  * Type definitions for Model Context Protocol (MCP) server implementation.
  * These types follow the MCP specification for Claude.ai integration.

@@ -20,7 +20,7 @@ Complete API reference for the Better Data LLM Gateway.
 Main gateway class that orchestrates all functionality.
 
 ```typescript
-import { LLMGateway } from '@betterdata/commerce-gateway';
+import { LLMGateway } from '@commercegateway/commerce-gateway';
 
 const gateway = new LLMGateway({
   backends: {
@@ -119,7 +119,7 @@ interface OrderBackend {
 ### Registering Tools
 
 ```typescript
-import { ToolRegistry } from '@betterdata/commerce-gateway';
+import { ToolRegistry } from '@commercegateway/commerce-gateway';
 
 ToolRegistry.register({
   name: 'my_tool',
@@ -152,7 +152,7 @@ ToolRegistry.register({
 Manages user sessions across LLM platforms.
 
 ```typescript
-import { SessionManager } from '@betterdata/commerce-gateway';
+import { SessionManager } from '@commercegateway/commerce-gateway';
 
 const sessionManager = new SessionManager({
   redis: { url: process.env.REDIS_URL },
@@ -183,7 +183,7 @@ await sessionManager.updateSession(sessionId, {
 For Claude integration.
 
 ```typescript
-import { createMCPAdapter } from '@betterdata/commerce-gateway/mcp';
+import { createMCPAdapter } from '@commercegateway/commerce-gateway/mcp';
 
 const mcpServer = createMCPAdapter(gateway);
 ```
@@ -193,7 +193,7 @@ const mcpServer = createMCPAdapter(gateway);
 For ChatGPT integration.
 
 ```typescript
-import { createOpenAIAdapter } from '@betterdata/commerce-gateway/openai';
+import { createOpenAIAdapter } from '@commercegateway/commerce-gateway/openai';
 
 const adapter = createOpenAIAdapter(gateway);
 ```
@@ -203,7 +203,7 @@ const adapter = createOpenAIAdapter(gateway);
 For Grok integration.
 
 ```typescript
-import { GrokAdapter } from '@betterdata/commerce-gateway/grok';
+import { GrokAdapter } from '@commercegateway/commerce-gateway/grok';
 
 const adapter = new GrokAdapter({
   apiKey: process.env.GROK_API_KEY!,
@@ -224,7 +224,7 @@ const adapter = new GrokAdapter({
 Multi-vendor marketplace hub.
 
 ```typescript
-import { FederationHub } from '@betterdata/commerce-gateway/federation';
+import { FederationHub } from '@commercegateway/commerce-gateway/federation';
 
 const hub = await FederationHub.create({
   registry: {
@@ -325,7 +325,7 @@ import {
   ProductNotFoundError,
   ValidationError,
   AuthenticationError,
-} from '@betterdata/commerce-gateway/errors';
+} from '@commercegateway/commerce-gateway/errors';
 
 try {
   // Your code

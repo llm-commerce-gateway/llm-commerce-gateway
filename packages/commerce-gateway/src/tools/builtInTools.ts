@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Built-in Commerce Tools
+ * @commercegateway/commerce-gateway - Built-in Commerce Tools
  * 
  * These tools work with any commerce backend that implements the
  * ProductBackend, CartBackend, and OrderBackend interfaces.

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * @betterdata/commerce-gateway CLI - Registry Commands
+ * @commercegateway/commerce-gateway CLI - Registry Commands
  * 
  * Main entry point for registry CLI commands
  * 

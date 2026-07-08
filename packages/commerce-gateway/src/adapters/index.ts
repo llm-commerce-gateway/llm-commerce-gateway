@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - LLM Adapters
+ * @commercegateway/commerce-gateway - LLM Adapters
  *
  * Unified adapters for different LLM providers.
  * All adapters share the same backend interfaces for consistent tool execution.
@@ -7,25 +7,25 @@
  * @example
  * ```typescript
  * // OpenAI
- * import { OpenAIAdapter } from '@betterdata/commerce-gateway/openai';
+ * import { OpenAIAdapter } from '@commercegateway/commerce-gateway/openai';
  *
  * // Grok
- * import { GrokAdapter } from '@betterdata/commerce-gateway/grok';
+ * import { GrokAdapter } from '@commercegateway/commerce-gateway/grok';
  *
  * // Anthropic (Claude)
- * import { AnthropicAdapter } from '@betterdata/commerce-gateway/anthropic';
+ * import { AnthropicAdapter } from '@commercegateway/commerce-gateway/anthropic';
  *
  * // Google (Gemini)
- * import { GeminiAdapter } from '@betterdata/commerce-gateway/google';
+ * import { GeminiAdapter } from '@commercegateway/commerce-gateway/google';
  *
  * // Perplexity
- * import { PerplexityAdapter } from '@betterdata/commerce-gateway/perplexity';
+ * import { PerplexityAdapter } from '@commercegateway/commerce-gateway/perplexity';
  *
  * // Llama (Together AI, Groq, local)
- * import { LlamaAdapter } from '@betterdata/commerce-gateway/llama';
+ * import { LlamaAdapter } from '@commercegateway/commerce-gateway/llama';
  *
  * // Or import all from adapters
- * import { OpenAIAdapter, GrokAdapter, AnthropicAdapter, GeminiAdapter, BaseAdapter } from '@betterdata/commerce-gateway/adapters';
+ * import { OpenAIAdapter, GrokAdapter, AnthropicAdapter, GeminiAdapter, BaseAdapter } from '@commercegateway/commerce-gateway/adapters';
  * ```
  *
  * @license Apache-2.0

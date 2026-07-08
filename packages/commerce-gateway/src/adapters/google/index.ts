@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Google Gemini Adapter Exports
+ * @commercegateway/commerce-gateway - Google Gemini Adapter Exports
  *
  * @license Apache-2.0
  */

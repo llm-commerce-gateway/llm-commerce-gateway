@@ -1,20 +1,25 @@
 # Promotion Runbook
 
-This runbook defines the promotion path from internal development in `bd-forge-main` to OSS packaging in `llm-commerce-gateway`, then to GitHub and npm.
+**GATEWAY-OSS-02:** OSS mirror (`betterdata-oss/commerce-gateway`) is **docs/examples only**.
+npm publishes from **bd-forge-main** as `@commercegateway/*`. Mirror `.github/workflows/release.yml`
+is **retired** — do not publish from this repo.
+
+This runbook defines the one-way promotion path from `bd-forge-main` to the OSS mirror for
+docs/examples sync. npm publish: `bd-forge-main` `oss-release.yml` (GATEWAY-OSS-03).
 
 ## Repositories
 
-- Internal source repo: `/Users/toddp/Projects/betterdata-platform/bd-forge-main`
-- OSS release repo: `/Users/toddp/Projects/betterdata-oss/commerce-gateway`
+- **Canonical source + publish:** `/Users/toddp/Projects/betterdata-platform/bd-forge-main`
+- **OSS mirror (docs/examples):** `/Users/toddp/Projects/betterdata-oss/commerce-gateway`
 
 ## OSS package surface
 
 The following packages are promoted as OSS under Apache-2.0:
 
-- `@betterdata/commerce-gateway`
-- `@betterdata/commerce-gateway-mcp`
-- `@betterdata/registry-mcp`
-- `@betterdata/commerce-gateway-connectors`
+- `@commercegateway/commerce-gateway`
+- `@commercegateway/commerce-gateway-mcp`
+- `@commercegateway/registry-mcp`
+- `@commercegateway/commerce-gateway-connectors`
 
 ## OSS application surface
 
@@ -66,18 +71,18 @@ Run from `llm-commerce-gateway` root:
 pnpm install --frozen-lockfile
 pnpm build
 
-pnpm --filter @betterdata/commerce-gateway check:contract
-pnpm --filter @betterdata/commerce-gateway-mcp check:oss-boundary
-pnpm --filter @betterdata/registry-mcp check:oss-boundary
+pnpm --filter @commercegateway/commerce-gateway check:contract
+pnpm --filter @commercegateway/commerce-gateway-mcp check:oss-boundary
+pnpm --filter @commercegateway/registry-mcp check:oss-boundary
 
-pnpm --filter @betterdata/commerce-gateway typecheck
-pnpm --filter @betterdata/commerce-gateway-mcp typecheck
-pnpm --filter @betterdata/registry-mcp typecheck
-pnpm --filter @betterdata/commerce-gateway-connectors typecheck
+pnpm --filter @commercegateway/commerce-gateway typecheck
+pnpm --filter @commercegateway/commerce-gateway-mcp typecheck
+pnpm --filter @commercegateway/registry-mcp typecheck
+pnpm --filter @commercegateway/commerce-gateway-connectors typecheck
 
-pnpm --filter @betterdata/commerce-gateway exec vitest run tests/contract/v0.1.test.ts
-pnpm --filter @betterdata/commerce-gateway exec vitest run tests/unit/telemetry.test.ts
-pnpm --filter @betterdata/commerce-gateway exec vitest run tests/unit/adapters/grok-adapter.test.ts
+pnpm --filter @commercegateway/commerce-gateway exec vitest run tests/contract/v0.1.test.ts
+pnpm --filter @commercegateway/commerce-gateway exec vitest run tests/unit/telemetry.test.ts
+pnpm --filter @commercegateway/commerce-gateway exec vitest run tests/unit/adapters/grok-adapter.test.ts
 ```
 
 If any command fails due to missing files/dependencies, promotion is blocked until the OSS repo is self-sufficient.
@@ -125,7 +130,7 @@ Gateway Console must remain:
 - **Local-first**. Persistence is `gateway.config.json` on disk. No
   Prisma, no database client, no ORM. Read-path fallbacks are allowed
   (e.g. env var `REGISTRY_URL` overriding config).
-- **Free of `@repo/*` imports**. Only `@betterdata/commerce-gateway*`
+- **Free of `@repo/*` imports**. Only `@commercegateway/commerce-gateway*`
   sibling packages, standard Node.js, Next.js, and React.
 - **Free of `apps/*` cross-imports**. The console must not reach into
   another app's source or public assets (this was an explicit finding
@@ -140,7 +145,7 @@ Gateway Console must remain:
 | No `.vercel/project.json` committed | `.gitignore` + PR review |
 | `README.md` declares SCM-vs-console boundary | README lint / code review |
 | Builds on Node 18, 20, 22 | `oss-split-verify` workflow matrix |
-| Sibling workspace deps (`@betterdata/commerce-gateway*`) resolve | `pnpm install --frozen-lockfile` in CI |
+| Sibling workspace deps (`@commercegateway/commerce-gateway*`) resolve | `pnpm install --frozen-lockfile` in CI |
 
 ### Verification steps
 

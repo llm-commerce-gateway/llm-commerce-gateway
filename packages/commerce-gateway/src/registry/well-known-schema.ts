@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - .well-known Schema
+ * @commercegateway/commerce-gateway - .well-known Schema
  * 
  * Type definitions and validation for the .well-known/commerce-gateway.json schema
  * See: commerce-gateway-implementation-spec.md Appendix A

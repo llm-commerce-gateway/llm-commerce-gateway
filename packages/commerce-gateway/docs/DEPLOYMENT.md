@@ -365,7 +365,7 @@ curl http://localhost:3000/health
 
 ```typescript
 // Add to your gateway
-import { prometheus } from '@betterdata/commerce-gateway/observability';
+import { prometheus } from '@commercegateway/commerce-gateway/observability';
 
 // Metrics are automatically exposed at /metrics
 ```

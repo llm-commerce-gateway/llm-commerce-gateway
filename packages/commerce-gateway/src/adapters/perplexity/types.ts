@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - Perplexity Adapter Types
+ * @commercegateway/commerce-gateway - Perplexity Adapter Types
  *
  * Type definitions for Perplexity API (OpenAI-compatible).
  *

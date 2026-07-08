@@ -1,5 +1,5 @@
 /**
- * @betterdata/commerce-gateway - MCP Response Formatters
+ * @commercegateway/commerce-gateway - MCP Response Formatters
  * 
  * Formats data into rich markdown and structured content for Claude.
  * Provides consistent, beautiful output across all tools.
