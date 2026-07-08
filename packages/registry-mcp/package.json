@@ -1,6 +1,6 @@
 {
   "name": "@commercegateway/registry-mcp",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "description": "Commerce Gateway Registry MCP Server for Claude Desktop integration",
   "license": "Apache-2.0",
   "type": "module",
@@ -32,7 +32,7 @@
     "check:oss-boundary": "node ../../scripts/check-oss-boundary.mjs --package ."
   },
   "dependencies": {
-    "@commercegateway/commerce-gateway": "^1.0.0",
+    "@commercegateway/commerce-gateway": "^1.0.0-rc.1",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "jose": "^5.10.0"
   },
@@ -49,6 +49,12 @@
     "registry",
     "gateway"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway.git",
+    "directory": "packages/registry-mcp"
+  },
+  "homepage": "https://github.com/llm-commerce-gateway/llm-commerce-gateway#readme",
   "files": [
     "dist",
     "src",

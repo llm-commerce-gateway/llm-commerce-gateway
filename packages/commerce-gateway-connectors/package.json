@@ -1,6 +1,6 @@
 {
   "name": "@commercegateway/commerce-gateway-connectors",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "description": "Commerce platform connectors for the LLM Commerce Gateway — Shopify, BigCommerce, WooCommerce",
   "license": "Apache-2.0",
   "type": "module",
@@ -33,7 +33,7 @@
     "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
-    "@commercegateway/commerce-gateway": "^1.0.0"
+    "@commercegateway/commerce-gateway": "^1.0.0-rc.1"
   },
   "devDependencies": {
     "@commercegateway/commerce-gateway": "workspace:*",
@@ -43,10 +43,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/betterdataco/llm-commerce-gateway.git",
+    "url": "https://github.com/llm-commerce-gateway/llm-commerce-gateway.git",
     "directory": "packages/commerce-gateway-connectors"
   },
-  "homepage": "https://github.com/betterdataco/llm-commerce-gateway",
+  "homepage": "https://github.com/llm-commerce-gateway/llm-commerce-gateway#readme",
   "keywords": [
     "commerce",
     "gateway",
