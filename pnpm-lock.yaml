@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@commercegateway/commerce-gateway@^1.0.0': workspace:*
+  '@commercegateway/commerce-gateway@^1.0.0-rc.2': workspace:*
 
 importers:
 

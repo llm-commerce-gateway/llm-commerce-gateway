@@ -1,6 +1,6 @@
 {
   "name": "@commercegateway/commerce-gateway-connectors",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "Commerce platform connectors for the LLM Commerce Gateway — Shopify, BigCommerce, WooCommerce",
   "license": "Apache-2.0",
   "type": "module",
@@ -33,7 +33,7 @@
     "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
-    "@commercegateway/commerce-gateway": "^1.0.0-rc.1"
+    "@commercegateway/commerce-gateway": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "@commercegateway/commerce-gateway": "workspace:*",

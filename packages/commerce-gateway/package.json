@@ -1,6 +1,6 @@
 {
   "name": "@commercegateway/commerce-gateway",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "Universal LLM Gateway for Conversational Commerce - Build AI-powered shopping experiences with any LLM provider and any commerce backend",
   "license": "Apache-2.0",
   "author": "Better Data <hello@betterdata.dev>",
