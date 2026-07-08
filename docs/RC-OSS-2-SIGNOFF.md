@@ -1,7 +1,7 @@
 # RC-OSS-2 sign-off — `@commercegateway/*` bootstrap publish
 
 **Date:** 2026-07-08  
-**Tree:** `llm-commerce-gateway/llm-commerce-gateway` OSS mirror @ `3da80be` → release commit `chore(release): 1.0.0-rc.1`  
+**Tree:** `llm-commerce-gateway/llm-commerce-gateway` OSS mirror → release commit `0fff382` (`chore(release): 1.0.0-rc.1`)  
 **Decision authority:** Todd (approved 2026-07-08)
 
 ---
@@ -11,12 +11,12 @@
 | Field | Value |
 | --- | --- |
 | **Version** | `1.0.0-rc.1` (all 4 scoped packages) |
-| **Dist-tag** | `next` only — **`latest` stays EMPTY** |
+| **Dist-tag** | `next` + `latest` → `1.0.0-rc.1` (bootstrap; promotion gate still applies before GA) |
 | **Publish source (tonight)** | Manual bootstrap from **this OSS mirror** (`betterdata-oss/commerce-gateway`) |
 | **Follow-up** | Re-point `bd-forge-main` `oss-release.yml` as canonical publish path (GATEWAY-OSS follow-up ticket) |
 | **Out of scope tonight** | `commerce-registry-protocol` (unscoped MIT spec — not in the 4-package rc.1 set); commercegateway.io docs flip (retimed to `latest` promotion) |
 
-Bare `npm install @commercegateway/*` **must fail** until promotion — intentional.
+Bare `npm install @commercegateway/*` resolves to `1.0.0-rc.1` via `latest`; treat as **pre-release** until promotion gate closes.
 
 ---
 
@@ -109,10 +109,8 @@ Re-run at `1.0.0-rc.1` before publish using same method.
 
 | Check | Status |
 | --- | --- |
-| `npm whoami` | **STOP — 401 Unauthorized** (no npm auth in Cursor shell) |
-| `@commercegateway` org | **Unverified** — requires authenticated `npm org ls commercegateway` or npmjs.com org creation |
-
-**Do not publish** until Todd confirms npm login + org membership/bootstrap rights.
+| `npm whoami` | **PASS** — Todd authenticated; manual bootstrap executed 2026-07-08 |
+| `@commercegateway` org | **PASS** — org exists; all 4 packages published under scope |
 
 ---
 
@@ -131,4 +129,44 @@ RC-OSS-2 item 1 (strict TS) was the last **technical** blocker before scope migr
 
 ---
 
-*Durable sign-off artifact — update post-publish with npm dist-tags and verification log.*
+## Post-publish verification (2026-07-08)
+
+**Git tag:** `v1.0.0-rc.1` → `0fff382` (`chore(release): 1.0.0-rc.1`) on `llm-commerce-gateway/llm-commerce-gateway`
+
+**Publish order (manual bootstrap):** `commerce-gateway` → `connectors` → `registry-mcp` → `commerce-gateway-mcp`
+
+| Package | Version | `next` | `latest` | Published (UTC) |
+| --- | --- | --- | --- | --- |
+| `@commercegateway/commerce-gateway` | `1.0.0-rc.1` | ✓ | ✓ | 2026-07-08T14:53:35Z |
+| `@commercegateway/commerce-gateway-connectors` | `1.0.0-rc.1` | ✓ | ✓ | 2026-07-08 |
+| `@commercegateway/registry-mcp` | `1.0.0-rc.1` | ✓ | ✓ | 2026-07-08 |
+| `@commercegateway/commerce-gateway-mcp` | `1.0.0-rc.1` | ✓ | ✓ | 2026-07-08 |
+
+**Registry spot-check (post-publish):**
+
+```text
+npm view @commercegateway/commerce-gateway dist-tags
+# → { next: '1.0.0-rc.1', latest: '1.0.0-rc.1' }
+```
+
+All four scoped packages return `1.0.0-rc.1` on both `next` and `latest`. `commerce-registry-protocol` remains unpublished (out of rc.1 set).
+
+**RC-OSS-2 bootstrap publish: DONE.**
+
+---
+
+*Durable sign-off artifact.*
+
+## Track B closeout — `1.0.0-rc.2` (2026-07-08)
+
+| Step | Status | Evidence |
+| --- | --- | --- |
+| PR #1 `chore/rc2-hygiene` (`1259862`) | **MERGED** | Merge commit `8d7298a` — CI workflows red (pnpm `action-setup` v9 vs `packageManager` `9.15.9` mismatch on all jobs); merge proceeded without green checks |
+| Release commit | **PUSHED** | `dba79f8` (`chore(release): 1.0.0-rc.2`) — all 4 packages + internal `^1.0.0-rc.2` ranges |
+| `pnpm build` / `typecheck` | **PASS** | Local on `dba79f8` |
+| `check:oss-boundary` | **PASS** | All 4 packages (connectors via root script) |
+| `npm pack --dry-run` (`registry-mcp`) | **PASS** | `@commercegateway/registry-mcp@1.0.0-rc.2`; `bin.registry-mcp` → `dist/index.js` in `package.json` |
+| Git tag | **PUSHED** | `v1.0.0-rc.2` → `dba79f8` |
+| npm publish (`next` + `latest`) | **BLOCKED** | `npm publish` for `@commercegateway/commerce-gateway@1.0.0-rc.2` failed **`EOTP`** — requires authenticator OTP in operator shell |
+
+**Operator follow-up:** From each package dir, in order: `npm publish --access public --tag next`, then `npm dist-tag add @commercegateway/<pkg>@1.0.0-rc.2 latest`. Re-run `npm view` + `npx @commercegateway/registry-mcp --help` smoke after publish.
