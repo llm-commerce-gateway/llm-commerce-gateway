@@ -50,10 +50,10 @@ npm install @commercegateway/commerce-gateway @commercegateway/commerce-gateway-
 Create a gateway:
 
 ```typescript
-import { createCommerceGateway } from '@commercegateway/commerce-gateway';
+import { createGateway } from '@commercegateway/commerce-gateway';
 import { createMCPServer } from '@commercegateway/commerce-gateway-mcp';
 
-const gateway = createCommerceGateway({
+const gateway = createGateway({
   // Optional: inject your own auth adapter
   // Defaults to EnvAuthAdapter (reads COMMERCE_GATEWAY_API_KEY)
   authAdapter: new MyAuthAdapter(),
@@ -152,7 +152,7 @@ The gateway exposes a standard HTTP protocol surface:
 `@commercegateway/commerce-gateway` exposes focused subpath exports:
 
 ```typescript
-import { createCommerceGateway } from '@commercegateway/commerce-gateway';
+import { createGateway } from '@commercegateway/commerce-gateway';
 import { createMCPServer }        from '@commercegateway/commerce-gateway/mcp';
 import { builtInTools }           from '@commercegateway/commerce-gateway/tools';
 import { createRegistryClient }   from '@commercegateway/commerce-gateway/registry';

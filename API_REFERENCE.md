@@ -118,7 +118,7 @@ Defined in `packages/commerce-gateway/src/core/protocol-endpoints.ts`.
 
 ```typescript
 // Main entry — gateway factory
-import { createCommerceGateway, type GatewayConfig } from '@commercegateway/commerce-gateway';
+import { createGateway, type GatewayConfig } from '@commercegateway/commerce-gateway';
 
 // MCP server
 import { createMCPServer, type MCPServerConfig } from '@commercegateway/commerce-gateway/mcp';
