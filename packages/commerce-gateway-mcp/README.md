@@ -92,4 +92,4 @@ Tools are enabled by gateway capabilities:
 
 ## License
 
-MIT
+Apache-2.0 — see [LICENSE](./LICENSE).
