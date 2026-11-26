@@ -10,7 +10,7 @@ MCP server wrapper for the Better Data gateway. Use it to expose commerce tools 
 npx @commercegateway/commerce-gateway-mcp
 ```
 
-By default, it loads `gateway.config.json` from your current directory.
+With no `gateway.config.json`, this starts stdio MCP against **built-in demo backends** so a first install can be tested immediately. Copy `gateway.config.example.json` to `gateway.config.json` (or pass `--config` / `GATEWAY_CONFIG`) to name the server.
 
 ## `gateway.config.json`
 

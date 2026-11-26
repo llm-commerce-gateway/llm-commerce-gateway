@@ -86,6 +86,9 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
+      - name: Build commerce-gateway (subpath .d.ts for dependents)
+        run: pnpm --filter @commercegateway/commerce-gateway build
+
       - name: Typecheck commerce-gateway
         run: pnpm --filter @commercegateway/commerce-gateway typecheck
 
