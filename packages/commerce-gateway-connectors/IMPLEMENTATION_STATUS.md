@@ -62,30 +62,14 @@ WooCommerce doesn't have a native cart API, so carts are stored in-memory. In pr
 
 ---
 
-## Next Steps
+## Known gaps
 
-1. **Complete BigCommerce Implementation**
-   - Implement all ProductBackend methods
-   - Implement all CartBackend methods
-   - Implement all OrderBackend methods
-   - Add error handling and rate limiting
+- Shopify **order get / lookup** requires Admin API; Storefront connector throws.
+- WooCommerce **cart** is in-memory; persist separately in production.
+- This package does **not** speak Shopify UCP.
 
-2. **Complete WooCommerce Implementation**
-   - Implement all ProductBackend methods
-   - Implement cart operations (may need session storage)
-   - Implement all OrderBackend methods
-   - Handle WooCommerce-specific quirks
+## Tests / docs
 
-3. **Add Testing**
-   - Unit tests for each connector
-   - Integration tests with mock APIs
-   - Error handling tests
+Prefer mocked unit tests and the public quickstarts on [commercegateway.io](https://commercegateway.io/docs/getting-started/quick-start).
 
-4. **Add Documentation**
-   - API reference
-   - Usage examples
-   - Platform-specific guides
-
----
-
-**Last Updated**: After Shopify implementation complete
+**Last updated:** 2026-11-26 (Track A status hygiene)

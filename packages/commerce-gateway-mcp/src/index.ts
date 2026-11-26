@@ -2,38 +2,31 @@
  * Gateway MCP Server (OSS)
  *
  * Thin wrapper around createGatewayMCPServer() that reads gateway.config.json
- * and starts the MCP server with demo backends by default.
+ * (or a built-in demo config) and starts stdio MCP with demo backends.
  */
 
-import { readFile } from 'node:fs/promises';
 import { createServer as createHttpServer } from 'node:http';
-import { resolve as resolvePath } from 'node:path';
 import {
   createGatewayMCPServer,
-  type GatewayConfig,
 } from '@commercegateway/commerce-gateway/mcp';
 import { DemoBackend } from '@commercegateway/commerce-gateway/backends/demo';
+import { loadGatewayMcpConfig, resolveConfigPath } from './config.js';
 
-type TransportConfig = {
-  type?: 'stdio' | 'http';
-  port?: number;
-};
+function printHelp(): void {
+  console.error(`Usage: gateway-mcp [--config <path>]
 
-type GatewayMcpConfig = GatewayConfig & {
-  transport?: TransportConfig;
-  backends?: { type?: 'demo' };
-};
+Starts a stdio MCP server with demo storefront backends.
 
-function getArgValue(args: string[], key: string): string | undefined {
-  const idx = args.indexOf(key);
-  if (idx === -1) return undefined;
-  return args[idx + 1];
-}
+Options:
+  --config <path>   JSON config (default: ./gateway.config.json)
+  --help            Show this message
 
-async function loadConfig(configPath: string): Promise<GatewayMcpConfig> {
-  const fullPath = resolvePath(process.cwd(), configPath);
-  const raw = await readFile(fullPath, 'utf-8');
-  return JSON.parse(raw) as GatewayMcpConfig;
+If no config file is present, a built-in demo config is used so
+\`npx @commercegateway/commerce-gateway-mcp\` works for a first test.
+
+Env:
+  GATEWAY_CONFIG    Absolute or relative path to JSON config
+`);
 }
 
 function startHealthServer(port: number): void {
@@ -59,12 +52,13 @@ function startHealthServer(port: number): void {
 
 async function main() {
   const args = process.argv.slice(2);
-  const configPath =
-    getArgValue(args, '--config') ||
-    process.env.GATEWAY_CONFIG ||
-    'gateway.config.json';
+  if (args.includes('--help') || args.includes('-h')) {
+    printHelp();
+    return;
+  }
 
-  const config = await loadConfig(configPath);
+  const resolved = resolveConfigPath(args);
+  const { config, source } = await loadGatewayMcpConfig(resolved);
   const backends = DemoBackend.create();
 
   const server = createGatewayMCPServer({
@@ -77,6 +71,11 @@ async function main() {
   });
 
   server.start();
+  if (source === 'demo-default') {
+    console.error(
+      '[gateway-mcp] No gateway.config.json found — using built-in demo backends. Pass --config or GATEWAY_CONFIG to customize.'
+    );
+  }
   console.error(`[gateway-mcp] Started MCP server for ${config.brandName}`);
 
   if (config.transport?.type === 'http') {

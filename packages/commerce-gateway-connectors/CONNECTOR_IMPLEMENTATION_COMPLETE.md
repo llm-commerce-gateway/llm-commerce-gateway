@@ -1,5 +1,7 @@
 # Connector Implementation - Complete ✅
 
+Install from `@commercegateway/commerce-gateway-connectors` (subpaths `/shopify`, `/woocommerce`, `/bigcommerce`). Historical `@betterdata/llm-gateway-*` snippets below are stale.
+
 ## Summary
 
 All three e-commerce platform connectors have been fully implemented and are ready for use.

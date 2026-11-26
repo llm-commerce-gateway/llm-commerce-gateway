@@ -43,43 +43,37 @@ The gateway handles federation, tool dispatch, auth, observability, and the prot
 
 ## Quickstart
 
+Published npm versions are currently **`1.0.0-rc.2`**. This runtime is **not** Shopify UCP / Shop MCP (`https://{shop}/api/ucp/mcp`). See [Shopify, UCP, and this gateway](https://commercegateway.io/docs/getting-started/shopify-and-ucp).
+
 ```bash
-npm install @commercegateway/commerce-gateway @commercegateway/commerce-gateway-mcp
+npm install @commercegateway/commerce-gateway @commercegateway/commerce-gateway-connectors
 ```
 
-Create a gateway:
+`@commercegateway/commerce-gateway-mcp` is a **CLI** (`npx @commercegateway/commerce-gateway-mcp`) that starts stdio MCP with **demo** backends. Programmatic MCP:
 
 ```typescript
-import { createGateway } from '@commercegateway/commerce-gateway';
-import { createMCPServer } from '@commercegateway/commerce-gateway-mcp';
+import { createGatewayMCPServer } from '@commercegateway/commerce-gateway/mcp';
+import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors/shopify';
 
-const gateway = createGateway({
-  // Optional: inject your own auth adapter
-  // Defaults to EnvAuthAdapter (reads COMMERCE_GATEWAY_API_KEY)
-  authAdapter: new MyAuthAdapter(),
-
-  // Optional: inject your own registry store
-  // Defaults to MemoryRegistryStore
-  registryStore: new MyRegistryStore(),
+const shopify = new ShopifyConnector({
+  domain: 'my-shop.myshopify.com',
+  accessToken: process.env.SHOPIFY_STOREFRONT_TOKEN!,
+  apiVersion: '2024-01',
 });
 
-// Start the MCP server — LLMs connect via SSE transport
-const server = createMCPServer({ gateway });
-await server.listen({ port: 3000 });
+const server = createGatewayMCPServer({
+  slug: 'my-shop',
+  brandName: 'My Shop',
+  endpoint: 'https://example.com/mcp',
+  protocol: 'mcp',
+  capabilities: { catalog_search: true, inventory: 'real_time' },
+  backends: shopify.getBackends(),
+});
+
+server.start(); // stdio
 ```
 
-Connect a storefront:
-
-```typescript
-import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors';
-
-gateway.registerConnector(
-  new ShopifyConnector({
-    shopDomain: 'my-shop.myshopify.com',
-    accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-  })
-);
-```
+WooCommerce and BigCommerce: `@commercegateway/commerce-gateway-connectors/woocommerce` and `/bigcommerce`.
 
 Now any MCP-compatible LLM can call:
 
@@ -153,7 +147,7 @@ The gateway exposes a standard HTTP protocol surface:
 
 ```typescript
 import { createGateway } from '@commercegateway/commerce-gateway';
-import { createMCPServer }        from '@commercegateway/commerce-gateway/mcp';
+import { createGatewayMCPServer } from '@commercegateway/commerce-gateway/mcp';
 import { builtInTools }           from '@commercegateway/commerce-gateway/tools';
 import { createRegistryClient }   from '@commercegateway/commerce-gateway/registry';
 import { createFederationLayer }  from '@commercegateway/commerce-gateway/federation';

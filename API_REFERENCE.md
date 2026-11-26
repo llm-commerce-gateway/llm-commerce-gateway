@@ -121,7 +121,7 @@ Defined in `packages/commerce-gateway/src/core/protocol-endpoints.ts`.
 import { createGateway, type GatewayConfig } from '@commercegateway/commerce-gateway';
 
 // MCP server
-import { createMCPServer, type MCPServerConfig } from '@commercegateway/commerce-gateway/mcp';
+import { createGatewayMCPServer, MCPServer } from '@commercegateway/commerce-gateway/mcp';
 
 // Tool definitions and registry
 import { builtInTools, registerTool } from '@commercegateway/commerce-gateway/tools';
@@ -180,10 +180,7 @@ import { WooCommerceConnector } from '@commercegateway/commerce-gateway-connecto
 
 ### `@commercegateway/commerce-gateway-mcp`
 
-```typescript
-import { createMCPServer } from '@commercegateway/commerce-gateway-mcp';
-// Claude, ChatGPT, and Grok adapters via MCP/SSE transport
-```
+CLI (`npx @commercegateway/commerce-gateway-mcp`), not a `createMCPServer` library export. Programmatic MCP: `createGatewayMCPServer` from `@commercegateway/commerce-gateway/mcp`.
 
 ### `@commercegateway/registry-mcp`
 

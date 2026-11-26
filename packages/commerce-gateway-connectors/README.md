@@ -38,9 +38,10 @@ const shopify = new ShopifyConnector({
 });
 ```
 
-- Credentials: Storefront API token
+- Credentials: Storefront API token (not Admin, not Shopify UCP `/api/ucp/mcp`)
 - API version: `2024-01` default in connector
 - Typical scopes: read products, inventory, and checkout/cart capabilities for your storefront
+- Order get/lookup is **not** supported on Storefront (connector throws)
 
 ### WooCommerce
 
@@ -75,16 +76,24 @@ const bigcommerce = new BigCommerceConnector({
 - API version: `v3` default
 - Permissions: catalog, inventory, carts/orders based on your use case
 
-## Use with Gateway
+## Use with Gateway MCP
 
 ```ts
-import { LLMGateway } from '@commercegateway/commerce-gateway';
+import { createGatewayMCPServer } from '@commercegateway/commerce-gateway/mcp';
 
-const gateway = new LLMGateway({
+const server = createGatewayMCPServer({
+  slug: 'your-store',
+  brandName: 'Your Store',
+  endpoint: 'https://example.com/mcp',
+  protocol: 'mcp',
+  capabilities: { catalog_search: true },
   backends: shopify.getBackends(),
-  session: { redis: { url: process.env.REDIS_URL! } },
 });
+
+server.start();
 ```
+
+`LLMGateway` also accepts `backends: shopify.getBackends()` for the HTTP tool surface. Public docs: https://commercegateway.io/docs/getting-started/quick-start
 
 ## Writing a Custom Connector
 
@@ -104,4 +113,4 @@ export function createMyConnector(): GatewayBackends {
 
 ## License
 
-MIT
+Apache-2.0 — see [LICENSE](./LICENSE).

@@ -5,7 +5,7 @@ Official BigCommerce connector for the Better Data LLM Gateway.
 ## Installation
 
 ```bash
-npm install @betterdata/llm-gateway-bigcommerce
+npm install @commercegateway/commerce-gateway-connectors
 ```
 
 ## Setup
@@ -17,19 +17,23 @@ npm install @betterdata/llm-gateway-bigcommerce
 ## Usage
 
 ```typescript
-import { BigCommerceConnector } from '@betterdata/llm-gateway-bigcommerce';
-import { LLMGateway } from '@betterdata/llm-gateway';
+import { BigCommerceConnector } from '@commercegateway/commerce-gateway-connectors/bigcommerce';
+import { createGatewayMCPServer } from '@commercegateway/commerce-gateway/mcp';
 
 const connector = new BigCommerceConnector({
   storeHash: process.env.BIGCOMMERCE_STORE_HASH!,
   accessToken: process.env.BIGCOMMERCE_ACCESS_TOKEN!,
 });
 
-const gateway = new LLMGateway({
+const server = createGatewayMCPServer({
+  slug: 'your-store',
+  brandName: 'Your Store',
+  endpoint: 'https://example.com/mcp',
+  protocol: 'mcp',
+  capabilities: { catalog_search: true },
   backends: connector.getBackends(),
 });
-
-gateway.start(3000);
+server.start();
 ```
 
 ## Configuration

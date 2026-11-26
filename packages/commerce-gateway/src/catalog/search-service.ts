@@ -7,7 +7,6 @@
  * @module catalog/search-service
  */
 
-import type { PrismaClient } from '@prisma/client';
 import { 
   rankListings, 
   calculateDistance,
@@ -15,6 +14,22 @@ import {
   type SearchResultRow,
   type UserLocation 
 } from './ranking-service';
+
+type PrismaSearchRow = Record<string, unknown>;
+
+/**
+ * Query surface used by marketplace search.
+ * Kept local so OSS dts builds do not depend on a generated `@prisma/client`.
+ */
+export type SearchDatabaseClient = {
+  marketplaceSearchIndex: {
+    findMany: (args: Record<string, unknown>) => Promise<any[]>;
+  };
+  productMaster: {
+    findUnique: (args: Record<string, unknown>) => Promise<any>;
+  };
+  $queryRawUnsafe: (query: string, ...values: unknown[]) => Promise<unknown>;
+};
 
 // ============================================================================
 // Types
@@ -98,18 +113,11 @@ export interface SearchResponse {
 }
 
 // ============================================================================
-// Prisma Result Types (explicit to avoid DTS build issues)
-// Note: Uses Record<string, unknown> to accommodate Prisma Decimal types
-// ============================================================================
-
-type PrismaSearchRow = Record<string, unknown>;
-
-// ============================================================================
 // Search Service Class
 // ============================================================================
 
 export interface SearchServiceConfig {
-  prisma: PrismaClient;
+  prisma: SearchDatabaseClient;
   defaultLimit?: number;
   maxListingsPerProduct?: number;
 }
@@ -223,7 +231,7 @@ function buildScopeWhereClause(scope?: SearchScope): Record<string, unknown> {
 }
 
 export class SearchService {
-  private prisma: PrismaClient;
+  private prisma: SearchDatabaseClient;
   private defaultLimit: number;
   private maxListingsPerProduct: number;
 
@@ -667,7 +675,7 @@ export class SearchService {
  * Create a search service instance
  */
 export function createSearchService(
-  prisma: PrismaClient,
+  prisma: SearchDatabaseClient,
   options?: Partial<SearchServiceConfig>
 ): SearchService {
   return new SearchService({
@@ -680,7 +688,7 @@ export function createSearchService(
  * Simple search function (creates ephemeral service)
  */
 export async function searchProducts(
-  prisma: PrismaClient,
+  prisma: SearchDatabaseClient,
   query: SearchQuery
 ): Promise<SearchResponse> {
   const service = createSearchService(prisma);

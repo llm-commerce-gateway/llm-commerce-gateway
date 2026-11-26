@@ -34,7 +34,7 @@ const FORBIDDEN_FIELD_SUBSTRINGS = [
 ];
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const SCHEMA_PATH = path.resolve(__dirname, '../../../../docs/telemetry/schema.json');
+const SCHEMA_PATH = path.resolve(__dirname, '../../docs/telemetry/schema.json');
 
 function collectKeys(value: unknown, keys: string[] = []): string[] {
   if (Array.isArray(value)) {

@@ -1,0 +1,16 @@
+{
+  "slug": "demo",
+  "brandName": "Commerce Gateway Demo",
+  "endpoint": "http://localhost/mcp",
+  "protocol": "mcp",
+  "capabilities": {
+    "catalog_search": true,
+    "inventory": "real_time"
+  },
+  "transport": {
+    "type": "stdio"
+  },
+  "backends": {
+    "type": "demo"
+  }
+}

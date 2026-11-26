@@ -19,7 +19,7 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.15.9
 
       - uses: actions/setup-node@v4
         with:
@@ -40,7 +40,7 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.15.9
 
       - uses: actions/setup-node@v4
         with:
@@ -76,7 +76,7 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.15.9
 
       - uses: actions/setup-node@v4
         with:
@@ -85,6 +85,9 @@ jobs:
 
       - name: Install
         run: pnpm install --frozen-lockfile
+
+      - name: Build commerce-gateway (subpath .d.ts for dependents)
+        run: pnpm --filter @commercegateway/commerce-gateway build
 
       - name: Typecheck commerce-gateway
         run: pnpm --filter @commercegateway/commerce-gateway typecheck
@@ -135,7 +138,7 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.15.9
 
       - uses: actions/setup-node@v4
         with:

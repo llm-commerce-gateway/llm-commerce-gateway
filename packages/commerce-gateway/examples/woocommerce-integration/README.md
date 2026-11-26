@@ -1,6 +1,6 @@
 # WooCommerce Integration
 
-> Connect your WordPress/WooCommerce store to Claude and ChatGPT.
+> First-party agent via WooCommerce REST API — Woo has no native Shopify UCP endpoint.
 
 This example shows how to integrate a WooCommerce store with the LLM Gateway using the WooCommerce REST API.
 

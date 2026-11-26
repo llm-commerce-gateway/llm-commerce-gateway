@@ -1,7 +1,7 @@
 # @commercegateway/commerce-gateway
 
 [![npm](https://img.shields.io/npm/v/@commercegateway/commerce-gateway)](https://www.npmjs.com/package/@commercegateway/commerce-gateway)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
 
 Core routing engine for conversational commerce. It normalizes tool execution across LLM providers and routes those tools to your real commerce backend.
 
@@ -10,6 +10,8 @@ Core routing engine for conversational commerce. It normalizes tool execution ac
 ```bash
 npm install @commercegateway/commerce-gateway
 ```
+
+Published prerelease: `1.0.0-rc.2`. Shopify examples below use **Storefront API**, not `{shop}/api/ucp/mcp`.
 
 ## Minimal TypeScript Setup
 
