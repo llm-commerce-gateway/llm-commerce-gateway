@@ -5,7 +5,7 @@ Official Shopify connector for the Better Data LLM Gateway.
 ## Installation
 
 ```bash
-npm install @betterdata/llm-gateway-shopify
+npm install @commercegateway/commerce-gateway-connectors
 ```
 
 ## Setup
@@ -23,8 +23,8 @@ npm install @betterdata/llm-gateway-shopify
 ## Usage
 
 ```typescript
-import { ShopifyConnector } from '@betterdata/llm-gateway-shopify';
-import { LLMGateway } from '@betterdata/llm-gateway';
+import { ShopifyConnector } from '@commercegateway/commerce-gateway-connectors/shopify';
+import { createGatewayMCPServer } from '@commercegateway/commerce-gateway/mcp';
 
 const connector = new ShopifyConnector({
   domain: 'your-store.myshopify.com',
@@ -32,11 +32,16 @@ const connector = new ShopifyConnector({
   apiVersion: '2024-01', // Optional, defaults to latest
 });
 
-const gateway = new LLMGateway({
+const server = createGatewayMCPServer({
+  slug: 'your-store',
+  brandName: 'Your Store',
+  endpoint: 'https://example.com/mcp',
+  protocol: 'mcp',
+  capabilities: { catalog_search: true },
   backends: connector.getBackends(),
 });
-
-gateway.start(3000);
+server.start();
+// Storefront API only — not Shopify UCP. Order lookup is not supported.
 ```
 
 ## Configuration

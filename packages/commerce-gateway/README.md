@@ -11,6 +11,8 @@ Core routing engine for conversational commerce. It normalizes tool execution ac
 npm install @commercegateway/commerce-gateway
 ```
 
+Published prerelease: `1.0.0-rc.2`. Shopify examples below use **Storefront API**, not `{shop}/api/ucp/mcp`.
+
 ## Minimal TypeScript Setup
 
 ```ts

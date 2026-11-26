@@ -1,8 +1,8 @@
 # Shopify Integration
 
-> Connect your Shopify store to Claude and ChatGPT.
+> First-party agent via **Shopify Storefront API** — not Shopify UCP (`/api/ucp/mcp`) or Shop MCP.
 
-This example shows how to integrate a real Shopify store with the LLM Gateway, enabling AI-powered shopping conversations.
+This example wires Storefront catalog/cart/checkout into the LLM Gateway for agents **you** host (Claude MCP / ChatGPT HTTP). Keep native Shopify AI channels on Shopify.
 
 ## Features
 

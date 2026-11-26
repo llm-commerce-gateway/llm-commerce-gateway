@@ -5,7 +5,7 @@ Official WooCommerce connector for the Better Data LLM Gateway.
 ## Installation
 
 ```bash
-npm install @betterdata/llm-gateway-woocommerce
+npm install @commercegateway/commerce-gateway-connectors
 ```
 
 ## Setup
@@ -19,8 +19,8 @@ npm install @betterdata/llm-gateway-woocommerce
 ## Usage
 
 ```typescript
-import { WooCommerceConnector } from '@betterdata/llm-gateway-woocommerce';
-import { LLMGateway } from '@betterdata/llm-gateway';
+import { WooCommerceConnector } from '@commercegateway/commerce-gateway-connectors/woocommerce';
+import { createGatewayMCPServer } from '@commercegateway/commerce-gateway/mcp';
 
 const connector = new WooCommerceConnector({
   url: 'https://your-store.com',
@@ -29,11 +29,15 @@ const connector = new WooCommerceConnector({
   version?: 'wc/v3', // Optional, defaults to 'wc/v3'
 });
 
-const gateway = new LLMGateway({
+const server = createGatewayMCPServer({
+  slug: 'your-store',
+  brandName: 'Your Store',
+  endpoint: 'https://example.com/mcp',
+  protocol: 'mcp',
+  capabilities: { catalog_search: true },
   backends: connector.getBackends(),
 });
-
-gateway.start(3000);
+server.start();
 ```
 
 ## Configuration
