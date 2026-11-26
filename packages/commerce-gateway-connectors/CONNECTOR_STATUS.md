@@ -1,6 +1,7 @@
 # Connector status
 
-**Canonical:** [IMPLEMENTATION_STATUS.md](./IMPLEMENTATION_STATUS.md) (matches `src/`).
+**Canonical:** [IMPLEMENTATION_STATUS.md](./IMPLEMENTATION_STATUS.md) (matches `src/`).  
+**Capability matrix (BD / partners):** [CONNECTOR_CAPABILITY.md](./CONNECTOR_CAPABILITY.md).
 
 | Connector | API | Catalog / cart | Order get |
 | --- | --- | --- | --- |
